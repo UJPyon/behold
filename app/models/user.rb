@@ -21,7 +21,6 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   # --User Associations--
-  # has_many :
 
 
   # --User Class & Instance Methods--

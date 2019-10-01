@@ -22,14 +22,14 @@ class Navbar extends React.Component {
       );
     } else {
       // --TESTING! Trying to not show the signup & login links on splash page, it's redundant: -- 
-      return <div></div>
+      // return <div></div>
 
-      // return (
-      //   <div>
-      //     <Link to="/signup">Sign Up</Link>
-      //     <Link to="/login">Login</Link>
-      //   </div>
-      // );
+      return (
+        <div>
+          <Link to="/signup">Sign Up</Link>
+          <Link to="/login">Login</Link>
+        </div>
+      );
     }
   }
 }
