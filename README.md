@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+Resource Credits:
+
+CSS Reset File
+source link: https://gist.github.com/DavidWells/18e73022e723037a50d6
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0-modified | 20110126
+   License: none (public domain)
+*/
+
