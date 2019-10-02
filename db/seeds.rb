@@ -24,3 +24,11 @@ user2 = User.create!(
   text: "My name is Sol Oak, and I'm a Pratt Institute graduate of Industrial Design."
 )
 
+demo_user = User.create!(
+  email: "cube", 
+  password: "123456",
+  fname:"APERTURE SCIENCE", 
+  lname: "WEIGHTED COMANION CUBE", 
+  text: "Property of Aperture Science"
+)
+

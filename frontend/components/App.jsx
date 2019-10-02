@@ -5,6 +5,7 @@ import SignUpFormContainer from './session/signup_form_container'
 import LoginFormContainer from './session/login_form_container'
 import { AuthRoute } from '../utils/route_util';
 
+
 const App = () => {
   return (
     <div>
@@ -13,8 +14,10 @@ const App = () => {
         <NavbarContainer />
       </nav>
 
-      <AuthRoute path='/signup' component={SignUpFormContainer} />
-      <AuthRoute path='/login' component={LoginFormContainer} />
+      <div className="app-container">
+        <AuthRoute path='/signup' component={SignUpFormContainer} />
+        <AuthRoute path='/login' component={LoginFormContainer} />
+      </div>
     </div>
   )
 };

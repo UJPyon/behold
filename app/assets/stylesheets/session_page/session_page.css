@@ -1,0 +1,74 @@
+body, html {
+  height: 100%;
+}
+/* 
+body {
+} */
+
+.app-container {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.mainRoot {
+  height: 100%;
+  width: auto;
+  background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.session {
+  background-color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 575px;
+  height: 700px;
+  border-radius: 4px;
+}
+
+.session form {
+  padding: 30px;
+}
+
+.session h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #323232;
+}
+.session p {
+}
+
+.session-logo {
+  width: 200px;
+  height: auto;
+}
+
+.session-line::before {
+  /* background: #eaeaea; */
+  background: black;
+  content: '';
+  height: 1px;
+  left: 0;
+  position: relative;
+  top: 50%;
+  width: 40%;
+}
+
+.session-demo {
+
+}
+
+.session-signup-login-link {
+  
+}

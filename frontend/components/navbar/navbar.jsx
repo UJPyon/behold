@@ -16,13 +16,11 @@ class Navbar extends React.Component {
     if (this.props.currentUser) {
       return (
         <div>
-          <h3>Salutations, {this.props.currentUser.email}!</h3>
+          <h3>Salutations, {this.props.currentUser.fname}&nbsp;{this.props.currentUser.lname}!</h3>
           <button onClick={this.handleLogout}>Logout</button>
         </div>
       );
     } else {
-      // --TESTING! Trying to not show the signup & login links on splash page, it's redundant: -- 
-      // return <div></div>
 
       return (
         <div>

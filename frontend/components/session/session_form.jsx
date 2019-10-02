@@ -8,8 +8,8 @@ class SessionForm extends React.Component {
     this.state = {
       email: "",
       password: "",
-      firstName: "",
-      lastName: "",
+      fname: "",
+      lname: "",
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
@@ -54,30 +54,33 @@ class SessionForm extends React.Component {
     if (this.props.formType !== "Sign in") {
       additionalFields = (
         <div>
-          <label>First name
-            <input type="text" onChange={this.update("firstName")} />
-          </label>
-          <label>Last name
-            <input type="text" onChange={this.update("lastName")} />
-          </label>
+          <label>First name</label>
+          <input id="fname" type="text" onChange={this.update("fname")} />
+          <label>Last name</label>
+            <input id="lname" type="text" onChange={this.update("lname")} />
         </div>
       );
     }
 
     // --Demo Login Button--
     const demoLogin = (
-      <>
-        <div>OR</div>
+      <div className="session-demo">
+        <span className="session-line">OR</span>
         <button onClick={this.handleDemoLogin}>Demo Login</button>
-      </>
+      </div>
     );
 
     // --Splash page session form--
     return (
-      <div>
+      <>
+      <section>
+        <img className="session-logo" src="https://behold-aa.s3.us-east-2.amazonaws.com/behold_image-01.png"/>
+      </section>
+      <section className="session">
+        {/* <img className="session-background" src="https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg"/> */}
         <form onSubmit={this.handleSubmit}>
           <h1>{this.props.formType}</h1>
-            <p>{text}</p>&nbsp;<Link to={path}>{title}</Link>
+            <div><p>{text}</p>&nbsp;<Link to={path}>{title}</Link></div>
           <ul>
             {errors}
           </ul>
@@ -93,7 +96,8 @@ class SessionForm extends React.Component {
           <input type="submit" value={buttonText}/>
         </form>
         {demoLogin}
-      </div>
+      </section>
+      </>
     );
   }
 }
