@@ -1,0 +1,221 @@
+body, html {
+  height: 100%;
+}
+/* 
+body {
+} */
+
+.app-container {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.mainRoot {
+  height: 100%;
+  width: auto;
+  /* background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/behold_session_background.jpg"); */
+  background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.session {
+  background-color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  color: #323232;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 510px;
+  height: 700px;
+  border-radius: 4px;
+}
+
+.session form {
+  padding: 70px 40px 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.session h1 {
+  font-size: 40px;
+  font-weight: 800;
+  color: #323232;
+  padding-bottom: 20px;
+}
+
+.session p {
+  /* padding-bottom: 30px; */
+}
+
+.session label {
+  display: flex;
+  padding-top: 30px;
+}
+
+.session-input {
+  height: 30px;
+  padding-top: 0;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.session-input:focus {
+  transition: 0.3s;
+  border-bottom: 1px solid #ca337d;
+}
+
+.session-input-additional {
+  height: 30px;
+  padding-top: 0;
+  width: 200px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.session-input:hover {
+  transition: 0.3s;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.session-input-additional:hover {
+  transition: 0.3s;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.session-input-additional:focus {
+  transition: 0.3s;
+  border-bottom: 1px solid #ca337d;
+}
+
+.session-logo {
+  width: 200px;
+  height: auto;
+}
+
+.session-demo span {
+  display: flex;
+  justify-content: center;
+  color: #323232;
+  font-size: 16px;
+}
+
+.session-line::before {
+  background: #eaeaea;
+  content: '';
+  height: 1px;
+  left: 0;
+  position: relative;
+  top: 50%;
+  width: 60%;
+  margin-right: 5px;
+}
+
+.session-line::after {
+  background: #eaeaea;
+  content: '';
+  height: 1px;
+  left: 0;
+  position: relative;
+  top: 50%;
+  width: 60%;
+  margin-left: 5px;
+}
+
+.session-demo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+
+.session-demo button {
+  border: 3px solid #eaeaea;
+  border-radius: 40px;
+  padding: 20px 150px;
+  background-color: white;
+  color: #505050;
+  /* color: #3d3d3d; */
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.session-demo button:hover {
+  border: 3px solid #d2d2d2;
+  transition: 0.4s;
+}
+
+.session-demo button:focus {
+  border: 3px solid #d2d2d2;
+  background-color: #eaeaea;
+  transition: 0.2s;
+}
+
+.session-submit-button {
+  border: 0;
+  border-radius: 18px;
+  width: 140px;
+  height: 35px;
+  background-color: #dc3888;
+  transition: 0.3s;
+  color: white;
+  margin-top: 30px;
+  margin-left: 290px;
+}
+
+.session-submit-button:hover {
+  border: 0;
+  border-radius: 18px;
+  width: 140px;
+  height: 35px;
+  background-color: #ca337d;
+  transition: 0.3s;
+  color: white;
+}
+
+.session-signup-login-link {
+  display: flex;
+  font-size: 14px;
+}
+
+.session-signup-login-link p {
+  color: #959595;
+}
+
+.session-signup-login-link a {
+  text-decoration: none;
+  color: #dc3888;
+}
+
+.session-signup-login-link a:hover {
+  text-decoration: underline;
+}
+
+.session-input-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.session-input-name section {
+  display: flex;
+  flex-direction: column;
+}
+
+.session-all-inputs {
+  display: flex;
+  flex-direction: column;
+}

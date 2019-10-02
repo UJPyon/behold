@@ -53,11 +53,15 @@ class SessionForm extends React.Component {
     let additionalFields = <div></div>;
     if (this.props.formType !== "Sign in") {
       additionalFields = (
-        <div>
-          <label>First name</label>
-          <input id="fname" type="text" onChange={this.update("fname")} />
-          <label>Last name</label>
-            <input id="lname" type="text" onChange={this.update("lname")} />
+        <div className="session-input-name">
+          <section>
+            <label>First name</label>
+            <input className="session-input-additional" id="fname" type="text" onChange={this.update("fname")} />
+          </section>
+          <section>
+            <label>Last name</label>
+            <input className="session-input-additional" id="lname" type="text" onChange={this.update("lname")} />
+          </section>
         </div>
       );
     }
@@ -65,7 +69,8 @@ class SessionForm extends React.Component {
     // --Demo Login Button--
     const demoLogin = (
       <div className="session-demo">
-        <span className="session-line">OR</span>
+        <span className="session-line">&nbsp;Or&nbsp;</span>
+        <br/><br/>
         <button onClick={this.handleDemoLogin}>Demo Login</button>
       </div>
     );
@@ -74,7 +79,7 @@ class SessionForm extends React.Component {
     return (
       <>
       <section>
-        <img className="session-logo" src="https://behold-aa.s3.us-east-2.amazonaws.com/behold_image-01.png"/>
+        <img className="session-logo" src="https://behold-aa.s3.us-east-2.amazonaws.com/behold_logo.png"/>
       </section>
       <section className="session">
         {/* <img className="session-background" src="https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg"/> */}
@@ -84,16 +89,17 @@ class SessionForm extends React.Component {
           <ul>
             {errors}
           </ul>
-          <label>Email
-            <input type="text" onChange={this.update("email")}/>
-          </label>
+          <div className="session-all-inputs">
+            <label htmlFor="email">Email</label>
+            <input className="session-input"id="email" type="text" onChange={this.update("email")}/>
 
-          {additionalFields}
+            {additionalFields}
 
-          <label>Password
-            <input type="password" onChange={this.update("password")}/>
-          </label>
-          <input type="submit" value={buttonText}/>
+            <label htmlFor="pw">Password</label>
+            <input className="session-input" id="pw" type="password" onChange={this.update("password")}/>
+            
+            <input className="session-submit-button" type="submit" value={buttonText}/>
+          </div>
         </form>
         {demoLogin}
       </section>
