@@ -80,7 +80,7 @@ class SessionForm extends React.Component {
         {/* <img className="session-background" src="https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg"/> */}
         <form onSubmit={this.handleSubmit}>
           <h1>{this.props.formType}</h1>
-            <div><p>{text}</p>&nbsp;<Link to={path}>{title}</Link></div>
+            <div className="session-signup-login-link"><p>{text}</p>&nbsp;<Link to={path}>{title}</Link></div>
           <ul>
             {errors}
           </ul>
