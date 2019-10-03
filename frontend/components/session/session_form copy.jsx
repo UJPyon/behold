@@ -17,8 +17,6 @@ class SessionForm extends React.Component {
       error3: "Please enter your first name.",
       error4: "Please enter your last name.",
       error5: "Invalid credentials. Please try again.",
-      loginNextStep: false,
-      emailError: "",
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
@@ -34,17 +32,6 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => this.props.history.push('/'));
-  }
-
-  handleEmailSubmit(e) {
-    e.preventDefault();
-    this.props.userExists(this.state.email).then(response => {
-      if (response === this.state.email) {
-        this.setState({ loginNextStep: true });
-      } else {
-        this.state.emailError = response;
-      }
-    });
   }
 
   handleDemoLogin() {
@@ -127,43 +114,6 @@ class SessionForm extends React.Component {
       </div>
     );
 
-    let emailInput = <div></div>;
-    if (this.props.formType === "Sign in") {
-      emailInput = (
-      <>
-        <label htmlFor="email">Email address</label>
-        <input
-          className={this.inputBorderType(this.state.error1) + "session-input"}
-          id="email"
-          type="email"
-          onChange={this.update("email")}
-        />
-        <p>{this.errorDoesExist(this.state.error1)}</p>
-      </>
-      )
-    }
-
-    let passwordInput = <div></div>;
-    if (this.props.formType !== "Sign in" || this.state.loginNextStep) {
-      passwordInput = (
-      <>
-        <label htmlFor="pw">Password</label>
-          <input
-            className={this.inputBorderType(this.state.error2, this.state.error5) + "session-input"}
-            id="pw"
-            type="password"
-            onChange={this.update("password")}
-          />
-          <p>{this.errorDoesExist(this.state.error2) || this.errorDoesExist(this.state.error5)}</p>
-
-          <input
-            className="session-submit-button"
-            type="submit"
-            value={buttonText}
-          />
-        </>
-      )
-    }
     // --Signup/Login page session form--
     return (
       <>
@@ -177,19 +127,18 @@ class SessionForm extends React.Component {
             <div className="session-signup-login-link"><p>{text}</p>&nbsp;<Link to={path}>{title}</Link></div>
 
             <div className="session-all-inputs">
-              {emailInput}
-              {/* <label htmlFor="email">Email address</label>
+              <label htmlFor="email">Email address</label>
               <input
                 className={this.inputBorderType(this.state.error1) + "session-input"}
                 id="email"
                 type="email"
                 onChange={this.update("email")}
               />
-              <p>{this.errorDoesExist(this.state.error1)}</p> */}
+              <p>{this.errorDoesExist(this.state.error1)}</p>
 
               {additionalFields}
 
-              {/* <label htmlFor="pw">Password</label>
+              <label htmlFor="pw">Password</label>
               <input
                 className={this.inputBorderType(this.state.error2, this.state.error5) + "session-input"}
                 id="pw"
@@ -202,8 +151,7 @@ class SessionForm extends React.Component {
                 className="session-submit-button"
                 type="submit"
                 value={buttonText}
-              /> */}
-              {passwordInput}
+              />
             </div>
           </form>
           {demoLogin}

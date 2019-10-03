@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main-navbar-active {
+  display: inherit;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #191919;
+  width: inherit;
+  color: white;
+  height: 60px;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-sizing: border-box;
+}
+
+.main-navbar-active img {
+  width: auto;
+  height: 34px;
+}
+
+.main-navbar-disabled {
+  display: none;
+}
+
+.main-navbar-disabled img {
+  display: none;
+}

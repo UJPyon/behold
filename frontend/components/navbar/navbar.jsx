@@ -8,8 +8,7 @@ class Navbar extends React.Component {
   }
 
   handleLogout() {
-    this.props.logout();
-    this.props.history.push("/login");
+    this.props.logout().then(() => this.props.history.push("/"));
   }
 
   render() {

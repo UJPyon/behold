@@ -7,6 +7,15 @@ export const postUser = function(user) {
     }));
 };
 
+export const getUser = function(user) {
+  return (
+    $.ajax({
+      method: "GET",
+      url: "api/users/search",
+      data: { user },
+    }));
+};
+
 export const postSession = function(user) {
   return (
     $.ajax({

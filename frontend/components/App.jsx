@@ -8,15 +8,17 @@ import { AuthRoute } from '../utils/route_util';
 
 const App = () => {
   return (
-    <div>
-      <nav>
-        <h1>Behold</h1>
+    <div className="main">
+      <nav className="main-navbar-active">
+        <img src="https://behold-aa.s3.us-east-2.amazonaws.com/behold_logo_bold.png"/>
         <NavbarContainer />
       </nav>
+      <div className="main-session">
 
-      <div className="app-container">
-        <AuthRoute path='/signup' component={SignUpFormContainer} />
-        <AuthRoute path='/login' component={LoginFormContainer} />
+        <div className="main-session-containers">
+          <AuthRoute path='/signup' component={SignUpFormContainer} />
+          <AuthRoute path='/login' component={LoginFormContainer} />
+        </div>
       </div>
     </div>
   )

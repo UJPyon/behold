@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { postUser, postSession, deleteSession } from './utils/session_api_util';
+import { postUser, postSession, deleteSession, getUser } from './utils/session_api_util';
 import { login, logout, signup } from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.login = login;
   window.logout = logout;
   window.signup = signup;
+  window.getUser = getUser;
 
   // ----------------------------------------
   // ^^^^^^^^^^^^^ END TESTS ^^^^^^^^^^^^^^^^
