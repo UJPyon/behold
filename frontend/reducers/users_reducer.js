@@ -8,7 +8,9 @@ export const usersReducer = (state = {}, action) => {
       // debugger 
       return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
     case FIND_CURRENT_USER:
-      return action.answer;
+      debugger
+      // return action.user;
+      return Object.assign({}, state, {[action.user.id]: action.user})
     default:
       return state;
   }

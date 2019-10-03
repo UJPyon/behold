@@ -7,12 +7,12 @@ export const postUser = function(user) {
     }));
 };
 
-export const getUser = function(user) {
+export const getUser = function(email) {
   return (
     $.ajax({
       method: "GET",
       url: "api/users/search",
-      data: { user },
+      data: { email },
     }));
 };
 

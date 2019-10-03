@@ -3,6 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import LoginPasswordForm from './login_password_form_container';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -17,11 +18,13 @@ class SessionForm extends React.Component {
       error3: "Please enter your first name.",
       error4: "Please enter your last name.",
       error5: "Invalid credentials. Please try again.",
+      error6: "Check your email address or ",
       loginNextStep: false,
-      emailError: "",
     }
+    debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
+    this.handleEmailSubmit = this.handleEmailSubmit.bind(this);
     this.update = this.update.bind(this);
     this.inputBorderType = this.inputBorderType.bind(this);
   }
@@ -37,14 +40,13 @@ class SessionForm extends React.Component {
   }
 
   handleEmailSubmit(e) {
+    debugger
+    console.log(this.state)
     e.preventDefault();
-    this.props.userExists(this.state.email).then(response => {
-      if (response === this.state.email) {
-        this.setState({ loginNextStep: true });
-      } else {
-        this.state.emailError = response;
-      }
-    });
+    this.props.userExists(this.state.email)
+    .then(this.setState({loginNextStep: true}))
+    console.log(this.state)
+    debugger
   }
 
   handleDemoLogin() {
@@ -91,105 +93,47 @@ class SessionForm extends React.Component {
     // }
 
     // --Display additional "first name" and "last name" inputs for creating a new account--
-    let additionalFields = <div></div>;
+    let signUpForm = <div></div>;
     if (this.props.formType !== "Sign in") {
-      additionalFields = (
-        <div className="session-input-name">
-          <section>
-            <label>First name</label>
-            <input
-              className={this.inputBorderType(this.state.error3) + "session-input-additional"}
-              id="fname" type="text"
-              onChange={this.update("fname")}
-            />
-            <p>{this.errorDoesExist(this.state.error3)}</p>
-          </section>
-          <section>
-            <label>Last name</label>
-            <input
-              className={this.inputBorderType(this.state.error4) + "session-input-additional"}
-              id="lname"
-              type="text"
-              onChange={this.update("lname")}
-            />
-            <p>{this.errorDoesExist(this.state.error4)}</p>
-          </section>
-        </div>
-      );
-    }
-
-    // --Demo Login Button--
-    const demoLogin = (
-      <div className="session-demo">
-        <span className="session-line">&nbsp;Or&nbsp;</span>
-        <br /><br />
-        <button onClick={this.handleDemoLogin}>Demo Login</button>
-      </div>
-    );
-
-    let emailInput = <div></div>;
-    if (this.props.formType === "Sign in") {
-      emailInput = (
-      <>
-        <label htmlFor="email">Email address</label>
-        <input
-          className={this.inputBorderType(this.state.error1) + "session-input"}
-          id="email"
-          type="email"
-          onChange={this.update("email")}
-        />
-        <p>{this.errorDoesExist(this.state.error1)}</p>
-      </>
-      )
-    }
-
-    let passwordInput = <div></div>;
-    if (this.props.formType !== "Sign in" || this.state.loginNextStep) {
-      passwordInput = (
-      <>
-        <label htmlFor="pw">Password</label>
-          <input
-            className={this.inputBorderType(this.state.error2, this.state.error5) + "session-input"}
-            id="pw"
-            type="password"
-            onChange={this.update("password")}
-          />
-          <p>{this.errorDoesExist(this.state.error2) || this.errorDoesExist(this.state.error5)}</p>
-
-          <input
-            className="session-submit-button"
-            type="submit"
-            value={buttonText}
-          />
-        </>
-      )
-    }
-    // --Signup/Login page session form--
-    return (
-      <>
-        <section>
-          <img className="session-logo" src="https://behold-aa.s3.us-east-2.amazonaws.com/behold_logo.png" />
-          {/* <img className="session-background" src="https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg"/> */}
-        </section>
+      signUpForm = (
         <section className="session">
           <form onSubmit={this.handleSubmit}>
             <h1>{this.props.formType}</h1>
             <div className="session-signup-login-link"><p>{text}</p>&nbsp;<Link to={path}>{title}</Link></div>
 
             <div className="session-all-inputs">
-              {emailInput}
-              {/* <label htmlFor="email">Email address</label>
+              <label htmlFor="email">Email address</label>
               <input
                 className={this.inputBorderType(this.state.error1) + "session-input"}
                 id="email"
                 type="email"
                 onChange={this.update("email")}
               />
-              <p>{this.errorDoesExist(this.state.error1)}</p> */}
+              <p>{this.errorDoesExist(this.state.error1)}</p>
 
-              {additionalFields}
+            <div className="session-input-name">
+              <section>
+                <label>First name</label>
+                <input
+                  className={this.inputBorderType(this.state.error3) + "session-input-additional"}
+                  id="fname" type="text"
+                  onChange={this.update("fname")}
+                />
+                <p>{this.errorDoesExist(this.state.error3)}</p>
+              </section>
+              <section>
+                <label>Last name</label>
+                <input
+                  className={this.inputBorderType(this.state.error4) + "session-input-additional"}
+                  id="lname"
+                  type="text"
+                  onChange={this.update("lname")}
+                />
+                <p>{this.errorDoesExist(this.state.error4)}</p>
+              </section>
+            </div>
 
-              {/* <label htmlFor="pw">Password</label>
+              <label htmlFor="pw">Password</label>
               <input
                 className={this.inputBorderType(this.state.error2, this.state.error5) + "session-input"}
                 id="pw"
@@ -202,10 +146,98 @@ class SessionForm extends React.Component {
                 className="session-submit-button"
                 type="submit"
                 value={buttonText}
-              /> */}
-              {passwordInput}
+              />
             </div>
           </form>
+          {demoLogin}
+        </section>
+      )
+    }
+
+    // --Demo Login Button--
+    const demoLogin = (
+      <div className="session-demo">
+        <span className="session-line">&nbsp;Or&nbsp;</span>
+        <br /><br />
+        <button onClick={this.handleDemoLogin}>Demo Login</button>
+      </div>
+    );
+
+    // --Email Input Field--
+    let emailInput = <div></div>;
+    if (this.props.formType === "Sign in") {
+      emailInput = (
+      <form onSubmit={this.handleEmailSubmit}>
+        <label htmlFor="email">Email address</label>
+        <input
+          className={this.inputBorderType(this.state.error1) + "session-input"}
+          id="email"
+          type="email"
+          onChange={this.update("email")}
+        />
+        <p>{this.errorDoesExist(this.state.error1)}</p>
+        <input
+          className="session-submit-button"
+          type="submit"
+          value={buttonText}
+          />
+      </form>
+      )
+    }
+
+    // --Password Input Field--
+    // let passwordInput = <div></div>;
+    // if (this.props.formType !== "Sign in" || this.state.loginNextStep) {
+    //   passwordInput = (
+    //   <form onSubmit={this.handleSubmit}>
+    //     <label htmlFor="pw">Password</label>
+    //       <input
+    //         className={this.inputBorderType(this.state.error2, this.state.error5) + "session-input"}
+    //         id="pw"
+    //         type="password"
+    //         onChange={this.update("password")}
+    //       />
+    //       <p>{this.errorDoesExist(this.state.error2) || this.errorDoesExist(this.state.error5)}</p>
+
+    //       <input
+    //         className="session-submit-button"
+    //         type="submit"
+    //         value={buttonText}
+    //       />
+    //     </form>
+    //   )
+    // }
+
+    // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // %%%%%%%%% THIS ISN'T EVEN MY FINAL FORM %%%%%%%%%%
+    // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    // --Logic to decide which login form to render--
+    let finalForm;
+
+    debugger
+    if (this.props.formType === "Sign in" && this.state.loginNextStep === false) {
+      finalForm = emailInput;
+    } else if (this.state.email && this.state.loginNextStep === true) {
+      finalForm = <LoginPasswordForm />;
+    } else if (this.props.formType !== "Sign in") {
+      finalForm = signUpForm;
+    }
+
+    // --Signup/Login page session form--
+    return (
+      <>
+        <section>
+          <img className="session-logo" src="https://behold-aa.s3.us-east-2.amazonaws.com/behold_logo.png" />
+          {/* <img className="session-background" src="https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg"/> */}
+        </section>
+        <section className="session">
+            <h1>{this.props.formType}</h1>
+            <div className="session-signup-login-link"><p>{text}</p>&nbsp;<Link to={path}>{title}</Link></div>
+
+            <div className="session-all-inputs">
+              {finalForm}
+
+            </div>
           {demoLogin}
         </section>
       </>

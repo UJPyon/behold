@@ -28,9 +28,13 @@ export const logout = () => dispatch => {
   );
 };
 
-export const userExists = (email) => dispatch => {
-  return (getUser(email)
-    .then(answer => dispatch(findCurrentUser(answer.responseJSON)))
+export const userExists = (user) => dispatch => {
+  debugger
+  return (getUser(user)
+    .then(user => {
+      debugger
+      dispatch(findCurrentUser(user[0]))})
+    .fail(error => dispatch(receiveErrors(error.responseJSON)))
   );
 };
 
@@ -48,9 +52,9 @@ export const receiveCurrentUser = (currentUser) => ({
   currentUser,
 });
 
-export const findCurrentUser = (answer) => ({
+export const findCurrentUser = (user) => ({
   type: FIND_CURRENT_USER,
-  answer,
+  user,
 });
 
 export const logoutCurrentUser = () => ({

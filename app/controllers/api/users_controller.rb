@@ -25,11 +25,11 @@ class Api::UsersController < ApplicationController
 
   def search
     debugger
-    user_email = User.find_by(email: params[:user][:email]).email
+    user_email = User.where(email: params[:email])
     unless user_email.nil?
       render json: user_email
     else
-      render json: ["check your email address or "], status: 404
+      render json: ["Check your email address or "], status: 404
     end
 
   end

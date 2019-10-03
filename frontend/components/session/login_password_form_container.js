@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import { login, clearErrors, userExists } from '../../actions/session_actions';
-import SessionForm from './session_form';
+import LoginPasswordForm from './login_password_form';
 
-const msp = state => {
+const msp = (state, ownProps) => {
   debugger
+  const userId = ownProps.match.params.userId;
   return {
     errors: state.errors.session,
-    email: state.entities.users.email,
+    user: state.entities.users[userId],
     formType: "Sign in",
   };
 }
@@ -14,10 +15,9 @@ const msp = state => {
 const mdp = dispatch => {
   return {
     processForm: userForm => dispatch(login(userForm)),
-    demoLogin: demoUser => dispatch(login(demoUser)),
     clearErrors: () => dispatch(clearErrors()),
     userExists: user => dispatch(userExists(user)),
   };
 }
 
-export default connect(msp, mdp)(SessionForm);
+export default connect(msp, mdp)(LoginPasswordForm);
