@@ -21,7 +21,10 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   # --User Associations--
-
+  has_many :projects,
+  primary_key: :id,
+  foreign_key: :artist_id,
+  class_name: :Project
 
   # --User Class & Instance Methods--
   attr_reader :password
