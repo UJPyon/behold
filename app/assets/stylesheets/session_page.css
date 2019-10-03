@@ -1,3 +1,15 @@
+@keyframes slidefromside {
+  0% {
+    opacity: 0;
+    transform: translateX(8%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 body, html {
   height: 100%;
 }
@@ -5,6 +17,8 @@ body, html {
 .main-session {
   display: flex;
   justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
 }
 
 .main-session-containers {
@@ -12,7 +26,6 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 90px;
   margin-left: 100px;
   margin-right: 100px;
 }
@@ -39,13 +52,14 @@ body, html {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 550px;
+  width: 510px;
   height: 700px;
   border-radius: 4px;
+  animation: .5s ease 0s 1 slidefromside;
 }
 
 .session form {
-  padding: 70px 60px 0 60px;
+  padding: 50px 60px 0 60px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -71,6 +85,7 @@ body, html {
   border-left: 0;
   border-right: 0;
   border-bottom: 2px solid #eaeaea;
+  width: 100%;
 }
 
 .session-input:hover {
@@ -90,6 +105,7 @@ body, html {
   border-left: 0;
   border-right: 0;
   border-bottom: 2px solid #e34850;
+  width: 100%;
 }
 
 .session-input-additional {
@@ -238,10 +254,36 @@ body, html {
 .session-all-inputs {
   display: flex;
   flex-direction: column;
+  height: 400px;
 }
 
 .session-all-inputs p {
   margin-top: 7px;
   color: #e34850;
   min-height: 21px;
+}
+
+.session-header {
+  padding-bottom: 15px;
+}
+.session-header-login {
+  padding-bottom: 50px;
+}
+
+.session-form-animate {
+  animation: .5s ease 0s 1 slidefromside;
+}
+
+.session-input-link {
+  display: flex;
+  align-items: center;
+}
+
+.session-input-link-text {
+  text-decoration: none;
+  color: #4962c0;
+}
+
+.session-input-link-text:hover {
+  text-decoration: underline;
 }

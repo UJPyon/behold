@@ -1,10 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class LoginPasswordForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
+      email: this.props.email || "",
       password: "",
       error: "Invalid credentials. Please try again.",
     }
@@ -42,10 +44,13 @@ class LoginPasswordForm extends React.Component {
   }
 
   render() {
-    const buttonText = this.props.formType === "Sign in" ? "Sign in" : "Create account";
-
     return (
-      <form onSubmit={this.handleSubmit}>
+
+      <form className="session-form-animate" onSubmit={this.handleSubmit}>
+      <div className="session-header-login">
+        <h1>Welcome back</h1>
+        <div className="session-signup-login-link"><div>New user?</div>&nbsp;<Link to="/signup">Create a new account</Link></div>
+      </div>
         <label htmlFor="pw">Password</label>
         <input
           className={this.inputBorderType(this.state.error) + "session-input"}
@@ -58,11 +63,11 @@ class LoginPasswordForm extends React.Component {
         <input
           className="session-submit-button"
           type="submit"
-          value={buttonText}
+          value="Sign in"
         />
       </form>
     )
   }
 }
 
-export default LoginPasswordForm;
+export default withRouter(LoginPasswordForm);

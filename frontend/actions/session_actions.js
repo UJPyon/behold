@@ -29,11 +29,7 @@ export const logout = () => dispatch => {
 };
 
 export const userExists = (user) => dispatch => {
-  debugger
   return (getUser(user)
-    .then(user => {
-      debugger
-      dispatch(findCurrentUser(user[0]))})
     .fail(error => dispatch(receiveErrors(error.responseJSON)))
   );
 };

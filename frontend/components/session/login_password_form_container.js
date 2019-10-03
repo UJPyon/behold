@@ -3,11 +3,9 @@ import { login, clearErrors, userExists } from '../../actions/session_actions';
 import LoginPasswordForm from './login_password_form';
 
 const msp = (state, ownProps) => {
-  debugger
-  const userId = ownProps.match.params.userId;
   return {
     errors: state.errors.session,
-    user: state.entities.users[userId],
+    email: ownProps.email,
     formType: "Sign in",
   };
 }

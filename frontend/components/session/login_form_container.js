@@ -3,7 +3,6 @@ import { login, clearErrors, userExists } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const msp = state => {
-  debugger
   return {
     errors: state.errors.session,
     email: state.entities.users.email,
