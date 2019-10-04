@@ -17,6 +17,7 @@ class SessionForm extends React.Component {
       error4: "Please enter your last name.",
       error5: "Invalid credentials. Please try again.",
       error6: "Check your email address or ",
+      error7: "Email has already been taken.",
       loginNextStep: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,12 +33,16 @@ class SessionForm extends React.Component {
 
   componentDidMount() {
     this.props.clearErrors();
+    document.body.style.backgroundImage = "url('https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg')";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push('/'));
+    this.props.processForm(user).then(() => this.props.history.push('/home'));
   }
 
   handleEmailSubmit(e) {
@@ -53,7 +58,7 @@ class SessionForm extends React.Component {
 
   handleDemoLogin() {
     const demoUser = { email: "ujpyon@gmail.com", password: "go_project_go" };
-    this.props.demoLogin(demoUser);
+    this.props.demoLogin(demoUser).then(() => this.props.history.push('/home'));
   }
 
   update(field) {
@@ -62,9 +67,11 @@ class SessionForm extends React.Component {
     };
   }
 
-  errorDoesExist(errorMsg) {
+  errorDoesExist(errorMsg, additErrorMsg = null) {
     if (this.props.errors.includes(errorMsg)) {
       return errorMsg;
+    } else if (this.props.errors.includes(additErrorMsg)) {
+      return additErrorMsg;
     } else {
       return null;
     }
@@ -152,12 +159,12 @@ class SessionForm extends React.Component {
               <section>
                 <label htmlFor="email">Email address</label>
                 <input
-                  className={this.inputBorderType(this.state.error1) + "session-input"}
+                  className={this.inputBorderType(this.state.error1, this.state.error7) + "session-input"}
                   id="email"
                   type="email"
                   onChange={this.update("email")}
                 />
-                <p>{this.errorDoesExist(this.state.error1)}</p>
+                <p>{this.errorDoesExist(this.state.error1, this.state.error7)}</p>
               </section>
               <div className="session-input-name">
                 <section>

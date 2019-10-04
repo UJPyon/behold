@@ -28,12 +28,10 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-left: 100px;
-  margin-right: 100px; */
-  background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg");
+  /* background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .mainRoot {
@@ -94,6 +92,13 @@ body, html {
   border-bottom: 2px solid #eaeaea;
   width: 100%;
 }
+/* 
+.session-background {
+  background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
 
 .session-input:hover {
   transition: 0.3s;

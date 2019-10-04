@@ -15,10 +15,17 @@ class LoginPasswordForm extends React.Component {
     this.inputBorderType = this.inputBorderType.bind(this);
   }
 
+  componentDidMount() {
+    document.body.style.backgroundImage = "url('https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg')";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push('/'));
+    this.props.processForm(user).then(() => this.props.history.push('/home'));
   }
 
   update(field) {

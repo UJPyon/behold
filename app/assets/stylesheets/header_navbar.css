@@ -125,6 +125,7 @@
   position: relative;
   display: flex;
   height: 60px;
+  min-width: 30px;
 }
 
 .header-drop-content {
@@ -132,6 +133,7 @@
   position: absolute;
   right: -20px;
   top: 60px;
+  color: black;
   background-color: #f1f1f1;
   min-width: 320px;
   min-height: 200px;
