@@ -1,3 +1,3 @@
 json.extract! user, :email, :id, :fname, :lname
-
-# :projectIds, :appreciatedProjectIds
+json.projectIds user.projects.pluck(:id)
+# :appreciatedProjectIds

@@ -24,15 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // vvvvvvvvvvvvv BEGIN TESTS vvvvvvvvvvvvvv
   // ----------------------------------------
 
-  window.postUser = postUser;
-  window.deleteSession = deleteSession;
-  window.postSession = postSession;
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.login = login;
-  window.logout = logout;
-  window.signup = signup;
-  window.getUser = getUser;
+  // window.postUser = postUser;
+  // window.deleteSession = deleteSession;
+  // window.postSession = postSession;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // window.login = login;
+  // window.logout = logout;
+  // window.signup = signup;
+  // window.getUser = getUser;
 
   // ----------------------------------------
   // ^^^^^^^^^^^^^ END TESTS ^^^^^^^^^^^^^^^^

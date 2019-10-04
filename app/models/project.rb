@@ -21,4 +21,6 @@ class Project < ApplicationRecord
   foreign_key: :artist_id,
   class_name: :User
 
+  has_many_attached :images
+
 end
