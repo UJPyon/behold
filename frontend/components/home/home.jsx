@@ -16,7 +16,7 @@ class Home extends React.Component {
     return (
     <div className="home">
       <nav className="home-navbar">
-        <img src="https://behold-aa.s3.us-east-2.amazonaws.com/behold_logo_bold.png" />
+        <img src={window.beholdLogoBold} />
         <NavbarContainer />
       </nav>
       <section className="home-body">

@@ -10,7 +10,7 @@ class SplashPage extends React.Component {
   }
 
   componentDidMount() {
-    document.body.style.backgroundImage = "url('https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg')";
+    document.body.style.backgroundImage = "url('https://cache.desktopnexus.com/cropped-wallpapers/2353/2353798-1920x1080-[DesktopNexus.com].jpg?st=Gsec2x7-Z0xWWwPSdmvqkA&e=1570216831')";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
@@ -39,7 +39,7 @@ class SplashPage extends React.Component {
     <div className="splash">
       <section className="splash-active">
         <div className="splash-active-text">
-          <img className="splash-logo" src="https://behold-aa.s3.us-east-2.amazonaws.com/behold_logo_bold.png" />
+          <img className="splash-logo" src={window.beholdLogoBold} />
           <p>Behold is a website where students can showcase their works</p>
           <p>of art! Share your awesome creations for everyone to behold!</p>
         </div>

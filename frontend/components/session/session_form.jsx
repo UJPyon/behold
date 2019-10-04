@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
 
   componentDidMount() {
     this.props.clearErrors();
-    document.body.style.backgroundImage = "url('https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg')";
+    document.body.style.backgroundImage = "url('https://cache.desktopnexus.com/cropped-wallpapers/2353/2353798-1920x1080-[DesktopNexus.com].jpg?st=Gsec2x7-Z0xWWwPSdmvqkA&e=1570216831')";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
@@ -224,7 +224,7 @@ class SessionForm extends React.Component {
     return (
       <>
         <section>
-          <img className="session-logo" src="https://behold-aa.s3.us-east-2.amazonaws.com/behold_logo.png" />
+          <img className="session-logo" src={window.beholdLogo} />
         </section>
         <section className="session">
             <div className="session-all-inputs">
