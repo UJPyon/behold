@@ -22,22 +22,28 @@ body, html {
 }
 
 .main-session-containers {
-  width: 1200px;
+  /* width: 1200px; */
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 100px;
-  margin-right: 100px;
+  /* margin-left: 100px;
+  margin-right: 100px; */
+  background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .mainRoot {
   height: 100%;
   width: auto;
   /* background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/behold_session_background.jpg"); */
-  background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg"); */
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
   display: flex;
   justify-content: center;
   position: relative;
@@ -54,6 +60,7 @@ body, html {
   align-items: center;
   width: 510px;
   height: 700px;
+  margin-right: 20%;
   border-radius: 4px;
   animation: .5s ease 0s 1 slidefromside;
 }
@@ -141,6 +148,7 @@ body, html {
 .session-logo {
   width: 200px;
   height: auto;
+  margin-left: 120%;
 }
 
 .session-demo span {

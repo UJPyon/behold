@@ -74,7 +74,7 @@ class SessionForm extends React.Component {
     if (this.props.errors.includes(errorMsg)) {
       return <Link className="session-input-link-text" to="/signup">&nbsp;create a new account</Link>
     } else {
-      return <Link></Link>
+      return <div></div>
     }
   }
 

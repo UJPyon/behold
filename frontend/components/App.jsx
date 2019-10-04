@@ -5,9 +5,10 @@ import SignUpFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import { SplashPage } from './splash/splash_form';
 import { AuthRoute } from '../utils/route_util';
-
+import Footer from './footer/footer';
 
 const App = () => {
+
   return (
     <div className="main">
 
@@ -25,10 +26,11 @@ const App = () => {
         </div>
       </div>
 
-      <nav className="main-footer">
+      {/* <nav className="main-footer">
         Future Footer
-      </nav>
-      
+      </nav> */}
+      <Footer />
+
     </div>
   )
 };
