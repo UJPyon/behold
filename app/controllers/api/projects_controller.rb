@@ -6,8 +6,11 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find(params[:id])
+    @project = Project.with_attached_images.find(params[:id])
     render :show
   end
 
+  def project_params
+    params.require(:post).permit(:title, :description, images: [])
+  end
 end

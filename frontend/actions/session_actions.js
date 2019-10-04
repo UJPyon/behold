@@ -1,10 +1,10 @@
-import { postUser, postSession, deleteSession, getUser } from '../utils/session_api_util'
+import { postUser, postSession, deleteSession, getUser } from '../utils/session_api_util';
 
-export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'
-export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER'
-export const FIND_CURRENT_USER = 'FIND_CURRENT_USER'
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS'
-export const REMOVE_ERRORS = 'REMOVE_ERRORS'
+export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
+export const FIND_CURRENT_USER = 'FIND_CURRENT_USER';
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const REMOVE_ERRORS = 'REMOVE_ERRORS';
 
 
 export const login = (formUser) => dispatch => {

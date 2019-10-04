@@ -4,7 +4,8 @@ export const postUser = function(user) {
       method: "POST",
       url: "api/users",
       data: { user },
-    }));
+    })
+  );
 };
 
 export const getUser = function(email) {
@@ -13,7 +14,8 @@ export const getUser = function(email) {
       method: "GET",
       url: "api/users/search",
       data: { email },
-    }));
+    })
+  );
 };
 
 export const postSession = function(user) {
