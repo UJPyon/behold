@@ -21,7 +21,7 @@ class Home extends React.Component {
       </nav>
       <section className="home-body">
 
-      <h1>Temporary Home Text</h1>
+      <h1>Temporary Home Text TEXT</h1>
       </section>
 
       <Footer />

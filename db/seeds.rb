@@ -25,10 +25,9 @@ user2 = User.create!(
 )
 
 demo_user = User.create!(
-  email: "cube", 
+  email: "cube@aps", 
   password: "123456",
   fname:"APERTURE SCIENCE", 
   lname: "WEIGHTED COMANION CUBE", 
-  text: "Property of Aperture Science"
+  text: "Property of Aperture Science - GLaDOS"
 )
-
