@@ -10,8 +10,11 @@ class Profile extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.artist = this.props.artist;
-    this.projects = this.props.projects;
-    this.mapProjects = this.mapProjects.bind(this);
+    this.state = {projects: this.props.projects};
+  }
+
+  componentDidMount() {
+    this.props.fetchProjects()
   }
 
   handleClick(e) {
@@ -19,23 +22,22 @@ class Profile extends React.Component {
     this.props.history.push("/home");
   }
 
-  // --Returns a mapped list of the 1st images from each owned project to display--
-  mapProjects() {
-    const projects = this.projects.map(projectId => {
-
+  render() {
+    let projects
+    if (this.props.projects[0] !== undefined) {
+    projects = this.props.projects.map(projectId => {
       return (
         <figure key={projectId} >
-          <img 
-          onClick={() => this.props.openModal("open project")} 
-          src={projectId.imageUrls[0]} 
+          <img
+            onClick={() => this.props.openModal("open project")}
+            src={projectId.imageUrls[0]}
           />
         </figure>
       );
     });
-    return projects;
-  }
-
-  render() {
+    } else {
+      return <figure></figure>;
+    }
 
     return (
     <>
@@ -47,7 +49,6 @@ class Profile extends React.Component {
           <div>
           Profile-About
           {/* Profile image */}
-
 
           {/* First name & last name */}
           <p>{this.artist.fname}&nbsp;{this.artist.lname}</p>
@@ -78,8 +79,9 @@ class Profile extends React.Component {
           <ul className="profile-project-index">
           {/* Profile-Project-Index */}       
           {/* list items of each project as Project Component */}
-            {this.mapProjects()}
+            {projects}
 
+          {/* Temporary sample images */}
             <img src="https://c8.alamy.com/comp/PC1RN9/fun-fox-cartoon-illustration-isolate-on-white-background-PC1RN9.jpg"/>
             <img src="https://i.pinimg.com/236x/7b/f7/50/7bf75067651b931b26f371d41ac1d284--funny-illustration-cartoon-illustrations.jpg"/>
             <img src="https://previews.123rf.com/images/sabelskaya/sabelskaya1706/sabelskaya170600675/80648968-divertido-cuenco-sonriente-de-reques%C3%B3n-y-frambuesa-caracteres-de-bayas-de-zarzamora-ilustraci%C3%B3n-vectorial-.jpg"/>

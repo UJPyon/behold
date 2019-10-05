@@ -1,12 +1,19 @@
 import * as ProjectApiUtil from '../utils/project_api_util';
+import Project from '../components/project/project';
 
 export const RECEIVE_ALL_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
+// export const RECEIVE_ARTISTS_PROJECTS = 'RECEIVE_ARTISTS_PROJECTS';
 
 export const receiveAllProjects = (projects) => ({
   type: RECEIVE_ALL_PROJECTS,
   projects,
 });
+
+// export const receiveArtistsProjects = (projects) => ({
+//   type: RECEIVE_ARTISTS_PROJECTS,
+//   projects,
+// });
 
 export const receiveProject = (project) => ({
   type: RECEIVE_PROJECT,
@@ -17,6 +24,10 @@ export const fetchProjects = () => dispatch => {
   ProjectApiUtil.getAllProjects()
   .then(projects => dispatch(receiveAllProjects(projects)));
 };
+
+// export const fetchArtistProjects = (userId) => dispatch => {
+//   ProjectApiUtil.get
+// };
 
 export const fetchProject = (id) => dispatch => {
   ProjectApiUtil.getProject(id)
