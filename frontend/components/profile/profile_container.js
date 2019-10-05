@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
-import { fetchProjects, fetchProject } from '../../actions/project_actions';
+import { fetchProject } from '../../actions/project_actions';
 
 const msp = (state, ownProps) => {
-  debugger
   const userId = ownProps.match.params.userId;
+  const projectIds = state.entities.users[userId].projectIds;
+  const projects = projectIds.map(id => state.entities.projects[id]);
   return {
-    projects: state.projects[userId],
+    projects,
   };
 }
 
 const mdp = dispatch => {
   return {
-    fetchProjects: () => dispatch(fetchProjects),
     fetchProject: () => dispatch(fetchProject),
   };
 }

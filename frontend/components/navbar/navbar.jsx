@@ -35,7 +35,7 @@ class Navbar extends React.Component {
                 <p>demo@gmail.com</p>
                 <Link to="/">Manage Adobe ID</Link>
               </div>
-              <Link className="header-drop-content-link" to="/">Behold Profile</Link>
+              <Link className="header-drop-content-link" to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
               <Link className="header-drop-content-link" to="/">Settings</Link>
               <button onClick={this.handleLogout}>Sign Out</button>
             </div>
