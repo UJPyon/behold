@@ -1,7 +1,10 @@
 import { connect } from 'react-redux';
 import Project from './project';
+import { closeModal } from '../../actions/modal_actions';
 
 const msp = state => {
+
+  // state.entities.projects[projectId];
   return {
    state,
   };
@@ -9,8 +12,8 @@ const msp = state => {
 
 const mdp = dispatch => {
   return {
-    dispatch,
+    closeModal: () => dispatch(closeModal()),
   };
 }
 
-export default connect(msp, mdp)(Project);
+export default connect(msp, mdp)(Project);  

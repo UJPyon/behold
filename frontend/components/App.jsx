@@ -7,11 +7,13 @@ import HomeContainer from './home/home_container';
 import ProfileContainer from './profile/profile_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 import Footer from './footer/footer';
-import Navbar from './navbar/navbar_container'
+import Navbar from './navbar/navbar_container';
+import Modal from './modal/modal';
 
 const App = () => {
   return (
   <>
+  <Modal />
   {/* <div className="main-session-containers"> */}
     <Switch>
       <Route exact path='/' component={SplashPageContainer} />

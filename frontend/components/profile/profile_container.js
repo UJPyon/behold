@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Profile from './profile';
 import { fetchProject } from '../../actions/project_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
@@ -15,7 +16,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return {
-    fetchProject: () => dispatch(fetchProject),
+    fetchProject: () => dispatch(fetchProject()),
+    openModal: (str) => dispatch(openModal(str)),
   };
 }
 

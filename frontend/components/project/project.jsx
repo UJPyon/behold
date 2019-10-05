@@ -10,6 +10,8 @@ class Project extends React.Component {
   }
 
   render() {
+  <>
+    <figure></figure>
     <section>
       <div>
         <p>{/* Project title */}</p>
@@ -21,6 +23,7 @@ class Project extends React.Component {
         {/* Appreciation count will go here in future feature */}
       </div>
     </section>
+  </>
   }
 }
 
