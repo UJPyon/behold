@@ -36,7 +36,7 @@ class DateJoined extends React.Component {
 
   render() {
     return (
-      <p>MEMBER SINCE:&nbsp;{this.createdDate(this.props.created_at)}</p>
+      <p>MEMBER SINCE:&nbsp;{this.createdDate(this.props.timestamp)}</p>
     );
   }
 }

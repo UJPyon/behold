@@ -1,0 +1,121 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-banner {
+  width: 100%;
+  padding-top: 65px;
+  overflow: hidden;
+  height: 212px;
+  background-color: lightgray;
+}
+
+.profile-banner img {
+  width: auto;
+  min-height: 100%;
+}
+
+.profile-banner div {
+  height: 212px;
+  overflow: hidden;
+}
+
+.profile-body {
+  display: flex;
+}
+
+.profile-projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-project-index {
+  margin: 50px 50px 50px 0;
+  display: grid;
+  height: 100%;
+  grid-gap: 20px;
+
+  @media (min-width: 220px){
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+}
+
+.profile-project-index img {
+  width: 100%;
+  // width: auto;
+  border: 1px solid red;
+  overflow: hidden;
+}
+
+
+.profile-about {
+  display: flex;
+  width: 460px;
+  justify-content: center;
+}
+
+
+/* testing css below: */
+
+.profile-project-index li {
+  background-color: #e8e8e8;
+  border: 1px solid black;
+  height: 260px;
+  width: 360px;
+  text-align: center;
+  border-radius: 5px;
+  list-style: none;
+}
+
+.profile-about div {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 1px solid black;
+  height: 400px;
+  margin: 0 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* @keyframes 
+
+.testing-circle {
+  position: relative;
+
+  width: 0px;
+  height: 0px;
+  top: 50px;
+  left: 50px;
+  text-align: center;
+  background: red;
+  color: white;
+  border-radius: 100%;
+  padding: 20px;
+  overflow: hidden;
+  animation: 2s ease 0x 1 
+}
+
+.testing-circle: {
+
+} */

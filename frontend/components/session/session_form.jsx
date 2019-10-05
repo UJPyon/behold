@@ -222,7 +222,7 @@ class SessionForm extends React.Component {
     );
 
     return (
-      <>
+      <div className="main-session-containers">
         <section>
           <img className="session-logo" src={window.beholdLogo} />
         </section>
@@ -233,7 +233,7 @@ class SessionForm extends React.Component {
             </div>
           {demoLogin}
         </section>
-      </>
+      </div>
     );
   }
 }

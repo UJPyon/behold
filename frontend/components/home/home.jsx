@@ -21,18 +21,9 @@ class Home extends React.Component {
 
   render() {
     return (
-    <div className="home">
-      <nav className="home-navbar">
-        <img onClick={this.handleClick} src={window.beholdLogoBold} />
-        <NavbarContainer />
-      </nav>
       <section className="home-body">
-
-      <h1>Temporary Home Text TEXT</h1>
+        <h1>Temporary Home Text TEXT</h1>
       </section>
-
-      <Footer />
-    </div>
     );
   }
 }

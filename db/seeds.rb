@@ -18,7 +18,7 @@ user1 = User.create!(
   password: "go_project_go",
   fname:"Jae", 
   lname: "Pyon", 
-  text: "Jae Pyon: Content creator extraordinaire! Take a look at my awesome projects!"
+  text: "Content creator extraordinaire! Take a look at my awesome projects!"
 )
 
 user2 = User.create!(

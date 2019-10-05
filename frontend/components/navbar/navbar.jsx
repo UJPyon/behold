@@ -7,60 +7,58 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleLogout() {
     this.props.logout().then(() => this.props.history.push("/"));
   }
 
+  handleClick(e) {
+    e.preventDefault();
+    this.props.history.push("/home");
+  }
+
   render() {
-    if (this.props.currentUser) {
-      return (
-        <div className="header-right">
-          {/* <h3>Welcome back, {this.props.currentUser.fname}&nbsp;{this.props.currentUser.lname}</h3> */}
+    return (
 
-          {/* List of icons in header:  */}
-          <i className="material-icons">search</i>
-          <i className="fas fa-envelope"/>
-          <i className="fas fa-bell"/>
-          {/* <button onClick={this.handleLogout}>Logout</button> */}
-          
-          <div className="header-drop">
-            <button className="header-drop-btn"><ProfileAvatar /></button>
-            <div className="header-drop-content">
-              <ul></ul>
-              <div>
-                <ProfileAvatar />
-                <p>{this.props.currentUser.fname}</p>
-                <p>demo@gmail.com</p>
-                <Link to="/">Manage Adobe ID</Link>
-              </div>
-              <Link className="header-drop-content-link" to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
-              <Link className="header-drop-content-link" to="/">Settings</Link>
-              <button onClick={this.handleLogout}>Sign Out</button>
-            </div>
-          </div>
-          <i className="material-icons">&#xe5c3;</i>
+    <nav className="home-navbar" fixed="top">
 
-          <a href="https://www.adobe.com/creativecloud.html" className="header-adobe-logo">
+      {/* Clickable Behold logo leads back to /home page */}
+      <img onClick={this.handleClick} src={window.beholdLogoBold} />
+
+      <div className="header-right">
+
+        {/* List of icons in header:  */}
+        <i className="material-icons">search</i>
+        <i className="fas fa-envelope"/>
+        <i className="fas fa-bell"/>
+        
+        {/* Dropdown menu on User Avatar icon */}
+        <div className="header-drop">
+          <button className="header-drop-btn"><ProfileAvatar /></button>
+          <div className="header-drop-content">
             <div>
-              <AdobeIcon />
+              <ProfileAvatar />
+              <p>{this.props.currentUser.fname}</p>
+              <p>demo@gmail.com</p>
+              <Link to="/">Manage Adobe ID</Link>
             </div>
-            <div className="header-adobe-logo-text">
-              Adobe
-            </div>
-          </a>
+            <Link className="header-drop-content-link" to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
+            <Link className="header-drop-content-link" to="/">Settings</Link>
+            <button onClick={this.handleLogout}>Sign Out</button>
+          </div>
         </div>
-      );
-    } else {
+        <i className="material-icons">&#xe5c3;</i>
 
-      return (
-        <div>
-          <Link to="/signup">Sign Up</Link>
-          <Link to="/login">Login</Link>
-        </div>
-      );
-    }
+        {/* Clickable Adobe logo & icon that leads to Adobe website */}
+        <a href="https://www.adobe.com/creativecloud.html" className="header-adobe-logo">
+          <div><AdobeIcon /></div>
+          <div className="header-adobe-logo-text">Adobe</div>
+        </a>
+      </div>
+    </nav>
+    );
   }
 }
 
