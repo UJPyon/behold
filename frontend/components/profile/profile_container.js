@@ -6,8 +6,10 @@ const msp = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
   const projectIds = state.entities.users[userId].projectIds;
   const projects = projectIds.map(id => state.entities.projects[id]);
+  const artist = state.entities.users[userId];
   return {
     projects,
+    artist,
   };
 }
 

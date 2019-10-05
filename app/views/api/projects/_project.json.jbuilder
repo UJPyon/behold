@@ -1,2 +1,2 @@
-json.extract! project, :title, :description, :artist
+json.extract! project, :title, :description
 json.artistId project.artist.id
