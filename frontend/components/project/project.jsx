@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Project extends React.Component {
   constructor(props) {
@@ -7,24 +8,28 @@ class Project extends React.Component {
 
   componentDidMount() {
     // Fetch the project images
+    const projectId = this.props.projectId;
+    this.props.fetchProject(projectId);
   }
 
   render() {
-  <>
-    <figure></figure>
-    <section>
-      <div>
-        <p>{/* Project title */}</p>
-        <p>{/* Project author name */}</p>
-      </div>
+    return (
+    <>
+      <figure></figure>
+      <section>
+        <div>
+          <p>{/* Project title */}</p>
+          <p>{/* Project author name */}</p>
+        </div>
 
-      <div>
-        25
-        {/* Appreciation count will go here in future feature */}
-      </div>
-    </section>
-  </>
+        <div>
+          25
+          {/* Appreciation count will go here in future feature */}
+        </div>
+      </section>
+    </>
+    );
   }
 }
 
-export default Project;
+export default withRouter(Project);

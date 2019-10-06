@@ -9,7 +9,6 @@ const msp = (state, ownProps) => {
   const projectIds = state.entities.users[userId].projectIds;
   const projects = projectIds.map(id => state.entities.projects[id]);
   const artist = state.entities.users[userId];
-  debugger
   return {
     projects,
     artist,

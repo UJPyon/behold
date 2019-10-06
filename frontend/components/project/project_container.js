@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import Project from './project';
 import { closeModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
 
-const msp = state => {
-
-  // state.entities.projects[projectId];
+const msp = (state, ownProps) => {
+  debugger
+  const projectId = ownProps.location.pathname.split("/")[3];
+  const images = state.entities.projects[projectId].imageUrls;
   return {
-   state,
+   images,
   };
 }
 
@@ -16,4 +18,4 @@ const mdp = dispatch => {
   };
 }
 
-export default connect(msp, mdp)(Project);  
+export default withRouter(connect(msp, mdp)(Project));

@@ -4,6 +4,7 @@ const modalReducer = (oldState = null, action) => {
   
   switch (action.type) {
     case OPEN_MODAL:
+      debugger
       return action.modal;
     case CLOSE_MODAL:
       return null;

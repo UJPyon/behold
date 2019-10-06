@@ -1,20 +1,19 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import NavbarContainer from '../navbar/navbar_container';
-import Footer from '../footer/footer';
 import DateJoined from './date_joined';
-import ProjectContainer from '../project/project_container';
+// import ProjectContainer from '../project/project_container';
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     this.artist = this.props.artist;
     this.state = {projects: this.props.projects};
+    this.handleClick = this.handleClick.bind(this);
+    this.handleModalClick = this.handleModalClick.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchProjects()
+    this.props.fetchProjects();
   }
 
   handleClick(e) {
@@ -22,16 +21,29 @@ class Profile extends React.Component {
     this.props.history.push("/home");
   }
 
+  handleModalClick(id) {
+    // e.preventDefault();
+    debugger
+
+    this.props.history.push(`/home/${this.artist.id}/${id}`);
+    this.props.openModal("open project");
+  }
+
   render() {
-    let projects
+
+    // --Map out all artist's projects as clickable images that leads to project modal--
+    let projects;
     if (this.props.projects[0] !== undefined) {
     projects = this.props.projects.map(projectId => {
+      debugger
       return (
         <figure key={projectId} >
           <img
-            onClick={() => this.props.openModal("open project")}
+            onClick={() => this.handleModalClick(projectId.id)}
             src={projectId.imageUrls[0]}
+            value={projectId.id}
           />
+
         </figure>
       );
     });
