@@ -2,7 +2,6 @@ import React from 'react';
 
 class DateJoined extends React.Component {
   constructor(props) {
-    debugger
     super(props);
     this.createdDate = this.createdDate.bind(this);
   }

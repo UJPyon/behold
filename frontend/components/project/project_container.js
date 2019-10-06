@@ -1,20 +1,27 @@
 import { connect } from 'react-redux';
 import Project from './project';
 import { closeModal } from '../../actions/modal_actions';
+import { fetchProject } from '../../actions/project_actions';
 import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
   debugger
   const projectId = ownProps.location.pathname.split("/")[3];
-  const images = state.entities.projects[projectId].imageUrls;
+  const project = state.entities.projects[projectId];
+  const imageUrls = project.imageUrls;
+  const artistId = project.artistId;
+  const artist = state.entities.users[artistId];
   return {
-   images,
+    artist,
+    project,
+    imageUrls,
   };
 }
 
 const mdp = dispatch => {
   return {
     closeModal: () => dispatch(closeModal()),
+    fetchProject: (id) => dispatch(fetchProject(id)),
   };
 }
 

@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 class Project extends React.Component {
   constructor(props) {
     super(props);
+    this.state = this.props.project;
   }
 
   componentDidMount() {
@@ -13,13 +14,31 @@ class Project extends React.Component {
   }
 
   render() {
+    debugger
+    let images;
+    if (this.props.imageUrls[0] !== undefined) {
+      images = this.props.imageUrls.map(url => {
+        return (
+          <figure key={url} className="project-image"><img src="url"/></figure>
+        );
+      })
+    } else {
+      images = <figure className="project-image-loading"></figure>
+    }
+
     return (
     <>
-      <figure></figure>
-      <section>
+      {/* All images load here */}
+      {images}
+
+      {/* Comment section & author info */}
+      <section className="project-section-info">
         <div>
-          <p>{/* Project title */}</p>
-          <p>{/* Project author name */}</p>
+          {/* Project title */}
+          <p>{this.state.title}</p>
+
+          {/* Project author name */}
+          <p>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</p>
         </div>
 
         <div>

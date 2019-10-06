@@ -14,12 +14,12 @@ export const receiveProject = (project) => ({
 });
 
 export const fetchProjects = () => dispatch => {
-  debugger
   ProjectApiUtil.getAllProjects()
   .then(projects => dispatch(receiveAllProjects(projects)));
 };
 
 export const fetchProject = (id) => dispatch => {
+  debugger
   ProjectApiUtil.getProject(id)
   .then(project => dispatch(receiveProject(project)));
 };
