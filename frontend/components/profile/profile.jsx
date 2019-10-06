@@ -23,10 +23,7 @@ class Profile extends React.Component {
   }
 
   handleModalClick(id) {
-    debugger
-
-    this.props.history.push(`/home/${this.artist.id}/${id}`);
-    this.props.openModal("open project");
+    this.props.openModal({modal: "open project", projectId: id});
   }
 
   render() {
@@ -35,14 +32,12 @@ class Profile extends React.Component {
     let projects;
     if (this.props.projects[0] !== undefined) {
     projects = this.props.projects.map(projectId => {
-      debugger
       return (
-        <figure key={projectId} >
+        <figure key={projectId.id} >
           <img
             onClick={() => this.handleModalClick(projectId.id)}
             // src={projectId.imageUrls[0]}
             src={projectId.imageUrls[projectId.imageUrls.length - 1]}
-            value={projectId.id}
           />
 
         </figure>
@@ -51,7 +46,6 @@ class Profile extends React.Component {
     } else {
       return <figure></figure>;
     }
-
     return (
     <>
       <section className="profile-banner">
@@ -59,7 +53,7 @@ class Profile extends React.Component {
 
       <div className="profile-body">
         <section className="profile-about">
-          <div>
+        <div>
           {/* Profile image */}
           <section>
             <ProfileAvatar />
@@ -83,13 +77,15 @@ class Profile extends React.Component {
           {/* Link icons to Github & LinkedIn */}
           <section>
             <h3>LINKS</h3>
-            <a href="https://github.com/UJPyon"><img className="home-footer-icon" src={window.gitHub} /></a>
-            <a href="https://www.linkedin.com/in/unjae-pyon-9a833972?trk=people-guest_profile-result-card_result-card_full-click"><img className="home-footer-icon" src={window.linkedIn} /></a>
+            <span>
+              <a href="https://github.com/UJPyon"><img className="home-footer-icon" src={window.gitHub} /></a>
+              <a href="https://www.linkedin.com/in/unjae-pyon-9a833972?trk=people-guest_profile-result-card_result-card_full-click"><img className="home-footer-icon" src={window.linkedIn} /></a>
+            </span>
           </section>
 
           {/* Member since date */}
           <DateJoined timestamp={this.artist.created_at}/>
-          </div>
+        </div>
         </section>
         
         <section className="profile-projects">

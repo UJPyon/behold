@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 class Project extends React.Component {
   constructor(props) {
@@ -7,25 +6,23 @@ class Project extends React.Component {
     this.state = this.props.project;
   }
 
-  componentDidMount() {
-    // Fetch the project images
-    const projectId = this.props.projectId;
-    this.props.fetchProject(projectId);
-  }
+  // componentDidMount() {
+  //   // Fetch the project images
+  //   const projectId = this.props.projectId;
+  //   this.props.fetchProject(projectId);
+  // }
 
   render() {
-    debugger
     let images;
     if (this.props.imageUrls[0] !== undefined) {
       images = this.props.imageUrls.map(url => {
         return (
-          <figure key={url} className="project-image"><img src="url"/></figure>
+          <figure key={url} className="project-image"><img src={url}/></figure>
         );
       })
     } else {
       images = <figure className="project-image-loading"></figure>
     }
-
     return (
     <>
       {/* All images load here */}
@@ -51,4 +48,4 @@ class Project extends React.Component {
   }
 }
 
-export default withRouter(Project);
+export default Project;

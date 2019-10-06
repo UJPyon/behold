@@ -14,7 +14,7 @@
 
 .profile-banner {
   width: 100%;
-  padding-top: 65px;
+  padding-top: 60px;
   overflow: hidden;
   height: 212px;
   background-color: lightgray;
@@ -58,15 +58,16 @@
   overflow: hidden;
 }
 
+.profile-project-index img:hover {
+  cursor: pointer;
+}
+
 
 .profile-about {
   display: flex;
   width: 460px;
   justify-content: center;
 }
-
-
-/* testing css below: */
 
 .profile-project-index li {
   background-color: #e8e8e8;
@@ -84,7 +85,7 @@
   justify-content: space-between;
   align-items: center;
   width: 360px;
-  height: 500px;
+  height: 600px;
   margin: 0 50px;
   padding: 30px;
   position: relative;
@@ -123,13 +124,19 @@
 }
 
 .profile-about section:nth-of-type(4) {
-  // flex-direction: row;
+  flex-direction: column;
   height: 50px;
+  width: 100%;
 }
 
 .profile-about section:nth-of-type(4) a {
   background-color: gray;
   height: fit-content;
+  width: fit-content;
+}
+
+.profile-about section:nth-of-type(4) span {
+  flex-direction: row;
 }
 
 .profile-about h1 {

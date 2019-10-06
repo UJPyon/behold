@@ -8,9 +8,9 @@ function Modal({ modal, closeModal }) {
     return null;
   }
   let component;
-  switch (modal) {
+  switch (modal.modal) {
     case 'open project':
-      component = <ProjectContainer />;
+      component = <ProjectContainer projectId={modal.projectId}/>;
       break;
     default:
       return null;
@@ -27,6 +27,7 @@ function Modal({ modal, closeModal }) {
 const mapStateToProps = state => {
   return {
     modal: state.ui.modal,
+    projectId: state.ui.projectId,
   };
 };
 

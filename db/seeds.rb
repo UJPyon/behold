@@ -1,3 +1,5 @@
+require 'open-uri'
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -18,7 +20,7 @@ user1 = User.create!(
   password: "go_project_go",
   fname:"Jae", 
   lname: "Pyon", 
-  text: "Content creator extraordinaire! Take a look at my awesome projects!"
+  text: "Content creator extraordinaire! I am a graduate of Pratt Institute School of Architecture, but now I'm currently attending App Academy and I draw in my free time as a hobby. Take a look at my awesome projects!"
 )
 
 user2 = User.create!(
@@ -42,20 +44,20 @@ test_user = User.create!(
 # vvvvvvvvvvvvvvvvvvvvvvvvvvv
 
 proj_1 = Project.create!(
-  title: "Life is an RPG",
-  description: "This is a set of characters I drew for my D&D group depicting each of us as our characters.",
-  artist_id: user1.id
-)
-
-proj_2 = Project.create!(
   title: "Life Moments in Illustrations: Part 1",
   description: "I created a series of illustrations based on moments in my life I've shared experienced together with my wife. Hope you enjoy!",
   artist_id: user1.id
 )
 
-proj_3 = Project.create!(
+proj_2 = Project.create!(
   title: "Life Moments in Illustrations: Part 2",
   description: "This is part 2 of a series of illustrations I did for my wife involving moments we've shared together!",
+  artist_id: user1.id
+)
+
+proj_3 = Project.create!(
+  title: "Life is an RPG",
+  description: "This is a set of characters I drew for my D&D group depicting each of us as our characters.",
   artist_id: user1.id
 )
 
@@ -64,3 +66,21 @@ proj_4 = Project.create!(
   description: "This is an illustrations project I started through sketching classmates. Thought I would share it with y'all!",
   artist_id: user1.id
 )
+
+
+# ------Image File URL Seed Data------
+# vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+file1 = open('https://behold-seeds.s3.amazonaws.com/1_01_01.jpg')
+file2 = open('https://behold-seeds.s3.amazonaws.com/1_03_01.png')
+file3 = open('https://behold-seeds.s3.amazonaws.com/1_02_06.jpg')
+file4 = open('https://behold-seeds.s3.amazonaws.com/1_04_02.jpg')
+
+
+# ------Attach Images to User------
+# vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+proj_1.images.attach(io: file1, filename: '1_01_01.jpg')
+proj_2.images.attach(io: file2, filename: '1_03_01.png')
+proj_3.images.attach(io: file3, filename: '1_02_06.jpg')
+proj_4.images.attach(io: file4, filename: '1_04_02.jpg')

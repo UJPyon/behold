@@ -26,7 +26,6 @@ class Api::UsersController < ApplicationController
   end
 
   def search
-    debugger
     user_email = User.where(email: params[:email])
     unless user_email.empty?
       render json: user_email

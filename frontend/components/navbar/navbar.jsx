@@ -42,10 +42,14 @@ class Navbar extends React.Component {
         
         {/* Dropdown menu on User Avatar icon */}
         <div className="header-drop">
-          <button onClick={this.handleAvatarClick} className="header-drop-btn"><ProfileAvatar class="home-navbar-avatar"/></button>
+           <button onClick={this.handleAvatarClick} className="header-drop-btn">
+              <ProfileAvatar class="home-navbar-avatar"/>
+          </button>
           <div className="header-drop-content">
             <div>
-              <ProfileAvatar />
+              <button onClick={this.handleAvatarClick}>
+                <ProfileAvatar class="home-navbar-avatar"/>
+              </button>
               <p>{this.props.currentUser.fname}</p>
               <p>demo@gmail.com</p>
               <Link to="/">Manage Adobe ID</Link>

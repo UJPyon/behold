@@ -13,7 +13,7 @@
 class Project < ApplicationRecord
   # --Project Validations--
   validates :title, :description, presence: true
-  validates :artist_id, presence: true, uniqueness: true
+  validates :artist_id, presence: true
 
   # --Project Associations--
   belongs_to :artist,

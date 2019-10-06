@@ -26,7 +26,6 @@ const App = () => {
     <ProtectedRoute path='/home' component={Navbar} /> 
     <ProtectedRoute exact path='/home' component={HomeContainer} />
     <ProtectedRoute exact path='/home/:userId' component={ProfileContainer} />
-    <ProtectedRoute exact path='/home/:userId/:projectId' component={ProjectContainer} />
     <ProtectedRoute path='/home' component={Footer} /> 
   </div>
   </>
