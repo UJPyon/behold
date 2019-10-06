@@ -8,6 +8,7 @@ class Navbar extends React.Component {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleAvatarClick = this.handleAvatarClick.bind(this);
   }
 
   handleLogout() {
@@ -17,6 +18,11 @@ class Navbar extends React.Component {
   handleClick(e) {
     e.preventDefault();
     this.props.history.push("/home");
+  }
+
+  handleAvatarClick() {
+    const currentUserId = this.props.currentUser.id
+    this.props.history.push(`/home/${currentUserId}`);
   }
 
   render() {
@@ -36,7 +42,7 @@ class Navbar extends React.Component {
         
         {/* Dropdown menu on User Avatar icon */}
         <div className="header-drop">
-          <button className="header-drop-btn"><ProfileAvatar /></button>
+          <button onClick={this.handleAvatarClick} className="header-drop-btn"><ProfileAvatar class="home-navbar-avatar"/></button>
           <div className="header-drop-content">
             <div>
               <ProfileAvatar />

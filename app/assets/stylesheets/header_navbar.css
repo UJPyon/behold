@@ -121,6 +121,17 @@
   background-color: #222;
 }
 
+.header-drop-btn img {
+  height: 20px;
+  width: 20px;
+  border: none;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+}
+
 .header-drop {
   position: relative;
   display: flex;

@@ -11,6 +11,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     document.body.style.backgroundImage = "";
+    document.body.style.backgroundColor = "#f9f9f9";
     this.props.fetchProjects();
   }
 

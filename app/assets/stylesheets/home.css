@@ -46,6 +46,12 @@ body {
   cursor: pointer;
 }
 
+.home-navbar-avatar {
+  height: 30px;
+  width: 30px;
+  margin-top: 15px;
+}
+
 .home-body {
   height: 100%;
   padding-top: 65px;
