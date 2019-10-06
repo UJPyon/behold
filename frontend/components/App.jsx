@@ -12,17 +12,28 @@ import Navbar from './navbar/navbar_container';
 import Modal from './modal/modal';
 
 const App = () => {
+  // let mainClass;
+  // debugger
+  // if (window.currentUser) {
+  //   mainClass = "main-home";
+  // } else {
+  //   mainClass = "main-home-disabled";
+  // }
+
   return (
   <>
   <Modal />
   {/* <div className="main-session-containers"> */}
+  {/* </div> */}
+  {/* <div className={mainClass}> */}
+  <div className="main-home">
     <Switch>
+      {/* <Route exact path='/' component={Navbar} />   */}
       <Route exact path='/' component={SplashPageContainer} />
       <AuthRoute exact path='/signup' component={SignUpFormContainer} />
       <AuthRoute exact path='/login' component={LoginFormContainer} />
+      {/* <Route exact path='/' component={Footer} />  */}
     </Switch>
-  {/* </div> */}
-  <div className="main-home">
     <ProtectedRoute path='/home' component={Navbar} /> 
     <ProtectedRoute exact path='/home' component={HomeContainer} />
     <ProtectedRoute exact path='/home/:userId' component={ProfileContainer} />

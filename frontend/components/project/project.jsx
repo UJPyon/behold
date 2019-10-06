@@ -6,12 +6,6 @@ class Project extends React.Component {
     this.state = this.props.project;
   }
 
-  // componentDidMount() {
-  //   // Fetch the project images
-  //   const projectId = this.props.projectId;
-  //   this.props.fetchProject(projectId);
-  // }
-
   render() {
     let images;
     if (this.props.imageUrls[0] !== undefined) {

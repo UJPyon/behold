@@ -26,6 +26,41 @@ class Navbar extends React.Component {
   }
 
   render() {
+    let navbarItems;
+    if (this.props.currentUser) {
+    navbarItems = (
+    <>
+    {/* Dropdown menu on User Avatar icon */ }
+    <div className="header-drop">
+      <button onClick={this.handleAvatarClick} className="header-drop-btn">
+        <ProfileAvatar class="home-navbar-avatar" />
+      </button>
+      <div className="header-drop-content">
+        <div>
+          <button onClick={this.handleAvatarClick}>
+            <ProfileAvatar class="home-navbar-avatar" />
+          </button>
+          <p>{this.props.currentUser.fname}</p>
+          <p>demo@gmail.com</p>
+          <Link to="/">Manage Adobe ID</Link>
+        </div>
+        <Link className="header-drop-content-link" to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
+        <Link className="header-drop-content-link" to="/">Settings</Link>
+        <button onClick={this.handleLogout}>Sign Out</button>
+      </div>
+    </div>
+    <i className="material-icons">&#xe5c3;</i>
+    </>
+    );
+    } else {
+      navbarItems = (
+      <section>
+        <Link to="/login">Log in</Link>
+        <Link to="/signup">Sign up</Link>
+      </section>
+      );
+    }
+
     return (
 
     <nav className="home-navbar" fixed="top">
@@ -35,31 +70,12 @@ class Navbar extends React.Component {
 
       <div className="header-right">
 
-        {/* List of icons in header:  */}
-        <i className="material-icons">search</i>
+        {/* List of icons in header (FOR FUTURE FEATURES):  */}
+        {/* <i className="material-icons">search</i>
         <i className="fas fa-envelope"/>
-        <i className="fas fa-bell"/>
+        <i className="fas fa-bell"/> */}
         
-        {/* Dropdown menu on User Avatar icon */}
-        <div className="header-drop">
-           <button onClick={this.handleAvatarClick} className="header-drop-btn">
-              <ProfileAvatar class="home-navbar-avatar"/>
-          </button>
-          <div className="header-drop-content">
-            <div>
-              <button onClick={this.handleAvatarClick}>
-                <ProfileAvatar class="home-navbar-avatar"/>
-              </button>
-              <p>{this.props.currentUser.fname}</p>
-              <p>demo@gmail.com</p>
-              <Link to="/">Manage Adobe ID</Link>
-            </div>
-            <Link className="header-drop-content-link" to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
-            <Link className="header-drop-content-link" to="/">Settings</Link>
-            <button onClick={this.handleLogout}>Sign Out</button>
-          </div>
-        </div>
-        <i className="material-icons">&#xe5c3;</i>
+        {navbarItems}
 
         {/* Clickable Adobe logo & icon that leads to Adobe website */}
         <a href="https://www.adobe.com/creativecloud.html" className="header-adobe-logo">

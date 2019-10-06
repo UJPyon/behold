@@ -43,18 +43,15 @@
 .profile-project-index {
   margin: 50px 50px 50px 0;
   display: grid;
-  height: 100%;
   grid-gap: 20px;
 
-  @media (min-width: 220px){
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  @media (min-width: 280px){
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
 .profile-project-index img {
   width: 100%;
-  // width: auto;
-  border: 1px solid red;
   overflow: hidden;
 }
 

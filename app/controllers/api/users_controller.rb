@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
         elsif error == "Password is too short (minimum is 6 characters)"
           error = "Password must be at least 6 characters."
         elsif error == "Email has already been taken"
-          error = "Email has already been taken."
+          error = "An account with this email address already exists."
         else
           error
         end

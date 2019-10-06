@@ -15,7 +15,7 @@ Project.destroy_all
 # ------Users Seed Data------
 # vvvvvvvvvvvvvvvvvvvvvvvvvvv
 
-user1 = User.create!(
+user1 = User.create(
   email: "ujpyon@gmail.com", 
   password: "go_project_go",
   fname:"Jae", 
@@ -23,7 +23,7 @@ user1 = User.create!(
   text: "Content creator extraordinaire! I am a graduate of Pratt Institute School of Architecture, but now I'm currently attending App Academy and I draw in my free time as a hobby. Take a look at my awesome projects!"
 )
 
-user2 = User.create!(
+user2 = User.create(
   email: "soloak@gmail.com", 
   password: "go_project_go",
   fname:"Sol", 
@@ -31,7 +31,7 @@ user2 = User.create!(
   text: "My name is Sol Oak, and I'm a Pratt Institute graduate of Industrial Design."
 )
 
-test_user = User.create!(
+test_user = User.create(
   email: "cube@aps", 
   password: "123456",
   fname:"APERTURE SCIENCE", 
@@ -43,25 +43,25 @@ test_user = User.create!(
 # -----Project Seed Data-----
 # vvvvvvvvvvvvvvvvvvvvvvvvvvv
 
-proj_1 = Project.create!(
+proj_1 = Project.create(
   title: "Life Moments in Illustrations: Part 1",
   description: "I created a series of illustrations based on moments in my life I've shared experienced together with my wife. Hope you enjoy!",
   artist_id: user1.id
 )
 
-proj_2 = Project.create!(
+proj_2 = Project.create(
   title: "Life Moments in Illustrations: Part 2",
   description: "This is part 2 of a series of illustrations I did for my wife involving moments we've shared together!",
   artist_id: user1.id
 )
 
-proj_3 = Project.create!(
+proj_3 = Project.create(
   title: "Life is an RPG",
   description: "This is a set of characters I drew for my D&D group depicting each of us as our characters.",
   artist_id: user1.id
 )
 
-proj_4 = Project.create!(
+proj_4 = Project.create(
   title: "Illustrations: People of ODA",
   description: "This is an illustrations project I started through sketching classmates. Thought I would share it with y'all!",
   artist_id: user1.id
@@ -73,7 +73,12 @@ proj_4 = Project.create!(
 
 file1 = open('https://behold-seeds.s3.amazonaws.com/1_01_01.jpg')
 file2 = open('https://behold-seeds.s3.amazonaws.com/1_03_01.png')
-file3 = open('https://behold-seeds.s3.amazonaws.com/1_02_06.jpg')
+file3_1 = open('https://behold-seeds.s3.amazonaws.com/1_02_06.jpg')
+# file3_2 = open('https://behold-seeds.s3.amazonaws.com/1_02_01.jpg')
+# file3_3 = open('https://behold-seeds.s3.amazonaws.com/1_02_02.png')
+# file3_4 = open('https://behold-seeds.s3.amazonaws.com/1_02_03.jpg')
+# file3_5 = open('https://behold-seeds.s3.amazonaws.com/1_02_04.jpg')
+# file3_6 = open('https://behold-seeds.s3.amazonaws.com/1_02_05.jpg')
 file4 = open('https://behold-seeds.s3.amazonaws.com/1_04_02.jpg')
 
 
@@ -82,5 +87,12 @@ file4 = open('https://behold-seeds.s3.amazonaws.com/1_04_02.jpg')
 
 proj_1.images.attach(io: file1, filename: '1_01_01.jpg')
 proj_2.images.attach(io: file2, filename: '1_03_01.png')
-proj_3.images.attach(io: file3, filename: '1_02_06.jpg')
+
+proj_3.images.attach(io: file3_1, filename: '1_02_06.jpg')
+# proj_3.images.attach(io: file3_2, filename: '1_02_01.jpg')
+# proj_3.images.attach(io: file3_3, filename: '1_02_02.jpg')
+# proj_3.images.attach(io: file3_4, filename: '1_02_03.jpg')
+# proj_3.images.attach(io: file3_5, filename: '1_02_04.jpg')
+# proj_3.images.attach(io: file3_6, filename: '1_02_05.jpg')
+
 proj_4.images.attach(io: file4, filename: '1_04_02.jpg')

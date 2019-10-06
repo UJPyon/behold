@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import Project from './project';
 import { closeModal } from '../../actions/modal_actions';
-import { fetchProject } from '../../actions/project_actions';
 
 const msp = (state, ownProps) => {
   const projectId = ownProps.projectId;
@@ -17,10 +16,7 @@ const msp = (state, ownProps) => {
 }
 
 const mdp = dispatch => {
-  return {
-    closeModal: () => dispatch(closeModal()),
-    // fetchProject: (id) => dispatch(fetchProject(id)),
-  };
+  return {closeModal: () => dispatch(closeModal())};
 }
 
 export default connect(msp, mdp)(Project);

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../navbar/navbar_container';
+import Footer from '../footer/footer';
 
 
 class SplashPage extends React.Component {
@@ -36,6 +38,8 @@ class SplashPage extends React.Component {
 
   render() {
     return (
+    <>
+    <Navbar /> 
     <div className="splash">
       <section className="splash-active">
         <div className="splash-active-text">
@@ -47,6 +51,8 @@ class SplashPage extends React.Component {
 
       </section>
     </div>
+    <Footer />
+    </>
     )
   }
 }

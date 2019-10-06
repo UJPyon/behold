@@ -275,7 +275,12 @@ body, html {
   margin-top: 7px;
   color: #e34850;
   min-height: 21px;
+  /* display: inline-block; */
 }
+
+/* .session-all-inputs p:first-of-type {
+  display: inline-block;
+} */
 
 .session-header {
   padding-bottom: 15px;
