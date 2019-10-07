@@ -50,14 +50,14 @@ proj_1 = Project.create(
 )
 
 proj_2 = Project.create(
-  title: "Life Moments in Illustrations: Part 2",
-  description: "This is part 2 of a series of illustrations I did for my wife involving moments we've shared together!",
+  title: "Life is an RPG",
+  description: "This is a set of characters I drew for my D&D group depicting each of us as our characters.",
   artist_id: user1.id
 )
 
 proj_3 = Project.create(
-  title: "Life is an RPG",
-  description: "This is a set of characters I drew for my D&D group depicting each of us as our characters.",
+  title: "Life Moments in Illustrations: Part 2",
+  description: "This is part 2 of a series of illustrations I did for my wife involving moments we've shared together!",
   artist_id: user1.id
 )
 
@@ -71,28 +71,54 @@ proj_4 = Project.create(
 # ------Image File URL Seed Data------
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
-file1 = open('https://behold-seeds.s3.amazonaws.com/1_01_01.jpg')
-file2 = open('https://behold-seeds.s3.amazonaws.com/1_03_01.png')
-file3_1 = open('https://behold-seeds.s3.amazonaws.com/1_02_06.jpg')
-# file3_2 = open('https://behold-seeds.s3.amazonaws.com/1_02_01.jpg')
-# file3_3 = open('https://behold-seeds.s3.amazonaws.com/1_02_02.png')
-# file3_4 = open('https://behold-seeds.s3.amazonaws.com/1_02_03.jpg')
-# file3_5 = open('https://behold-seeds.s3.amazonaws.com/1_02_04.jpg')
-# file3_6 = open('https://behold-seeds.s3.amazonaws.com/1_02_05.jpg')
-file4 = open('https://behold-seeds.s3.amazonaws.com/1_04_02.jpg')
+file1_1 = open('https://behold-seeds.s3.amazonaws.com/1_01_01s.jpg')
+file1_2 = open('https://behold-seeds.s3.amazonaws.com/1_01_02s.jpg')
+file1_3 = open('https://behold-seeds.s3.amazonaws.com/1_01_03s.jpg')
+file1_4 = open('https://behold-seeds.s3.amazonaws.com/1_01_04s.jpg')
+file1_5 = open('https://behold-seeds.s3.amazonaws.com/1_01_05s.jpg')
+
+file2_1 = open('https://behold-seeds.s3.amazonaws.com/1_02_01s.jpg')
+file2_2 = open('https://behold-seeds.s3.amazonaws.com/1_02_02s.jpg')
+file2_3 = open('https://behold-seeds.s3.amazonaws.com/1_02_03s.jpg')
+file2_4 = open('https://behold-seeds.s3.amazonaws.com/1_02_04s.jpg')
+file2_5 = open('https://behold-seeds.s3.amazonaws.com/1_02_05s.jpg')
+file2_6 = open('https://behold-seeds.s3.amazonaws.com/1_02_06s.jpg')
+
+file3_1 = open('https://behold-seeds.s3.amazonaws.com/1_03_01s.jpg')
+file3_2 = open('https://behold-seeds.s3.amazonaws.com/1_03_02s.jpg')
+file3_3 = open('https://behold-seeds.s3.amazonaws.com/1_03_03s.jpg')
+file3_4 = open('https://behold-seeds.s3.amazonaws.com/1_03_04s.jpg')
+
+file4_1 = open('https://behold-seeds.s3.amazonaws.com/1_04_01s.jpg')
+file4_2 = open('https://behold-seeds.s3.amazonaws.com/1_04_02s.jpg')
+file4_3 = open('https://behold-seeds.s3.amazonaws.com/1_04_03s.jpg')
+file4_4 = open('https://behold-seeds.s3.amazonaws.com/1_04_04s.jpg')
+file4_5 = open('https://behold-seeds.s3.amazonaws.com/1_04_05s.jpg')
 
 
 # ------Attach Images to User------
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
-proj_1.images.attach(io: file1, filename: '1_01_01.jpg')
-proj_2.images.attach(io: file2, filename: '1_03_01.png')
+proj_1.images.attach(io: file1_1, filename: '1_01_01s.jpg')
+proj_1.images.attach(io: file1_2, filename: '1_01_02s.jpg')
+proj_1.images.attach(io: file1_3, filename: '1_01_03s.jpg')
+proj_1.images.attach(io: file1_4, filename: '1_01_04s.jpg')
+proj_1.images.attach(io: file1_5, filename: '1_01_05s.jpg')
 
-proj_3.images.attach(io: file3_1, filename: '1_02_06.jpg')
-# proj_3.images.attach(io: file3_2, filename: '1_02_01.jpg')
-# proj_3.images.attach(io: file3_3, filename: '1_02_02.jpg')
-# proj_3.images.attach(io: file3_4, filename: '1_02_03.jpg')
-# proj_3.images.attach(io: file3_5, filename: '1_02_04.jpg')
-# proj_3.images.attach(io: file3_6, filename: '1_02_05.jpg')
+proj_2.images.attach(io: file2_1, filename: '1_02_01s.png')
+proj_2.images.attach(io: file2_2, filename: '1_02_02s.png')
+proj_2.images.attach(io: file2_3, filename: '1_02_03s.png')
+proj_2.images.attach(io: file2_4, filename: '1_02_04s.png')
+proj_2.images.attach(io: file2_5, filename: '1_02_05s.png')
+proj_2.images.attach(io: file2_6, filename: '1_02_06s.png')
 
-proj_4.images.attach(io: file4, filename: '1_04_02.jpg')
+proj_3.images.attach(io: file3_1, filename: '1_03_01s.jpg')
+proj_3.images.attach(io: file3_2, filename: '1_03_02s.jpg')
+proj_3.images.attach(io: file3_3, filename: '1_03_03s.jpg')
+proj_3.images.attach(io: file3_4, filename: '1_03_04s.jpg')
+
+proj_4.images.attach(io: file4_1, filename: '1_04_01s.jpg')
+proj_4.images.attach(io: file4_2, filename: '1_04_02s.jpg')
+proj_4.images.attach(io: file4_3, filename: '1_04_03s.jpg')
+proj_4.images.attach(io: file4_4, filename: '1_04_04s.jpg')
+proj_4.images.attach(io: file4_5, filename: '1_04_05s.jpg')

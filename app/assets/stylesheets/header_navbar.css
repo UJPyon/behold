@@ -69,15 +69,6 @@
   height: 60px;
 }
 
-/* .header-right section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 180px;
-  height: 60px;
-  margin-right: 10px;
-} */
-
 .header-login > a {
   color: white;
   text-decoration: none;
@@ -97,13 +88,6 @@
   border: 1px solid black;
   transition: .2s;
 }
-/* 
-.header-right section a:hover {
-  color: red;
-  background-color: white;
-  border: 1px solid black;
-  transition: .2s;
-} */
 
 .material-icons {
   opacity: .5;
@@ -183,31 +167,44 @@
 }
 
 .header-drop-content {
-  display: none;
+  visibility: hidden;
   position: absolute;
   right: -20px;
   top: 60px;
-  color: black;
+  color: gray;
   background-color: white;
   min-width: 320px;
-  min-height: 240px;
+  min-height: 200px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 3;
-  transition: .5s;
+  transition: .4s;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0;
+  border-radius: 3px;
 }
 
 .header-drop-content > div {
   display: flex;
-  height: 120px;
+  height: 80px;
   width: 320px;
 }
 
 .header-drop-content-section {
   display: flex;
-  height: 60px;
+  height: 50px;
   border-bottom: 1px solid #e4e4e4;
   width: 100%;
-  padding: 20px;
+  padding: 20px 20px 30px 20px;
+}
+
+.header-drop-content-section h3 {
+  color: black;
+  font-weight: bold;
+}
+
+.header-drop-content-section p {
+  color: gray;
+  font-size: 14px;
 }
 
 .header-drop-content-section button {
@@ -227,70 +224,50 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  height: 65px;
 }
 
 .header-drop-content-links {
   display: flex;
   flex-direction: column;
+  margin-top: 25px;
+  font-size: 14px;
 }
 
 .header-drop-content-links a {
   text-decoration: none;
-  color: black;
-  padding-left: 20px;
+  color: gray;
+  padding: 10px 20px;
 }
 
-/* 
-.header-drop-content ul:before {
-  content: "";
-  position: absolute;
-  right: -20px;
-  top: 60px;
-  background-color: #f1f1f1;
-  width: 0;
-  height: 0;
-  border-color: transparent transparent #f1f1f1 transparent;
-  z-index: 3;
+.header-drop-content-links a:hover {
+  background-color: #f7f7f7;
 }
-
-.header-drop-content ul:after {
-  content: "";
-  position: absolute;
-  right: -20px;
-  top: 60px;
-  background-color: #f1f1f1;
-  width: 0;
-  height: 0;
-  border-color: transparent transparent #f1f1f1 transparent;
-  z-index: 3;
-} */
 
 .header-drop:hover .header-drop-content {
-  display: block;
-  transition: .5s;
+  visibility: visible;
+  opacity: 1;
+  transition: .4s;
 }
 
-.header-drop-content-link {
-  border-bottom: 1px solid #e4e4e4;
-  padding-left: 20px;
-  margin-top: 20px;
-  padding-bottom: 20px;
+.header-drop:focus {
+  visibility: visible;
 }
 
 .header-drop-content-link:hover {
-  background-color: #f9f9f9;
-  border: none;
+  background-color: #f7f7f7;
 }
 
 .header-drop-content-links button {
   border: none;
   height: 40px;
+  border-top: 1px solid #e4e4e4;
   margin: 5px 0;
+  text-align: left;
+  padding-left: 20px;
+  color: gray;
 }
 
-.header-drop-content-links button {
-  border: none;
-  height: 40px;
-  margin: 5px 0;
+.header-drop-content-links button:hover {
+  background-color: #f7f7f7;
 }
-

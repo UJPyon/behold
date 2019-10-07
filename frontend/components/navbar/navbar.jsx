@@ -25,6 +25,11 @@ class Navbar extends React.Component {
     this.props.history.push(`/home/${currentUserId}`);
   }
 
+  // closeDropdown() {
+  //   let dropClass = "header-drop-content";
+  //   setTimeout
+  // }
+
   render() {
     let navbarItems;
     if (this.props.currentUser) {
@@ -39,17 +44,17 @@ class Navbar extends React.Component {
         <div>
           <section className="header-drop-content-section">
             <button onClick={this.handleAvatarClick}>
-              <ProfileAvatar class="home-navbar-avatar" />
+                  <img style={{width: "70px", height: "70px"}} src={window.profileAvatar} />
             </button>
             <div>
-              <p>{this.props.currentUser.fname}</p>
+              <h3>{this.props.currentUser.fname}</h3>
               <p>{this.props.currentUser.email}</p>
             </div>
           </section>
         </div>
         <section className="header-drop-content-links">
           <Link to="/home">Back to Home Page</Link>
-          <Link className="header-drop-content-link" to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
+          <Link to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
           {/* <Link className="header-drop-content-link" to="/">Settings</Link> */}
           <button onClick={this.handleLogout}>Sign Out</button>
         </section>

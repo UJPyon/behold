@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 const msp = (state, ownProps) => {
   const className = ownProps.class;
-  return {className};
+  const size = ownProps.size;
+  return {className, size};
 };
 
 class ProfileAvatar extends React.Component {
@@ -17,6 +18,8 @@ class ProfileAvatar extends React.Component {
         height: "30px",
         width: "30px",
       };
+    } else if (this.props.size) {
+      iconStyle = this.props.size;
     }
 
     return (

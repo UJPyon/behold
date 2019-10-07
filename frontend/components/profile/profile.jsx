@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import DateJoined from './date_joined';
 import ProfileAvatar from '../navbar/profile_avatar';
+import { Link } from 'react-router-dom';
 // import ProjectContainer from '../project/project_container';
 
 class Profile extends React.Component {
@@ -31,16 +32,21 @@ class Profile extends React.Component {
     // --Map out all artist's projects as clickable images that leads to project modal--
     let projects;
     if (this.props.projects[0] !== undefined) {
-    projects = this.props.projects.map(projectId => {
+    projects = this.props.projects.map(project => {
       return (
-        <figure key={projectId.id} >
-          <img
-            onClick={() => this.handleModalClick(projectId.id)}
-            // src={projectId.imageUrls[0]}
-            src={projectId.imageUrls[projectId.imageUrls.length - 1]}
-          />
-
-        </figure>
+      <figure className="project-mask" key={project.id} >
+        <img
+          onClick={() => this.handleModalClick(project.id)}
+          src={project.imageUrls[0]}
+          // src={project.imageUrls[project.imageUrls.length - 1]}
+        />
+        <figcaption className="project-info">
+          <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
+          <Link to={`/home/${project.artistId}`}>
+            <p>{this.artist.fname}&nbsp;{this.artist.lname}</p>
+          </Link> 
+        </figcaption>
+      </figure>
       );
     });
     } else {
@@ -78,8 +84,8 @@ class Profile extends React.Component {
           <section>
             <h3>LINKS</h3>
             <span>
-              <a href="https://github.com/UJPyon"><img className="home-footer-icon" src={window.gitHub} /></a>
               <a href="https://www.linkedin.com/in/unjae-pyon-9a833972?trk=people-guest_profile-result-card_result-card_full-click"><img className="home-footer-icon" src={window.linkedIn} /></a>
+              <a href="https://github.com/UJPyon"><img className="home-footer-icon" src={window.gitHub} /></a>
             </span>
           </section>
 
@@ -90,10 +96,10 @@ class Profile extends React.Component {
         
         <section className="profile-projects">
           <div>
-            *--Future user category bar will go here--*
+            {/* *--Future user category bar will go here--* */}
           </div>
           <div>
-            *--Future category NavBar will go here--*
+            {/* *--Future category NavBar will go here--* */}
           </div>
 
           {/* Profile-Project-Index */}       
