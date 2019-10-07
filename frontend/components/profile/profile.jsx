@@ -34,7 +34,9 @@ class Profile extends React.Component {
     if (this.props.projects[0] !== undefined) {
     projects = this.props.projects.map(project => {
       return (
-      <figure className="project-mask" key={project.id} >
+      <figure 
+      onClick={() => this.handleModalClick(project.id)}
+      className="project-mask" key={project.id} >
         <img
           onClick={() => this.handleModalClick(project.id)}
           src={project.imageUrls[0]}

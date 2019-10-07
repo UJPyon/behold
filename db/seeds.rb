@@ -35,7 +35,7 @@ test_user = User.create(
   email: "cube@aps", 
   password: "123456",
   fname:"APERTURE SCIENCE", 
-  lname: "WEIGHTED COMANION CUBE", 
+  lname: "WEIGHTED COMPANION CUBE", 
   text: "Property of Aperture Science - GLaDOS"
 )
 
@@ -67,10 +67,28 @@ proj_4 = Project.create(
   artist_id: user1.id
 )
 
+proj_5 = Project.create(
+  title: "Summer Sketches",
+  description: "Here's a few illustrations I did for some friends this summer! I really like working with different colors for these.",
+  artist_id: user2.id
+)
+
+proj_6 = Project.create(
+  title: "First Aid Kit Design",
+  description: "This was a project for my Industrial Design class where we were given a product to design a container for.",
+  artist_id: user2.id
+)
+
 
 # ------Image File URL Seed Data------
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
+## --User Avatars--
+user1_avatar = open('https://behold-seeds.s3.amazonaws.com/user1_avatar.png')
+user2_avatar = open('https://behold-seeds.s3.amazonaws.com/user2_avatar.png')
+
+
+##--Project Images--
 file1_1 = open('https://behold-seeds.s3.amazonaws.com/1_01_01s.jpg')
 file1_2 = open('https://behold-seeds.s3.amazonaws.com/1_01_02s.jpg')
 file1_3 = open('https://behold-seeds.s3.amazonaws.com/1_01_03s.jpg')
@@ -96,9 +114,14 @@ file4_4 = open('https://behold-seeds.s3.amazonaws.com/1_04_04s.jpg')
 file4_5 = open('https://behold-seeds.s3.amazonaws.com/1_04_05s.jpg')
 
 
-# ------Attach Images to User------
+# --------Attach AWS Images--------
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
+## --Attach User Avatars--
+user1.avatar.attach(io: user1_avatar, filename: 'user1_avatar.png')
+user2.avatar.attach(io: user2_avatar, filename: 'user2_avatar.png')
+
+## --Attach Project Images--
 proj_1.images.attach(io: file1_1, filename: '1_01_01s.jpg')
 proj_1.images.attach(io: file1_2, filename: '1_01_02s.jpg')
 proj_1.images.attach(io: file1_3, filename: '1_01_03s.jpg')

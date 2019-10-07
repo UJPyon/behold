@@ -1,5 +1,6 @@
 import React from 'react';
 import ProfileAvatar from '../navbar/profile_avatar';
+import { Link } from 'react-router-dom';
 
 class Project extends React.Component {
   constructor(props) {
@@ -20,9 +21,12 @@ class Project extends React.Component {
     }
     return (
     <>
-    <header>
-      <h1>{this.state.title}</h1>
-      <h2>{this.props.artist.fname}</h2>
+    <header className="project-header">
+      <Link to={`/home/${this.props.artist.id}`}><ProfileAvatar size={{ width: "40px", height: "40px" }} /></Link>
+      <div>
+        <h1>{this.state.title}</h1>
+        <Link to={`/home/${this.props.artist.id}`}>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</Link>
+      </div>
     </header>
       {/* All images load here */}
       {images}
@@ -42,10 +46,10 @@ class Project extends React.Component {
 
           <section className="project-section-info-user">
             <section>
-              <ProfileAvatar size={{width: "60px", height: "60px"}}/>
+              <ProfileAvatar size={{width: "40px", height: "40px"}}/>
               {/* Project author name */}
               <div>
-                <h4>Owner:</h4>
+                <h4>OWNER</h4>
                 <p>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</p>
               </div>
             </section>

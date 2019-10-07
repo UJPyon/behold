@@ -1,8 +1,9 @@
 import { RECEIVE_CURRENT_USER, FIND_CURRENT_USER } from '../actions/session_actions';
-import { FETCH_USER } from '../actions/user_actions';
+import { FETCH_USER, FETCH_ALL_USERS } from '../actions/user_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
+  debugger
 
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
@@ -11,6 +12,8 @@ const usersReducer = (state = {}, action) => {
       return Object.assign({}, state, { email: action.user.email });
     case FETCH_USER:
       return Object.assign({}, state, { user: action.user });
+    case FETCH_ALL_USERS:
+      return action.users;
     default:
       return state;
   }

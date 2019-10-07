@@ -13,6 +13,7 @@ class Home extends React.Component {
     document.body.style.backgroundImage = "";
     document.body.style.backgroundColor = "#f9f9f9";
     this.props.fetchProjects();
+    this.props.receiveAllUsers();
   }
 
   handleClick(e) {

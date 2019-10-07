@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import ProjectContainer from '../project/project_container';
 
 function Modal({ modal, closeModal }) {
+  debugger
   if (!modal) {
     return null;
   }
@@ -15,6 +16,7 @@ function Modal({ modal, closeModal }) {
     default:
       return null;
   }
+  debugger
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
@@ -25,6 +27,7 @@ function Modal({ modal, closeModal }) {
 }
 
 const mapStateToProps = state => {
+  debugger
   return {
     modal: state.ui.modal,
     projectId: state.ui.projectId,
