@@ -23,34 +23,41 @@
 }
 
 .splash-active {
-  background: rgba(13, 16, 37, 0.9);
+  /* background: rgba(13, 16, 37, 0.9); */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   transition: 1s;
   color: white;
   padding: 20px 50px 40px 50px;
   font-family: 'Source Sans Pro', sans-serif;
-  border-radius: 8px;
+  border-radius: 5px;
   position: absolute;
   animation: 0.6s ease 0s 1 fadein;
+  width: 490px;
+  height: 400px;
 }
 
 .splash-active-a {
   text-decoration: none;
   color: white;
   background-color: #2e5ab9;
-  padding: 15px 112px;
+  padding: 10px 0;
   border-radius: 6px;
   transition: 0.4s;
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 40%;
 }
 
 .splash-active p {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 7px;
+  text-align: center;
+  line-height: 30px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .splash-active-a:hover {
@@ -58,17 +65,13 @@
   transition: 0.4s;
 }
 
-.splash-active {
-  margin-bottom: 6px;
-}
-
 .splash-active-link {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 100px;
-  margin-top: 40px;
+  height: 50px;
+  border-top: 1px solid #c5c5c5;
+  padding-top: 40px;
 }
 
 .splash-active-alt-link-a {
@@ -98,6 +101,14 @@
   justify-content: center;
   align-items: center;
   transition: 1s;
+}
+
+.splash-active-text h2 {
+  font-size: 32px;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 .splash-disabled {

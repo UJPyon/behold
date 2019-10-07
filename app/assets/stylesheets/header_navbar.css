@@ -25,6 +25,13 @@
   opacity: 1;
 }
 
+.header-login {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+  margin-right: 10px;
+}
+
 .footer-adobe-logo {
   border: 0;
   background-color: #222;
@@ -62,31 +69,41 @@
   height: 60px;
 }
 
-.header-right section {
+/* .header-right section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 180px;
+  height: 60px;
   margin-right: 10px;
-}
+} */
 
-.header-right section > a {
+.header-login > a {
   color: white;
   text-decoration: none;
   font-family: 'Source Sans Pro', sans-serif;
   padding: 8px;
   width: 64px;
+  height: 18px;
   border: 1px solid white;
   border-radius: 20px;
   text-align: center;
   transition: .2s;
 }
 
-.header-right section > a:hover {
+.header-login > a:hover {
   color: black;
   background-color: white;
   border: 1px solid black;
   transition: .2s;
 }
+/* 
+.header-right section a:hover {
+  color: red;
+  background-color: white;
+  border: 1px solid black;
+  transition: .2s;
+} */
 
 .material-icons {
   opacity: .5;
@@ -137,7 +154,6 @@
 }
 
 .header-drop-btn {
-  height: 20px;
   width: 20px;
   border: none;
   margin: 0 10px;
@@ -163,6 +179,7 @@
   display: flex;
   height: 60px;
   min-width: 30px;
+  justify-content: center;
 }
 
 .header-drop-content {
@@ -171,13 +188,58 @@
   right: -20px;
   top: 60px;
   color: black;
-  background-color: #f1f1f1;
+  background-color: white;
   min-width: 320px;
-  min-height: 200px;
+  min-height: 240px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 3;
   transition: .5s;
 }
+
+.header-drop-content > div {
+  display: flex;
+  height: 120px;
+  width: 320px;
+}
+
+.header-drop-content-section {
+  display: flex;
+  height: 60px;
+  border-bottom: 1px solid #e4e4e4;
+  width: 100%;
+  padding: 20px;
+}
+
+.header-drop-content-section button {
+  border: none;
+  height: 70px;
+  width: 70px;
+  margin-top: -6px;
+}
+
+.header-drop-content-section img {
+  height: 70px;
+  width: 70px;
+}
+
+.header-drop-content-section div {
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.header-drop-content-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-drop-content-links a {
+  text-decoration: none;
+  color: black;
+  padding-left: 20px;
+}
+
 /* 
 .header-drop-content ul:before {
   content: "";
@@ -209,6 +271,26 @@
 }
 
 .header-drop-content-link {
+  border-bottom: 1px solid #e4e4e4;
+  padding-left: 20px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
 
+.header-drop-content-link:hover {
+  background-color: #f9f9f9;
+  border: none;
+}
+
+.header-drop-content-links button {
+  border: none;
+  height: 40px;
+  margin: 5px 0;
+}
+
+.header-drop-content-links button {
+  border: none;
+  height: 40px;
+  margin: 5px 0;
 }
 

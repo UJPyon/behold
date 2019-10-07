@@ -16,7 +16,6 @@ class ProfileAvatar extends React.Component {
       iconStyle = {
         height: "30px",
         width: "30px",
-        marginTop: "15px"
       };
     }
 

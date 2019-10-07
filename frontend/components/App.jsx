@@ -29,7 +29,7 @@ const App = () => {
   <div className="main-home">
     <Switch>
       {/* <Route exact path='/' component={Navbar} />   */}
-      <Route exact path='/' component={SplashPageContainer} />
+      <AuthRoute exact path='/' component={SplashPageContainer} />
       <AuthRoute exact path='/signup' component={SignUpFormContainer} />
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       {/* <Route exact path='/' component={Footer} />  */}

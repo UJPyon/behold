@@ -18,7 +18,7 @@ Project.destroy_all
 user1 = User.create(
   email: "ujpyon@gmail.com", 
   password: "go_project_go",
-  fname:"Jae", 
+  fname:"UnJae", 
   lname: "Pyon", 
   text: "Content creator extraordinaire! I am a graduate of Pratt Institute School of Architecture, but now I'm currently attending App Academy and I draw in my free time as a hobby. Take a look at my awesome projects!"
 )

@@ -23,7 +23,7 @@ class Home extends React.Component {
   render() {
     return (
       <section className="home-body">
-        <h1>Temporary Home Text TEXT</h1>
+        <h1>Temporary Home Text (see profile for MVP 3)</h1>
       </section>
     );
   }

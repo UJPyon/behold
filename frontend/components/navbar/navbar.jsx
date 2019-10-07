@@ -32,21 +32,27 @@ class Navbar extends React.Component {
     <>
     {/* Dropdown menu on User Avatar icon */ }
     <div className="header-drop">
-      <button onClick={this.handleAvatarClick} className="header-drop-btn">
+      <section onClick={this.handleAvatarClick} className="header-drop-btn">
         <ProfileAvatar class="home-navbar-avatar" />
-      </button>
+      </section>
       <div className="header-drop-content">
         <div>
-          <button onClick={this.handleAvatarClick}>
-            <ProfileAvatar class="home-navbar-avatar" />
-          </button>
-          <p>{this.props.currentUser.fname}</p>
-          <p>demo@gmail.com</p>
-          <Link to="/">Manage Adobe ID</Link>
+          <section className="header-drop-content-section">
+            <button onClick={this.handleAvatarClick}>
+              <ProfileAvatar class="home-navbar-avatar" />
+            </button>
+            <div>
+              <p>{this.props.currentUser.fname}</p>
+              <p>{this.props.currentUser.email}</p>
+            </div>
+          </section>
         </div>
-        <Link className="header-drop-content-link" to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
-        <Link className="header-drop-content-link" to="/">Settings</Link>
-        <button onClick={this.handleLogout}>Sign Out</button>
+        <section className="header-drop-content-links">
+          <Link to="/home">Back to Home Page</Link>
+          <Link className="header-drop-content-link" to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
+          {/* <Link className="header-drop-content-link" to="/">Settings</Link> */}
+          <button onClick={this.handleLogout}>Sign Out</button>
+        </section>
       </div>
     </div>
     <i className="material-icons">&#xe5c3;</i>
@@ -54,7 +60,7 @@ class Navbar extends React.Component {
     );
     } else {
       navbarItems = (
-      <section>
+      <section className="header-login">
         <Link to="/login">Log in</Link>
         <Link to="/signup">Sign up</Link>
       </section>

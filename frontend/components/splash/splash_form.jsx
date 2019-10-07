@@ -44,8 +44,8 @@ class SplashPage extends React.Component {
       <section className="splash-active">
         <div className="splash-active-text">
           <img className="splash-logo" src={window.beholdLogoBold} />
-          <p>Behold is a website where students can showcase their works</p>
-          <p>of art! Share your awesome creations for everyone to behold!</p>
+          <h2>Artwork for students, by students.</h2>
+          <p>Behold is a website for showcasing works of art. Join today and view awesome student creations!</p>
         </div>
         {this.whichButton()}
 
