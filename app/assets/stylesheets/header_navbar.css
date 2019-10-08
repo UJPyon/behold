@@ -138,9 +138,9 @@
 }
 
 .header-drop-btn {
-  width: 20px;
+  width: 40px;
   border: none;
-  margin: 0 10px;
+  /* margin: 0 10px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,10 +148,10 @@
 }
 
 .header-drop-btn img {
-  height: 20px;
-  width: 20px;
+  /* height: 20px; */
+  /* width: 20px; */
   border: none;
-  margin: 0 10px;
+  /* margin: 0 10px; */
   display: flex;
   justify-content: center;
   align-items: center;

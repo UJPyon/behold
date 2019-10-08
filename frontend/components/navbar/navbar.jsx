@@ -38,7 +38,8 @@ class Navbar extends React.Component {
     {/* Dropdown menu on User Avatar icon */ }
     <div className="header-drop">
       <section onClick={this.handleAvatarClick} className="header-drop-btn">
-            <ProfileAvatar class="home-navbar-avatar" avatarUrl={this.props.currentUser.avatarUrl} />
+        {/* TEST HERE */}
+            <ProfileAvatar size={{ width: "34px", height: "34px" }} avatarUrl={this.props.currentUser.avatarUrl} />
       </section>
       <div className="header-drop-content">
         <div>

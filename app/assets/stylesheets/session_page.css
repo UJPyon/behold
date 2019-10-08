@@ -22,26 +22,16 @@ body, html {
 }
 
 .main-session-containers {
-  /* width: 1200px; */
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
 .mainRoot {
   height: 100%;
   width: auto;
-  /* background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/behold_session_background.jpg"); */
-  /* background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg"); */
-  /* background-position: center; */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,13 +83,6 @@ body, html {
   border-bottom: 2px solid #eaeaea;
   width: 100%;
 }
-/* 
-.session-background {
-  background-image: url("https://behold-aa.s3.us-east-2.amazonaws.com/signup_login_background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
 
 .session-input:hover {
   transition: 0.3s;
@@ -275,12 +258,7 @@ body, html {
   margin-top: 7px;
   color: #e34850;
   min-height: 21px;
-  /* display: inline-block; */
 }
-
-/* .session-all-inputs p:first-of-type {
-  display: inline-block;
-} */
 
 .session-header {
   padding-bottom: 15px;

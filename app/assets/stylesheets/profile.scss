@@ -64,33 +64,6 @@
   left: 10px;
 }
 
-// TESTING BELOW::::
-
-
-// The purpose of this css class was to preload the space as gray squares
-// on a profile page while waiting for the project images to load:
-
-// .profile-loading-projects {
-//   height: 453px;
-//   width: 359px;
-//   background-color: #bdbdbd;
-// }
-
-
-// .square:before {
-//   content: '';
-//   display: block;
-//   position: absolute;
-//   height: 0%;
-//   width: 100%;
-//   bottom: 0;
-//   transition: height 0.5s ease-out;
-//   background: linear-gradient(to bottom, transparent 0%, black 100%);
-// }
-// .square:hover:before {
-//   height: 100%;
-// }
-
 .profile-project-index p {
   position: absolute;
   bottom: 10px;
