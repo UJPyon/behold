@@ -169,7 +169,7 @@
 .header-drop-content {
   visibility: hidden;
   position: absolute;
-  right: -20px;
+  right: -13px;
   top: 60px;
   color: gray;
   background-color: white;
@@ -181,6 +181,17 @@
   font-family: Arial, Helvetica, sans-serif;
   opacity: 0;
   border-radius: 3px;
+}
+
+.header-drop-content-triangle {
+    width: 0;
+    height: 0;
+    border-right: 16px solid transparent;
+    border-left: 16px solid transparent;
+    border-bottom: 17px solid white;
+    position: absolute;
+    left: 271px;
+    top: -7.3px;
 }
 
 .header-drop-content > div {

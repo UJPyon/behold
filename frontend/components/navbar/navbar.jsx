@@ -39,9 +39,10 @@ class Navbar extends React.Component {
     <div className="header-drop">
       <section onClick={this.handleAvatarClick} className="header-drop-btn">
         {/* TEST HERE */}
-            <ProfileAvatar size={{ width: "34px", height: "34px" }} avatarUrl={this.props.currentUser.avatarUrl} />
+        <ProfileAvatar size={{ width: "34px", height: "34px" }} avatarUrl={this.props.currentUser.avatarUrl} />
       </section>
       <div className="header-drop-content">
+        <span className="header-drop-content-triangle"></span>
         <div>
           <section className="header-drop-content-section">
             <button onClick={this.handleAvatarClick}>
