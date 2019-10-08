@@ -3,7 +3,6 @@ import { FETCH_USER, FETCH_ALL_USERS } from '../actions/user_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
-  debugger
 
   switch (action.type) {
     case RECEIVE_CURRENT_USER:

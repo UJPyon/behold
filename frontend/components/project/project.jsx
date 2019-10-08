@@ -6,7 +6,12 @@ class Project extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.project;
+    // this.handleModalClick = this.handleModalClick.bind(this);
   }
+
+  // handleModalClick() {
+  //   this.props.closeModal();
+  // }
 
   render() {
     let images;
@@ -20,6 +25,7 @@ class Project extends React.Component {
       images = <figure className="project-image-loading"></figure>
     }
     return (
+      // onClick = { this.closeModal }
     <>
     <header className="project-header">
       <Link to={`/home/${this.props.artist.id}`}><ProfileAvatar size={{ width: "40px", height: "40px" }} /></Link>

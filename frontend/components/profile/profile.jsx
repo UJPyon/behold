@@ -8,14 +8,19 @@ import { Link } from 'react-router-dom';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-    this.artist = this.props.artist;
+    // this.artist = this.props.artist;
     this.state = {projects: this.props.projects};
     this.handleClick = this.handleClick.bind(this);
     this.handleModalClick = this.handleModalClick.bind(this);
   }
 
   componentDidMount() {
+    // --------------------------
+    // TESTING THIS LINE HERE::::
+    // --------------------------
+    this.props.receiveAllUsers();
     this.props.fetchProjects();
+    // this.props.fetchUser();
   }
 
   handleClick(e) {
@@ -45,7 +50,7 @@ class Profile extends React.Component {
         <figcaption className="project-info">
           <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
           <Link to={`/home/${project.artistId}`}>
-            <p>{this.artist.fname}&nbsp;{this.artist.lname}</p>
+            <p>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</p>
           </Link> 
         </figcaption>
       </figure>
@@ -69,17 +74,17 @@ class Profile extends React.Component {
 
           <section>
           {/* First name & last name */}
-            <h1>{this.artist.fname}&nbsp;{this.artist.lname}</h1>
+            <h1>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</h1>
             <h4>App Academy Student</h4>
             
             {/* Artist's email */}
-            <p>{this.artist.email}</p>
+            <p>{this.props.artist.email}</p>
           </section>
 
           {/* About me text */}
           <section>
             <h3>ABOUT ME</h3>
-            <p>{this.artist.text}</p>
+            <p>{this.props.artist.text}</p>
           </section>
 
           {/* Link icons to Github & LinkedIn */}
@@ -92,7 +97,7 @@ class Profile extends React.Component {
           </section>
 
           {/* Member since date */}
-          <DateJoined timestamp={this.artist.created_at}/>
+          <DateJoined timestamp={this.props.artist.created_at}/>
         </div>
         </section>
         
@@ -110,7 +115,7 @@ class Profile extends React.Component {
             {projects}
 
             {/* Temporary sample images */}
-            <img src="https://c8.alamy.com/comp/PC1RN9/fun-fox-cartoon-illustration-isolate-on-white-background-PC1RN9.jpg"/>
+            {/* <img src="https://c8.alamy.com/comp/PC1RN9/fun-fox-cartoon-illustration-isolate-on-white-background-PC1RN9.jpg"/>
             <img src="https://i.pinimg.com/236x/7b/f7/50/7bf75067651b931b26f371d41ac1d284--funny-illustration-cartoon-illustrations.jpg"/>
             <img src="https://previews.123rf.com/images/sabelskaya/sabelskaya1706/sabelskaya170600675/80648968-divertido-cuenco-sonriente-de-reques%C3%B3n-y-frambuesa-caracteres-de-bayas-de-zarzamora-ilustraci%C3%B3n-vectorial-.jpg"/>
             <img src="http://patswerk.nl/versie-2/wp-content/uploads/2017/07/OFFICE.png"/>
@@ -118,7 +123,7 @@ class Profile extends React.Component {
             <img src="https://i.pinimg.com/236x/7b/f7/50/7bf75067651b931b26f371d41ac1d284--funny-illustration-cartoon-illustrations.jpg"/>
             <img src="https://previews.123rf.com/images/sabelskaya/sabelskaya1706/sabelskaya170600675/80648968-divertido-cuenco-sonriente-de-reques%C3%B3n-y-frambuesa-caracteres-de-bayas-de-zarzamora-ilustraci%C3%B3n-vectorial-.jpg"/>
             <img src="http://patswerk.nl/versie-2/wp-content/uploads/2017/07/OFFICE.png"/>
-            <img src="https://cdn2.vectorstock.com/i/1000x1000/92/96/cute-funny-cartoon-red-fox-character-having-fun-vector-20639296.jpg"/>
+            <img src="https://cdn2.vectorstock.com/i/1000x1000/92/96/cute-funny-cartoon-red-fox-character-having-fun-vector-20639296.jpg"/> */}
           </ul>
         </section>
       </div>

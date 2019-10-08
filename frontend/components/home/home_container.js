@@ -5,7 +5,6 @@ import { openModal } from '../../actions/modal_actions';
 import Home from './home';
 
 const msp = state => {
-  debugger
   const projects = Object.values(state.entities.projects);
   const users = state.entities.users;
   return {
@@ -15,7 +14,6 @@ const msp = state => {
 }
 
 const mdp = dispatch => {
-  debugger
   return {
     fetchProjects: () => dispatch(fetchProjects()),
     receiveAllUsers: () => dispatch(receiveAllUsers()),

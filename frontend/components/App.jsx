@@ -12,13 +12,6 @@ import Navbar from './navbar/navbar_container';
 import Modal from './modal/modal';
 
 const App = () => {
-  // let mainClass;
-  // debugger
-  // if (window.currentUser) {
-  //   mainClass = "main-home";
-  // } else {
-  //   mainClass = "main-home-disabled";
-  // }
 
   return (
   <>

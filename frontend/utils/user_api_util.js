@@ -8,7 +8,6 @@ export const findUser = (id) => {
 }
 
 export const getAllUsers = () => {
-  debugger
   return (
     $.ajax({
       method: "GET",
