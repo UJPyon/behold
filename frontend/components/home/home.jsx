@@ -58,14 +58,6 @@ class Home extends React.Component {
     }
 
     return (
-<<<<<<< HEAD
-    <div className="home">
-      <nav className="home-navbar">
-        <img src={window.beholdLogoBold} />
-        <NavbarContainer />
-      </nav>
-=======
->>>>>>> projects
       <section className="home-body">
         <section className="home-banner">
           <h1>Discover & Behold</h1> 
