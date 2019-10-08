@@ -1,0 +1,262 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-banner {
+  width: 100%;
+  padding-top: 60px;
+  overflow: hidden;
+  height: 212px;
+  background-color: lightgray;
+}
+
+.profile-banner img {
+  width: auto;
+  min-height: 100%;
+}
+
+.profile-banner div {
+  height: 212px;
+  overflow: hidden;
+}
+
+.profile-body {
+  display: flex;
+}
+
+.profile-projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  padding-bottom: 42px;
+}
+
+.profile-project-index {
+  margin: 100px 50px 50px 0;
+  background-color: #f9f9f9;
+  display: grid;
+  grid-gap: 20px;
+  min-width: 280px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // @media (min-width: 280px){
+  //   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // }
+}
+
+.profile-project-index figure {
+  position: relative;
+}
+
+.profile-project-index h4 {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+}
+
+// TESTING BELOW::::
+
+
+// The purpose of this css class was to preload the space as gray squares
+// on a profile page while waiting for the project images to load:
+
+// .profile-loading-projects {
+//   height: 453px;
+//   width: 359px;
+//   background-color: #bdbdbd;
+// }
+
+
+// .square:before {
+//   content: '';
+//   display: block;
+//   position: absolute;
+//   height: 0%;
+//   width: 100%;
+//   bottom: 0;
+//   transition: height 0.5s ease-out;
+//   background: linear-gradient(to bottom, transparent 0%, black 100%);
+// }
+// .square:hover:before {
+//   height: 100%;
+// }
+
+.profile-project-index p {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.profile-project-index img {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.profile-project-index img:hover {
+  cursor: pointer;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.228));
+}
+
+.profile-project-index li {
+  background-color: #e8e8e8;
+  border: 1px solid black;
+  height: 260px;
+  width: 360px;
+  text-align: center;
+  border-radius: 5px;
+  list-style: none;
+}
+
+.profile-about {
+  display: flex;
+  width: 460px;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+.profile-about div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 360px;
+  height: 600px;
+  margin: 0 50px;
+  padding: 30px;
+  position: relative;
+  margin-top: -150px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 0 3px #bdbdbd;
+  // font-family: acumin-pro,sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: gray;
+}
+
+.profile-about section {
+  display: flex;
+}
+
+.profile-about section:first-of-type img {
+  height: 110px;
+  width: 110px;
+}
+
+.profile-about section:nth-of-type(2) {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 85px;
+  margin-top: -30px;
+}
+
+.profile-about section:nth-of-type(3) {
+  flex-direction: column;
+}
+
+.profile-about section:nth-of-type(4) {
+  flex-direction: column;
+  height: 50px;
+  width: 100%;
+}
+
+.profile-about section:nth-of-type(4) a {
+  height: fit-content;
+  width: fit-content;
+}
+
+.profile-about section:nth-of-type(4) span {
+  flex-direction: row;
+  display: flex;
+  height: 70px;
+  width: 65px;
+  justify-content: space-between;
+}
+
+.profile-about h1 {
+  color: black;
+  font-size: 20px;
+}
+
+.profile-about h3 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+}
+
+.profile-about h4 {
+  margin-top: 5px;
+}
+
+.profile-about h5 {
+  font-size: 12px;
+}
+
+.profile-about p {
+  line-height: 20px;
+}
+
+
+.profile-icon {
+  width: 28px;
+  height: 28px;
+  opacity: 1;
+  transition: .2s;
+}
+
+.profile-icon:hover {
+  opacity: .7;
+  transition: .2s;
+}
+
+.profile-icon:focus {
+  opacity: .7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* @keyframes 
+
+.testing-circle {
+  position: relative;
+
+  width: 0px;
+  height: 0px;
+  top: 50px;
+  left: 50px;
+  text-align: center;
+  background: red;
+  color: white;
+  border-radius: 100%;
+  padding: 20px;
+  overflow: hidden;
+  animation: 2s ease 0x 1 
+}
+
+.testing-circle: {
+
+} */

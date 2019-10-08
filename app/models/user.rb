@@ -26,6 +26,9 @@ class User < ApplicationRecord
   foreign_key: :artist_id,
   class_name: :Project
 
+  has_one_attached :avatar
+  has_one_attached :banner
+
   # --User Class & Instance Methods--
   attr_reader :password
 

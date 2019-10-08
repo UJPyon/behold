@@ -13,12 +13,14 @@
 class Project < ApplicationRecord
   # --Project Validations--
   validates :title, :description, presence: true
-  validates :artist_id, presence: true, uniqueness: true
+  validates :artist_id, presence: true
 
   # --Project Associations--
   belongs_to :artist,
   primary_key: :id,
   foreign_key: :artist_id,
   class_name: :User
+
+  has_many_attached :images
 
 end

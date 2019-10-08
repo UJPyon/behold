@@ -1,0 +1,49 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 20;
+}
+/* .modal-background section {
+  overflow: hidden;
+} */
+
+.modal-child {
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  max-height: calc(100vh - 1px);
+}
+
+.modal-child::-webkit-scrollbar { width: 0 }
+.modal-child { overflow: -moz-scrollbars-none; }
+.modal-child { -ms-overflow-style: none; }
+
+.modal-child header {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  padding: 20px 0;
+}
+
+
+/* LEGACY MODAL-CHILD CLASS */
+
+/* .modal-child {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  top: 374px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  max-height: calc(100vh - 210px);
+  min-height: calc(100vh - 210px);
+} */

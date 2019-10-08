@@ -24,7 +24,7 @@ body, html {
 .main-session-containers {
   /* width: 1200px; */
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,6 +43,7 @@ body, html {
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   position: relative;
 }
@@ -58,7 +59,7 @@ body, html {
   align-items: center;
   width: 510px;
   height: 700px;
-  margin-right: 20%;
+  margin-right: 15%;
   border-radius: 4px;
   animation: .5s ease 0s 1 slidefromside;
 }
@@ -153,7 +154,7 @@ body, html {
 .session-logo {
   width: 200px;
   height: auto;
-  margin-left: 120%;
+  margin-left: 100%;
 }
 
 .session-demo span {
@@ -274,7 +275,12 @@ body, html {
   margin-top: 7px;
   color: #e34850;
   min-height: 21px;
+  /* display: inline-block; */
 }
+
+/* .session-all-inputs p:first-of-type {
+  display: inline-block;
+} */
 
 .session-header {
   padding-bottom: 15px;

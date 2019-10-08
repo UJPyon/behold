@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
         elsif error == "Password is too short (minimum is 6 characters)"
           error = "Password must be at least 6 characters."
         elsif error == "Email has already been taken"
-          error = "Email has already been taken."
+          error = "An account with this email address already exists."
         else
           error
         end
@@ -35,14 +35,19 @@ class Api::UsersController < ApplicationController
 
   end
 
-  # def show
-  #   @user = User.find(params[:id])
-  #   if @user
-  #     render 'api/users/show'
-  #   else
-  #     render json: @user.errors.full_messages status: 404
-  #   end
-  # end
+  def show
+    @user = User.find(params[:id])
+    if @user
+      render 'api/users/show'
+    else
+      render json: @user.errors.full_messages, status: 404
+    end
+  end
+
+  def index
+    @users = User.all
+    render 'api/users/index'
+  end
 
   private 
   def user_params

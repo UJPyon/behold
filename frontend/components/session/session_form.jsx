@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
       error4: "Please enter your last name.",
       error5: "Invalid credentials. Please try again.",
       error6: "Check your email address or ",
-      error7: "Email has already been taken.",
+      error7: "An account with this email address already exists.",
       loginNextStep: false,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -78,10 +78,12 @@ class SessionForm extends React.Component {
   }
 
   errorLink(errorMsg) {
-    if (this.props.errors.includes(errorMsg)) {
-      return <Link className="session-input-link-text" to="/signup">&nbsp;create a new account</Link>
+    if (this.props.errors.includes(errorMsg) && errorMsg === "Check your email address or ") {
+      return <Link className="session-input-link-text" to="/signup">&nbsp;create a new account</Link>;
+    } else if (this.props.errors.includes(errorMsg) && errorMsg === "An account with this email address already exists.") {
+      return <Link className="session-input-link-text" to="/login">Sign in</Link>;
     } else {
-      return <div></div>
+      return <div></div>;
     }
   }
 
@@ -98,7 +100,7 @@ class SessionForm extends React.Component {
   // -------------------------------------------------------------------------------------------------------
   // changeUserLink() {
   //   if (this.state.loginNextStep) {
-  //     this.setState({loginNextStep: false})
+  //     this.setState({loginNextStep: false});
   //   }
   // }
 
@@ -164,7 +166,7 @@ class SessionForm extends React.Component {
                   type="email"
                   onChange={this.update("email")}
                 />
-                <p>{this.errorDoesExist(this.state.error1, this.state.error7)}</p>
+                <p>{this.errorDoesExist(this.state.error1, this.state.error7)}&nbsp;{this.errorLink(this.state.error7)}</p>
               </section>
               <div className="session-input-name">
                 <section>
@@ -222,7 +224,7 @@ class SessionForm extends React.Component {
     );
 
     return (
-      <>
+      <div className="main-session-containers">
         <section>
           <img className="session-logo" src={window.beholdLogo} />
         </section>
@@ -233,7 +235,7 @@ class SessionForm extends React.Component {
             </div>
           {demoLogin}
         </section>
-      </>
+      </div>
     );
   }
 }

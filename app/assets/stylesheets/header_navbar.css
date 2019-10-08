@@ -25,6 +25,13 @@
   opacity: 1;
 }
 
+.header-login {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+  margin-right: 10px;
+}
+
 .footer-adobe-logo {
   border: 0;
   background-color: #222;
@@ -60,6 +67,26 @@
   display: flex;
   align-items: center;
   height: 60px;
+}
+
+.header-login > a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 8px;
+  width: 64px;
+  height: 18px;
+  border: 1px solid white;
+  border-radius: 20px;
+  text-align: center;
+  transition: .2s;
+}
+
+.header-login > a:hover {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  transition: .2s;
 }
 
 .material-icons {
@@ -111,6 +138,16 @@
 }
 
 .header-drop-btn {
+  width: 20px;
+  border: none;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+}
+
+.header-drop-btn img {
   height: 20px;
   width: 20px;
   border: none;
@@ -126,52 +163,111 @@
   display: flex;
   height: 60px;
   min-width: 30px;
+  justify-content: center;
 }
 
 .header-drop-content {
-  display: none;
+  visibility: hidden;
   position: absolute;
   right: -20px;
   top: 60px;
-  color: black;
-  background-color: #f1f1f1;
+  color: gray;
+  background-color: white;
   min-width: 320px;
   min-height: 200px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 3;
-  transition: .5s;
-}
-/* 
-.header-drop-content ul:before {
-  content: "";
-  position: absolute;
-  right: -20px;
-  top: 60px;
-  background-color: #f1f1f1;
-  width: 0;
-  height: 0;
-  border-color: transparent transparent #f1f1f1 transparent;
-  z-index: 3;
+  transition: .4s;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0;
+  border-radius: 3px;
 }
 
-.header-drop-content ul:after {
-  content: "";
-  position: absolute;
-  right: -20px;
-  top: 60px;
-  background-color: #f1f1f1;
-  width: 0;
-  height: 0;
-  border-color: transparent transparent #f1f1f1 transparent;
-  z-index: 3;
-} */
+.header-drop-content > div {
+  display: flex;
+  height: 80px;
+  width: 320px;
+}
+
+.header-drop-content-section {
+  display: flex;
+  height: 50px;
+  border-bottom: 1px solid #e4e4e4;
+  width: 100%;
+  padding: 20px 20px 30px 20px;
+}
+
+.header-drop-content-section h3 {
+  color: black;
+  font-weight: bold;
+}
+
+.header-drop-content-section p {
+  color: gray;
+  font-size: 14px;
+}
+
+.header-drop-content-section button {
+  border: none;
+  height: 70px;
+  width: 70px;
+  margin-top: -6px;
+}
+
+.header-drop-content-section img {
+  height: 70px;
+  width: 70px;
+}
+
+.header-drop-content-section div {
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 65px;
+}
+
+.header-drop-content-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.header-drop-content-links a {
+  text-decoration: none;
+  color: gray;
+  padding: 10px 20px;
+}
+
+.header-drop-content-links a:hover {
+  background-color: #f7f7f7;
+}
 
 .header-drop:hover .header-drop-content {
-  display: block;
-  transition: .5s;
+  visibility: visible;
+  opacity: 1;
+  transition: .4s;
 }
 
-.header-drop-content-link {
-
+.header-drop:focus {
+  visibility: visible;
 }
 
+.header-drop-content-link:hover {
+  background-color: #f7f7f7;
+}
+
+.header-drop-content-links button {
+  border: none;
+  height: 40px;
+  border-top: 1px solid #e4e4e4;
+  margin: 5px 0;
+  text-align: left;
+  padding-left: 20px;
+  color: gray;
+}
+
+.header-drop-content-links button:hover {
+  background-color: #f7f7f7;
+}
