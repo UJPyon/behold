@@ -86,6 +86,7 @@ proj_6 = Project.create(
 ## --User Avatars--
 user1_avatar = open('https://behold-seeds.s3.amazonaws.com/user1_avatar.png')
 user2_avatar = open('https://behold-seeds.s3.amazonaws.com/user2_avatar.png')
+default_avatar = open('https://behold-seeds.s3.amazonaws.com/default_avatar.png')
 
 
 ##--Project Images--
@@ -113,6 +114,14 @@ file4_3 = open('https://behold-seeds.s3.amazonaws.com/1_04_03s.jpg')
 file4_4 = open('https://behold-seeds.s3.amazonaws.com/1_04_04s.jpg')
 file4_5 = open('https://behold-seeds.s3.amazonaws.com/1_04_05s.jpg')
 
+file5_1 = open('https://behold-seeds.s3.amazonaws.com/2_01_01s.jpg')
+file5_2 = open('https://behold-seeds.s3.amazonaws.com/2_01_02s.jpg')
+file5_3 = open('https://behold-seeds.s3.amazonaws.com/2_01_03s.jpg')
+
+file6_1 = open('https://behold-seeds.s3.amazonaws.com/2_02_01s.jpg')
+file6_2 = open('https://behold-seeds.s3.amazonaws.com/2_02_02s.jpg')
+file6_3 = open('https://behold-seeds.s3.amazonaws.com/2_02_03s.jpg')
+
 
 # --------Attach AWS Images--------
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
@@ -120,6 +129,7 @@ file4_5 = open('https://behold-seeds.s3.amazonaws.com/1_04_05s.jpg')
 ## --Attach User Avatars--
 user1.avatar.attach(io: user1_avatar, filename: 'user1_avatar.png')
 user2.avatar.attach(io: user2_avatar, filename: 'user2_avatar.png')
+test_user.avatar.attach(io: default_avatar, filename: 'default_avatar.png')
 
 ## --Attach Project Images--
 proj_1.images.attach(io: file1_1, filename: '1_01_01s.jpg')
@@ -145,3 +155,11 @@ proj_4.images.attach(io: file4_2, filename: '1_04_02s.jpg')
 proj_4.images.attach(io: file4_3, filename: '1_04_03s.jpg')
 proj_4.images.attach(io: file4_4, filename: '1_04_04s.jpg')
 proj_4.images.attach(io: file4_5, filename: '1_04_05s.jpg')
+
+proj_5.images.attach(io: file5_1, filename: '2_01_01s.jpg')
+proj_5.images.attach(io: file5_2, filename: '2_01_02s.jpg')
+proj_5.images.attach(io: file5_3, filename: '2_01_03s.jpg')
+
+proj_6.images.attach(io: file6_1, filename: '2_02_01s.jpg')
+proj_6.images.attach(io: file6_2, filename: '2_02_02s.jpg')
+proj_6.images.attach(io: file6_3, filename: '2_02_03s.jpg')

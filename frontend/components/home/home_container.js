@@ -1,12 +1,16 @@
 import { connect } from 'react-redux';
 import { receiveAllUsers } from '../../actions/user_actions'
 import { fetchProjects, fetchProject } from '../../actions/project_actions'
+import { openModal } from '../../actions/modal_actions';
 import Home from './home';
 
 const msp = state => {
-  const projects = state.projects;
+  debugger
+  const projects = Object.values(state.entities.projects);
+  const users = state.entities.users;
   return {
     projects,
+    users,
   };
 }
 
@@ -16,6 +20,7 @@ const mdp = dispatch => {
     fetchProjects: () => dispatch(fetchProjects()),
     receiveAllUsers: () => dispatch(receiveAllUsers()),
     fetchProject: (id) => dispatch(fetchProject(id)),
+    openModal: () => dispatch(openModal()),
   };
 }
 

@@ -28,7 +28,7 @@ class Profile extends React.Component {
   }
 
   render() {
-
+    debugger
     // --Map out all artist's projects as clickable images that leads to project modal--
     let projects;
     if (this.props.projects[0] !== undefined) {
