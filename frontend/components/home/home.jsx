@@ -46,7 +46,7 @@ class Home extends React.Component {
             />
             <figcaption className="project-info">
               <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
-              <Link to={`/home/${project.artistId}`}>
+              <Link to={`/home/${project.artistId}`} onClick={e => e.stopPropagation()}>
                 <p>{this.props.users[project.artistId].fname}&nbsp;{this.props.users[project.artistId].lname}</p>
               </Link>
             </figcaption>

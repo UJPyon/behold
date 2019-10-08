@@ -15,12 +15,8 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    // --------------------------
-    // TESTING THIS LINE HERE::::
-    // --------------------------
     this.props.receiveAllUsers();
     this.props.fetchProjects();
-    // this.props.fetchUser();
   }
 
   handleClick(e) {
@@ -49,7 +45,8 @@ class Profile extends React.Component {
         />
         <figcaption className="project-info">
           <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
-          <Link to={`/home/${project.artistId}`}>
+          {/* TESTING CODE ONCLICK UNDERNEATH */}
+          <Link to={`/home/${project.artistId}`} onClick={e => e.stopPropagation()}>
             <p>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</p>
           </Link> 
         </figcaption>
