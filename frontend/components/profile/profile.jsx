@@ -60,7 +60,7 @@ class Profile extends React.Component {
     if (this.props.artist.text) {
       aboutMeInfo = this.props.artist.text;
     } else {
-      aboutMeInfo = "Welcome new user!"
+      aboutMeInfo = "Welcome new user!";
     }
 
     return (
@@ -95,8 +95,8 @@ class Profile extends React.Component {
           <section>
             <h3>LINKS</h3>
             <span>
-              <a href="https://www.linkedin.com/in/unjae-pyon-9a833972?trk=people-guest_profile-result-card_result-card_full-click"><img className="home-footer-icon" src={window.linkedIn} /></a>
-              <a href="https://github.com/UJPyon"><img className="home-footer-icon" src={window.gitHub} /></a>
+              <a href="https://www.linkedin.com/in/unjae-pyon-9a833972?trk=people-guest_profile-result-card_result-card_full-click"><img className="profile-icon" src={window.linkedInDark} /></a>
+              <a href="https://github.com/UJPyon"><img className="profile-icon" src={window.gitHubDark} /></a>
             </span>
           </section>
 
