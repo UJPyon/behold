@@ -60,7 +60,9 @@ class Home extends React.Component {
     return (
       <section className="home-body">
         <section className="home-banner">
-          <img src="" />
+          <h1>Discover & Behold</h1> 
+          <h1>Creative Student Work</h1>
+          <img src={window.homeBanner} />
         </section>
         <ul className="profile-project-index">
           {projects}

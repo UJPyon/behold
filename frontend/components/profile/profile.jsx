@@ -30,7 +30,6 @@ class Profile extends React.Component {
 
   render() {
     // --Map out all artist's projects as clickable images that leads to project modal--
-    debugger
     let projects;
     if (this.props.projects[0] !== undefined) {
     projects = this.props.projects.map(project => {
@@ -63,7 +62,7 @@ class Profile extends React.Component {
     } else {
       aboutMeInfo = "Welcome new user!"
     }
-    debugger
+
     return (
     <>
       <section className="profile-banner">

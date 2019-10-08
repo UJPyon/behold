@@ -1,3 +1,13 @@
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   margin: 0;
 }
@@ -58,6 +68,41 @@ body {
 .home-body {
   height: 100%;
   padding-top: 60px;
+  padding-bottom: 42px;
+}
+
+.home-banner {
+  height: 210px;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.home-banner h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 60px;
+  position: fixed;
+  z-index: 5;
+  animation: 0.9s ease 0s 1 fadein;
+}
+
+.home-banner h1:first-of-type {
+  top: 100px;
+}
+
+.home-banner h1:nth-of-type(2) {
+  top: 165px;
+}
+
+.home-banner img {
+  width: 100%;
+  opacity: .7;
 }
 
 .home-footer {

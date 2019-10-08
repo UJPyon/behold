@@ -3,7 +3,6 @@ import Project from './project';
 import { closeModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-  debugger
   const projectId = ownProps.projectId;
   const project = state.entities.projects[projectId];
   const imageUrls = project.imageUrls;
