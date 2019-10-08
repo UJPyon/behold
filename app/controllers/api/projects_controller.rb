@@ -10,6 +10,8 @@ class Api::ProjectsController < ApplicationController
     render :show
   end
 
+  private
+
   def project_params
     params.require(:post).permit(:title, :description, images: [])
   end
