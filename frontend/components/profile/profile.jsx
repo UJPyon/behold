@@ -29,8 +29,8 @@ class Profile extends React.Component {
   }
 
   render() {
-    debugger
     // --Map out all artist's projects as clickable images that leads to project modal--
+    debugger
     let projects;
     if (this.props.projects[0] !== undefined) {
     projects = this.props.projects.map(project => {
@@ -45,7 +45,6 @@ class Profile extends React.Component {
         />
         <figcaption className="project-info">
           <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
-          {/* TESTING CODE ONCLICK UNDERNEATH */}
           <Link to={`/home/${project.artistId}`} onClick={e => e.stopPropagation()}>
             <p>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</p>
           </Link> 
@@ -54,8 +53,17 @@ class Profile extends React.Component {
       );
     });
     } else {
-      return <figure></figure>;
+      projects = <figure></figure>;
     }
+
+    // --Conditional logic for default ABOUT ME text if it is a new user:--
+    let aboutMeInfo;
+    if (this.props.artist.text) {
+      aboutMeInfo = this.props.artist.text;
+    } else {
+      aboutMeInfo = "Welcome new user!"
+    }
+    debugger
     return (
     <>
       <section className="profile-banner">
@@ -66,7 +74,7 @@ class Profile extends React.Component {
         <div>
           {/* Profile image */}
           <section>
-            <ProfileAvatar />
+            <ProfileAvatar avatarUrl={this.props.artist.avatarUrl}/>
           </section>
 
           <section>
@@ -81,7 +89,7 @@ class Profile extends React.Component {
           {/* About me text */}
           <section>
             <h3>ABOUT ME</h3>
-            <p>{this.props.artist.text}</p>
+            <p>{aboutMeInfo}</p>
           </section>
 
           {/* Link icons to Github & LinkedIn */}
@@ -110,18 +118,8 @@ class Profile extends React.Component {
           <ul className="profile-project-index">
             {/* list items of each project as Project Component */}
             {projects}
-
-            {/* Temporary sample images */}
-            {/* <img src="https://c8.alamy.com/comp/PC1RN9/fun-fox-cartoon-illustration-isolate-on-white-background-PC1RN9.jpg"/>
-            <img src="https://i.pinimg.com/236x/7b/f7/50/7bf75067651b931b26f371d41ac1d284--funny-illustration-cartoon-illustrations.jpg"/>
-            <img src="https://previews.123rf.com/images/sabelskaya/sabelskaya1706/sabelskaya170600675/80648968-divertido-cuenco-sonriente-de-reques%C3%B3n-y-frambuesa-caracteres-de-bayas-de-zarzamora-ilustraci%C3%B3n-vectorial-.jpg"/>
-            <img src="http://patswerk.nl/versie-2/wp-content/uploads/2017/07/OFFICE.png"/>
-            <img src="https://cdn2.vectorstock.com/i/1000x1000/92/96/cute-funny-cartoon-red-fox-character-having-fun-vector-20639296.jpg"/>
-            <img src="https://i.pinimg.com/236x/7b/f7/50/7bf75067651b931b26f371d41ac1d284--funny-illustration-cartoon-illustrations.jpg"/>
-            <img src="https://previews.123rf.com/images/sabelskaya/sabelskaya1706/sabelskaya170600675/80648968-divertido-cuenco-sonriente-de-reques%C3%B3n-y-frambuesa-caracteres-de-bayas-de-zarzamora-ilustraci%C3%B3n-vectorial-.jpg"/>
-            <img src="http://patswerk.nl/versie-2/wp-content/uploads/2017/07/OFFICE.png"/>
-            <img src="https://cdn2.vectorstock.com/i/1000x1000/92/96/cute-funny-cartoon-red-fox-character-having-fun-vector-20639296.jpg"/> */}
           </ul>
+
         </section>
       </div>
       </>

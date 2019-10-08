@@ -5,7 +5,6 @@ import { receiveAllUsers } from '../../actions/user_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-  debugger
   const userId = ownProps.match.params.userId;
   let projectIds;
   let projects;
@@ -16,9 +15,7 @@ const msp = (state, ownProps) => {
     projectIds = null;
     projects = [];
   }
-  // END TESTS
   const artist = state.entities.users[userId];
-  debugger
   return {
     projects,
     artist,

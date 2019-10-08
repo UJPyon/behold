@@ -6,12 +6,12 @@ class Project extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.project;
-    // this.handleModalClick = this.handleModalClick.bind(this);
+    this.handleModalClick = this.handleModalClick.bind(this);
   }
 
-  // handleModalClick() {
-  //   this.props.closeModal();
-  // }
+  handleModalClick() {
+    this.props.closeModal();
+  }
 
   render() {
     let images;
@@ -28,7 +28,9 @@ class Project extends React.Component {
       // onClick = { this.closeModal }
     <>
     <header className="project-header">
-      <Link to={`/home/${this.props.artist.id}`}><ProfileAvatar size={{ width: "40px", height: "40px" }} /></Link>
+          <Link to={`/home/${this.props.artist.id}`} onClick={this.handleModalClick}>
+            <ProfileAvatar avatarUrl={this.props.artist.avatarUrl} size={{ width: "40px", height: "40px" }} />
+          </Link>
       <div>
         <h1>{this.state.title}</h1>
         <Link to={`/home/${this.props.artist.id}`}>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</Link>
@@ -52,7 +54,7 @@ class Project extends React.Component {
 
           <section className="project-section-info-user">
             <section>
-              <ProfileAvatar size={{width: "40px", height: "40px"}}/>
+              <ProfileAvatar avatarUrl={this.props.artist.avatarUrl} size={{width: "40px", height: "40px"}}/>
               {/* Project author name */}
               <div>
                 <h4>OWNER</h4>

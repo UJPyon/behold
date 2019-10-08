@@ -38,13 +38,13 @@ class Navbar extends React.Component {
     {/* Dropdown menu on User Avatar icon */ }
     <div className="header-drop">
       <section onClick={this.handleAvatarClick} className="header-drop-btn">
-        <ProfileAvatar class="home-navbar-avatar" />
+            <ProfileAvatar class="home-navbar-avatar" avatarUrl={this.props.currentUser.avatarUrl} />
       </section>
       <div className="header-drop-content">
         <div>
           <section className="header-drop-content-section">
             <button onClick={this.handleAvatarClick}>
-                  <img style={{width: "70px", height: "70px"}} src={window.profileAvatar} />
+                  <img style={{width: "70px", height: "70px"}} src={this.props.currentUser.avatarUrl} />
             </button>
             <div>
               <h3>{this.props.currentUser.fname}</h3>
@@ -55,7 +55,6 @@ class Navbar extends React.Component {
         <section className="header-drop-content-links">
           <Link to="/home">Back to Home Page</Link>
           <Link to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
-          {/* <Link className="header-drop-content-link" to="/">Settings</Link> */}
           <button onClick={this.handleLogout}>Sign Out</button>
         </section>
       </div>
