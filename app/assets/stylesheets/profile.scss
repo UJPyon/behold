@@ -48,11 +48,11 @@
   display: grid;
   grid-gap: 20px;
   min-width: 280px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  // @media (min-width: 280px){
-  //   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  // }
-}
+  grid-template-columns: repeat(4, minmax(300px, 1fr));
+  // --TESTING: ABOVE IS THE TEMPORARY CODE, BELOW IS THE DESIRED BEHAVIOR CODE. TRY 
+  // PUTTING A GRID WITHIN A GRID TO GET BOTH THE MINIMUM NUMBER OF GRID COLUMNS WHILE
+  // MAINTAINING SCALABILITY!! --
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
 .profile-project-index figure {
   position: relative;
