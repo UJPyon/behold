@@ -29,13 +29,25 @@ class Project extends React.Component {
 
     // --Map out all comments for this particular project--
     let comments;
-    debugger
     if (this.props.comments[0] !== undefined ) {
       comments = this.props.comments.map(comment => {
-        debugger
+        const authorId = comment.authorId;
+        const author = this.props.users[authorId];
         return (
           <li key={comment.id}>
-            <p>{comment.body}</p> 
+            <div>
+              {/* Comment Author Avatar */}
+              <Link to={`/home/${authorId}`} onClick={this.handleModalClick}>
+                <ProfileAvatar size={{ width: "52px", height: "52px" }} avatarUrl={author.avatarUrl} />
+              </Link> 
+            </div>
+            <div>
+              {/* Comment Author Name and Comment Body */}
+              <Link to={`/home/${authorId}`} onClick={this.handleModalClick}>
+                <h3>{author.fname}&nbsp;{author.lname}</h3>
+              </Link>
+              <p>{comment.body}</p> 
+            </div>
           </li>
         );
       });
@@ -66,7 +78,7 @@ class Project extends React.Component {
           {/* Comment section */}
           <section className="project-section-info-comments">
           <CommentForm projectId={this.state.id}/>
-          <ul>
+          <ul className="comments">
             {comments}
           </ul>
           </section>

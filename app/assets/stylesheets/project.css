@@ -29,7 +29,7 @@
 }
 
 .project-section-info {
-  height: 500px;
+  min-height: 500px;
   background-color: #fafafa;
   padding: 70px 80px 80px 80px;
   display: flex;
@@ -41,7 +41,7 @@
   border: 1px solid #e8e8e8;
   background-color: white;
   border-radius: 2px;
-  padding: 32px;
+  padding: 32px 0;
   width: 100%;
   min-width: 400px;
   min-height: 350px;

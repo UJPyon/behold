@@ -14,21 +14,19 @@ class CommentForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    debugger
-
     const comment = Object.assign({}, this.state);
     this.props.createNewComment(comment).then(() => {
-      debugger
       this.props.fetchProject(this.props.projectId);
       if (this.state.body) {
         this.setState({ body: "" });
       }
     });
-    // .then(() => this.props.fetchComments());
-    // const user = Object.assign({}, this.state);
-    // this.props.processForm(user).then(() => this.props.history.push('/home'));
   }
 
   update(body) {
@@ -59,13 +57,9 @@ class CommentForm extends React.Component {
 
   render() {
     return (
-    <form 
-      onSubmit={this.handleSubmit}
-      // --NEED TO FIGURE OUT DEFAULT ERROR: SOMETHING LIKE "CANNOT BE BLANK"--
-      className={this.inputBorderType(this.state.error) + "comment-input"}
-    >
+    <form onSubmit={this.handleSubmit}>
       <textarea 
-        name="" 
+        className={this.inputBorderType(this.state.error) + "comment-form-textarea"}
         // cols="10" 
         // rows="20" 
         onChange={this.update("body")}
@@ -73,8 +67,10 @@ class CommentForm extends React.Component {
       >
       </textarea>
       
-      <p>{this.errorDoesExist(this.state.error)}</p>
-      <input type="submit" value="Post a Comment"/>
+      <div>
+        <p>{this.errorDoesExist(this.state.error)}</p>
+        <input className="comment-form-button" type="submit" value="Post a Comment"/>
+      </div>
     </form>
     );
   }

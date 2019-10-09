@@ -18,9 +18,13 @@ const msp = (state, ownProps) => {
   // --Grab comments of project by project's comment ID's--
   const commentIds = project.commentIds;
   const comments = commentIds.map(id => state.entities.comments[id]);
-  debugger
+  
+  // --All users--
+  const users = state.entities.users;
+
   return {
     artist,
+    users,
     project,
     imageUrls,
     comments,
