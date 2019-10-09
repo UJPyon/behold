@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Project from './project';
 import { closeModal } from '../../actions/modal_actions';
-import { fetchComments } from '../../actions/comment_actions';
+import { fetchComments, deleteComment } from '../../actions/comment_actions';
 
 const msp = (state, ownProps) => {
   // --Grab project from state by project ID--
@@ -22,9 +22,13 @@ const msp = (state, ownProps) => {
   // --All users--
   const users = state.entities.users;
 
+  // --Current user--
+  const currentUser = users[state.session.id];
+
   return {
     artist,
     users,
+    currentUser,
     project,
     imageUrls,
     comments,
@@ -35,6 +39,7 @@ const mdp = dispatch => {
   return {
     closeModal: () => dispatch(closeModal()),
     fetchComments: () => dispatch(fetchComments()),
+    deleteComment: (id) => dispatch(deleteComment(id)),
   };
 }
 

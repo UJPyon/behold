@@ -8,10 +8,15 @@ class Project extends React.Component {
     super(props);
     this.state = this.props.project;
     this.handleModalClick = this.handleModalClick.bind(this);
+    this.deleteComment = this.deleteComment.bind(this);
   }
 
   handleModalClick() {
     this.props.closeModal();
+  }
+
+  deleteComment(commentId) {
+    this.props.deleteComment(commentId).then(() => this.props.fetchComments());
   }
 
   render() {
@@ -33,21 +38,37 @@ class Project extends React.Component {
       comments = this.props.comments.map(comment => {
         const authorId = comment.authorId;
         const author = this.props.users[authorId];
+
+        // --Conditional that displays X to delete comment only if the current user is the owner--
+        let deleteComment;
+        debugger
+        if (this.props.currentUser.id === authorId) {
+          deleteComment = <span className="comment-delete" onClick={() => this.deleteComment(comment.id)}>&times;</span>;
+        } else {
+          deleteComment = <span></span>
+        }
+
         return (
           <li key={comment.id}>
+
+            {/* Comment Author's Avatar */}
             <div>
-              {/* Comment Author Avatar */}
               <Link to={`/home/${authorId}`} onClick={this.handleModalClick}>
                 <ProfileAvatar size={{ width: "52px", height: "52px" }} avatarUrl={author.avatarUrl} />
               </Link> 
             </div>
+
+            {/* Comment Author's Name & the Comment Body */}
             <div>
-              {/* Comment Author Name and Comment Body */}
               <Link to={`/home/${authorId}`} onClick={this.handleModalClick}>
-                <h3>{author.fname}&nbsp;{author.lname}</h3>
+                {author.fname}&nbsp;{author.lname}
               </Link>
               <p>{comment.body}</p> 
             </div>
+
+            {/* X Button to Delete Comment */}
+            {deleteComment}
+
           </li>
         );
       });
@@ -55,10 +76,12 @@ class Project extends React.Component {
       // TESTING CODE BELOW: CREATE CLASS IN CSS FOR LOADING COMMENTS
       comments = <p className="loading-comments"></p>;
     }
+    comments = comments.reverse();
 
-    debugger
+    // ----------------------------
+    // FINAL PROJECT RENDER RETURN: 
+    // ----------------------------
     return (
-      // onClick = { this.closeModal }
     <>
     <header className="project-header">
           <Link to={`/home/${this.props.artist.id}`} onClick={this.handleModalClick}>
@@ -85,11 +108,15 @@ class Project extends React.Component {
 
           <section className="project-section-info-user">
             <section>
-              <ProfileAvatar avatarUrl={this.props.artist.avatarUrl} size={{width: "40px", height: "40px"}}/>
+              <Link to={`/home/${this.props.artist.id}`} onClick={this.handleModalClick}>
+                <ProfileAvatar avatarUrl={this.props.artist.avatarUrl} size={{width: "40px", height: "40px"}}/>
+              </Link>
               {/* Project author name */}
               <div>
                 <h4>OWNER</h4>
-                <p>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</p>
+                <Link to={`/home/${this.props.artist.id}`} onClick={this.handleModalClick}>
+                  {this.props.artist.fname}&nbsp;{this.props.artist.lname}
+                </Link>
               </div>
             </section>
 

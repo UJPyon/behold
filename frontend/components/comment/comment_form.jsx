@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import ProfileAvatar from '../navbar/profile_avatar';
 
 class CommentForm extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class CommentForm extends React.Component {
       error: "This field is required",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleModalClick = this.handleModalClick.bind(this);
     this.update = this.update.bind(this);
   }
 
@@ -29,13 +31,13 @@ class CommentForm extends React.Component {
     });
   }
 
+  handleModalClick() {
+    this.props.closeModal();
+  }
+
   update(body) {
     return (e) => {
-      // if (!this.state.body) {
-      //   this.setState({ [body]: "Share your thoughts on this project."});
-      // } else {
-        this.setState({ [body]: e.target.value });
-      // }
+      this.setState({ [body]: e.target.value });
     };
   }
 
@@ -56,17 +58,21 @@ class CommentForm extends React.Component {
   }
 
   render() {
+    const placeholderText = "What are your thoughts on this project?"
+
     return (
     <form onSubmit={this.handleSubmit}>
-      <textarea 
-        className={this.inputBorderType(this.state.error) + "comment-form-textarea"}
-        // cols="10" 
-        // rows="20" 
-        onChange={this.update("body")}
-        value={this.state.body}
-      >
-      </textarea>
-      
+      <div>
+        <Link to={`/home/${this.props.currentUserId}`} onClick={this.handleModalClick}>
+          <ProfileAvatar size={{ width: "52px", height: "52px" }} avatarUrl={this.props.currentUser.avatarUrl} />
+        </Link>
+        <textarea 
+          className={this.inputBorderType(this.state.error) + "comment-form-textarea"}
+          onChange={this.update("body")}
+          value={this.state.body}
+          placeholder={placeholderText}>
+        </textarea>
+      </div>
       <div>
         <p>{this.errorDoesExist(this.state.error)}</p>
         <input className="comment-form-button" type="submit" value="Post a Comment"/>
@@ -76,4 +82,4 @@ class CommentForm extends React.Component {
   }
 }
 
-export default CommentForm;
+export default withRouter(CommentForm);

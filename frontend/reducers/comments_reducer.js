@@ -4,13 +4,11 @@ import { merge } from 'lodash';
 const commentsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
-  debugger
   switch(action.type) {
     case RECEIVE_ALL_COMMENTS:
       return merge({}, action.comments);
     case RECEIVE_COMMENT:
       newState = merge({}, oldState, {[action.comment.id]: action.comment});
-      debugger
       return newState;
     case REMOVE_COMMENT:
       newState = merge({}, oldState);
