@@ -1,6 +1,7 @@
 import React from 'react';
 import ProfileAvatar from '../navbar/profile_avatar';
 import { Link } from 'react-router-dom';
+import CommentForm from '../comment/comment_form_container';
 
 class Project extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Project extends React.Component {
   }
 
   render() {
+    // --Map out all images for this particular project--
     let images;
     if (this.props.imageUrls[0] !== undefined) {
       images = this.props.imageUrls.map(url => {
@@ -22,8 +24,26 @@ class Project extends React.Component {
         );
       })
     } else {
-      images = <figure className="project-image-loading"></figure>
+      images = <figure className="project-image-loading"></figure>;
     }
+
+    debugger
+    // --Map out all comments for this particular project--
+    let comments;
+    if (this.props.comments[0] !== undefined ) {
+      comments = this.props.comments.map(comment => {
+        return (
+          <li>
+            <p key={comment}>{comment}</p> 
+          </li>
+        );
+      });
+    } else {
+      // TESTING CODE BELOW: CREATE CLASS IN CSS FOR LOADING COMMENTS
+      comments = <p className="loading-comments"></p>;
+    }
+
+    debugger
     return (
       // onClick = { this.closeModal }
     <>
@@ -44,12 +64,10 @@ class Project extends React.Component {
         <section className="project-section-info">
           {/* Comment section */}
           <section className="project-section-info-comments">
-            <p>FUTURE COMMENTS GO HERE</p>
-            <p>FUTURE COMMENTS GO HERE</p>
-            <p>FUTURE COMMENTS GO HERE</p>
-            <p>FUTURE COMMENTS GO HERE</p>
-            <p>FUTURE COMMENTS GO HERE</p>
-            <p>FUTURE COMMENTS GO HERE</p>
+          <CommentForm />
+          <ul>
+            {comments}
+          </ul>
           </section>
 
           <section className="project-section-info-user">

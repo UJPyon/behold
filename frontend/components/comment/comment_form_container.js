@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { createNewComment } from "../../actions/comment_actions";
+import { createNewComment, fetchComments } from "../../actions/comment_actions";
 import { clearErrors } from "../../actions/session_actions";
 import CommentForm from "./comment_form";
 
@@ -12,6 +12,7 @@ const msp = state => {
 const mdp = dispatch => {
   return {
     processForm: (comment) => dispatch(createNewComment(comment)),
+    fetchComments: () => dispatch(fetchComments()),
     clearErrors: () => dispatch(clearErrors()),
   };
 };

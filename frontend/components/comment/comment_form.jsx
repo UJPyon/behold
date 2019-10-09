@@ -6,8 +6,6 @@ class CommentForm extends React.Component {
     super(props);
     this.state = {
       body: "",
-      // --CHANGE THIS DEFAULT ERROR IN JSON!!!--
-      // error: "Body can't be blank",
       error: "This field is required",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +14,8 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm()
+    const comment = Object.assign({}, this.state);
+    this.props.processForm(comment).then(() => this.props.fetchComments());
     // const user = Object.assign({}, this.state);
     // this.props.processForm(user).then(() => this.props.history.push('/home'));
   }
@@ -55,7 +54,15 @@ class CommentForm extends React.Component {
       // --NEED TO FIGURE OUT DEFAULT ERROR: SOMETHING LIKE "CANNOT BE BLANK"--
       className={this.inputBorderType(this.state.error) + "comment-input"}
     >
-      <textarea name="" cols="20" rows="60" onChange={this.update("body")}></textarea>
+      <textarea 
+        name="" 
+        // cols="10" 
+        // rows="20" 
+        onChange={this.update("body")}
+        value={this.state.body}
+      >
+      </textarea>
+      
       <p>{this.errorDoesExist(this.state.error)}</p>
       <input type="submit" value="Post a Comment"/>
     </form>

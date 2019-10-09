@@ -6,8 +6,12 @@ class Api::CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create!(comment_params)
-    render :index
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      render :index
+    else
+      render json: ['This field is required'], status: 422
+    end
   end
 
   def destroy

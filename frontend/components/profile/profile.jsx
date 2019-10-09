@@ -29,6 +29,7 @@ class Profile extends React.Component {
   }
 
   render() {
+
     // --Map out all artist's projects as clickable images that leads to project modal--
     let projects;
     if (this.props.projects[0] !== undefined) {
@@ -40,7 +41,6 @@ class Profile extends React.Component {
         <img
           onClick={() => this.handleModalClick(project.id)}
           src={project.imageUrls[0]}
-          // src={project.imageUrls[project.imageUrls.length - 1]}
         />
         <figcaption className="project-info">
           <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
