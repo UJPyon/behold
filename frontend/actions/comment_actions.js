@@ -1,4 +1,5 @@
 import * as CommentApiUtil from '../utils/comment_api_util';
+import { receiveErrors } from '../actions/session_actions';
 
 export const RECEIVE_ALL_COMMENTS = "RECEIVE_ALL_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
@@ -26,16 +27,17 @@ export const receiveComment = (comment) => {
 };
 
 export const fetchComments = () => dispatch => {
-  CommentApiUtil.getAllComments()
+  return CommentApiUtil.getAllComments()
   .then(comments => dispatch(receiveAllComments(comments)));
 };
 
 export const createNewComment = (comment) => dispatch => {
-  CommentApiUtil.postComment(comment)
-  .then(comment => dispatch(receiveComment(comment)));
+  return CommentApiUtil.postComment(comment)
+  .then(comment => dispatch(receiveComment(comment)))
+  .fail(error => dispatch(receiveErrors(error.responseJSON)));
 };
 
 export const deleteComment = (id) => dispatch => {
-  CommentApiUtil.deleteComment(id)
+  return CommentApiUtil.deleteComment(id)
   .then(comment => dispatch(removeComment(comment)));
 };

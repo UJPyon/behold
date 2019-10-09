@@ -15,7 +15,6 @@ const msp = (state, ownProps) => {
   const artistId = project.artistId;
   const artist = state.entities.users[artistId];
   
-  debugger
   // --Grab comments of project by project's comment ID's--
   const commentIds = project.commentIds;
   const comments = commentIds.map(id => state.entities.comments[id]);

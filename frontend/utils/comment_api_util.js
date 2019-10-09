@@ -1,5 +1,4 @@
 export const getAllComments = () => {
-  debugger
   return (
     $.ajax({
       method: "GET",

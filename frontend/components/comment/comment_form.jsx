@@ -6,6 +6,8 @@ class CommentForm extends React.Component {
     super(props);
     this.state = {
       body: "",
+      project_id: this.props.projectId,
+      author_id: this.props.currentUserId,
       error: "This field is required",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,19 +16,28 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger
+
     const comment = Object.assign({}, this.state);
-    this.props.processForm(comment).then(() => this.props.fetchComments());
+    this.props.createNewComment(comment).then(() => {
+      debugger
+      this.props.fetchProject(this.props.projectId);
+      if (this.state.body) {
+        this.setState({ body: "" });
+      }
+    });
+    // .then(() => this.props.fetchComments());
     // const user = Object.assign({}, this.state);
     // this.props.processForm(user).then(() => this.props.history.push('/home'));
   }
 
   update(body) {
     return (e) => {
-      if (!this.state.body) {
-        this.setState({ [body]: "Share your thoughts on this project."});
-      } else {
+      // if (!this.state.body) {
+      //   this.setState({ [body]: "Share your thoughts on this project."});
+      // } else {
         this.setState({ [body]: e.target.value });
-      }
+      // }
     };
   }
 
@@ -47,7 +58,6 @@ class CommentForm extends React.Component {
   }
 
   render() {
-
     return (
     <form 
       onSubmit={this.handleSubmit}

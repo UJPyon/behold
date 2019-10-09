@@ -27,14 +27,15 @@ class Project extends React.Component {
       images = <figure className="project-image-loading"></figure>;
     }
 
-    debugger
     // --Map out all comments for this particular project--
     let comments;
+    debugger
     if (this.props.comments[0] !== undefined ) {
       comments = this.props.comments.map(comment => {
+        debugger
         return (
-          <li>
-            <p key={comment}>{comment}</p> 
+          <li key={comment.id}>
+            <p>{comment.body}</p> 
           </li>
         );
       });
@@ -64,7 +65,7 @@ class Project extends React.Component {
         <section className="project-section-info">
           {/* Comment section */}
           <section className="project-section-info-comments">
-          <CommentForm />
+          <CommentForm projectId={this.state.id}/>
           <ul>
             {comments}
           </ul>

@@ -19,6 +19,7 @@
   transform: translate(-50%, -50%);
   overflow-y: auto;
   max-height: calc(100vh - 1px);
+  max-width: 1400px;
 }
 
 .modal-child::-webkit-scrollbar { width: 0 }
