@@ -7,6 +7,16 @@ export const getAllComments = () => {
   );
 }
 
+// --TEST CODE: RETRIEVE A SPECIFIC PROJECT'S COMMENTS--
+// export const getProjectComments = (id) => {
+//   return (
+//     $.ajax({
+//       method: "GET",
+//       url: `/api/projects/${id}/comments`,
+//     })
+//   );
+// }
+
 export const postComment = (comment) => {
   return (
     $.ajax({

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import LoginPasswordForm from './login_password_form_container';
 
 class SessionForm extends React.Component {
@@ -32,11 +31,11 @@ class SessionForm extends React.Component {
   }
 
   componentDidMount() {
-    this.props.clearErrors();
     document.body.style.backgroundImage = "url('https://cache.desktopnexus.com/cropped-wallpapers/2353/2353798-1920x1080-[DesktopNexus.com].jpg?st=Gsec2x7-Z0xWWwPSdmvqkA&e=1570216831')";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {

@@ -151,6 +151,10 @@ user1_avatar = open('https://behold-seeds.s3.amazonaws.com/user1_avatar.png')
 user2_avatar = open('https://behold-seeds.s3.amazonaws.com/user2_avatar.png')
 default_avatar = open('https://behold-seeds.s3.amazonaws.com/default_avatar.png')
 
+# --User Banners--
+user1_banner = open('https://behold-seeds.s3.amazonaws.com/user1_banner.jpg')
+user2_banner = open('https://behold-seeds.s3.amazonaws.com/user2_banner.jpg')
+
 
 ##--Project Images--
 
@@ -256,6 +260,10 @@ file18_4 = open('https://behold-seeds.s3.amazonaws.com/4_02_04s.jpg')
 user1.avatar.attach(io: user1_avatar, filename: 'user1_avatar.png')
 user2.avatar.attach(io: user2_avatar, filename: 'user2_avatar.png')
 # test_user.avatar.attach(io: default_avatar, filename: 'default_avatar.png')
+
+## --Attach User Banners--
+user1.banner.attach(io: user1_banner, filename: 'user1_banner.jpg')
+user2.banner.attach(io: user2_banner, filename: 'user2_banner.jpg')
 
 ## --Attach Project Images--
 proj_1.images.attach(io: file1_1, filename: '1_01_01s.jpg')
@@ -364,370 +372,370 @@ comment_002 = Comment.create(
 comment_003 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_1.id
 )
 
 comment_004 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_1.id
 )
 
 comment_005 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_1.id
 )
 
 ## --PROJ 2 COMMENTS--
 comment_006 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_2.id
 )
 
 comment_007 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_2.id
 )
 
 comment_008 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_2.id
 )
 
 comment_009 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_2.id
 )
 
 ## --PROJ 3 COMMENTS--
 comment_010 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_3.id
 )
 
 comment_011 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_3.id
 )
 
 comment_012 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_3.id
 )
 
 comment_013 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_3.id
 )
 
 ## --PROJ 4 COMMENTS--
 comment_014 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_4.id
 )
 
 comment_015 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_4.id
 )
 
 comment_016 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_4.id
 )
 
 ## --PROJ 5 COMMENTS--
 comment_017 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_5.id
 )
 
 comment_018 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_5.id
 )
 
 comment_019 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_5.id
 )
 
 comment_020 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_5.id
 )
 
 ## --PROJ 6 COMMENTS--
 comment_021 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_6.id
 )
 
 comment_022 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_6.id
 )
 
 comment_023 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_6.id
 )
 
 comment_024 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_6.id
 )
 
 comment_025 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_6.id
 )
 
 ## --PROJ 7 COMMENTS--
 comment_026 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_7.id
 )
 
 comment_027 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_7.id
 )
 
 comment_028 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_7.id
 )
 
 ## --PROJ 8 COMMENTS--
 comment_029 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_8.id
 )
 
 comment_030 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_8.id
 )
 
 comment_031 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_8.id
 )
 
 ## --PROJ 9 COMMENTS--
 comment_032 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_9.id
 )
 
 comment_033 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_9.id
 )
 
 ## --PROJ 10 COMMENTS--
 comment_034 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_10.id
 )
 
 comment_035 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_10.id
 )
 
 comment_036 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_10.id
 )
 
 ## --PROJ 11 COMMENTS--
 comment_037 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_11.id
 )
 
 comment_038 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_11.id
 )
 
 comment_039 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_11.id
 )
 
 comment_040 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_11.id
 )
 
 ## --PROJ 12 COMMENTS--
 comment_041 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_12.id
 )
 
 comment_042 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_12.id
 )
 
 comment_043 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_12.id
 )
 
 ## --PROJ 13 COMMENTS--
 comment_044 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_13.id
 )
 
 comment_045 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_13.id
 )
 
 ## --PROJ 14 COMMENTS--
 comment_046 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_14.id
 )
 
 comment_047 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_14.id
 )
 
 comment_048 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_14.id
 )
 
 comment_049 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_14.id
 )
 
 ## --PROJ 15 COMMENTS--
 comment_050 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_15.id
 )
 
 comment_051 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_15.id
 )
 
 comment_052 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_15.id
 )
 
 ## --PROJ 16 COMMENTS--
 comment_053 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_16.id
 )
 
 comment_054 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_16.id
 )
 
 comment_055 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_16.id
 )
 
 ## --PROJ 17 COMMENTS--
 comment_056 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_17.id
 )
 
 comment_057 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_17.id
 )
 
 comment_058 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_17.id
 )
 
 ## --PROJ 18 COMMENTS--
 comment_059 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_18.id
 )
 
 comment_060 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_18.id
 )
 
 comment_061 = Comment.create(
   body:
   author_id:
-  project_id:
+  project_id: proj_18.id
 )
