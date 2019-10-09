@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { postUser, postSession, deleteSession, getUser } from './utils/session_api_util';
-import { login, logout, signup } from './actions/session_actions';
+// import { postUser, postSession, deleteSession, getUser } from './utils/session_api_util';
+// import { login, logout, signup } from './actions/session_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
