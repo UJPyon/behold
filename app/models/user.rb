@@ -34,7 +34,11 @@ class User < ApplicationRecord
   has_many :appreciations_given,
   primary_key: :id,
   foreign_key: :appreciator_id,
-  class_name: :Appreciaton
+  class_name: :Appreciation
+
+  has_many :appreciated_projects,
+  through: :appreciations_given,
+  source: :project
 
   has_many :appreciations_received,
   through: :projects,
