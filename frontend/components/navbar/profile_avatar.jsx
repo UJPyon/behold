@@ -27,7 +27,6 @@ class ProfileAvatar extends React.Component {
 
 
     let avatarUrl;
-    debugger
     if (this.props.avatarUrl) {
       avatarUrl = this.props.avatarUrl;
     } else {

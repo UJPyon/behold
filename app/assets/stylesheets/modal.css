@@ -22,6 +22,11 @@
   max-width: 1400px;
 }
 
+.modal-child figure {
+  padding-bottom: 24px;
+  background-color: white;
+}
+
 .modal-child::-webkit-scrollbar { width: 0 }
 .modal-child { overflow: -moz-scrollbars-none; }
 .modal-child { -ms-overflow-style: none; }
