@@ -28,7 +28,7 @@ const mdp = dispatch => {
     fetchProject: (id) => dispatch(fetchProject(id)),
     fetchProjects: () => dispatch(fetchProjects()),
     receiveAllUsers: () => dispatch(receiveAllUsers()),
-    openModal: (str) => dispatch(openModal(str)),
+    openModal: (object) => dispatch(openModal(object)),
   };
 }
 

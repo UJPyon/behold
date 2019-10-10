@@ -16,7 +16,9 @@ class Project extends React.Component {
   }
 
   deleteComment(commentId) {
-    this.props.deleteComment(commentId).then(() => this.props.fetchComments());
+    const projectId = this.state.id;
+    this.props.deleteComment({commentId: commentId, projectId: projectId});
+    // .then(() => this.props.fetchComments());
   }
 
   render() {
@@ -36,12 +38,12 @@ class Project extends React.Component {
     let comments;
     if (this.props.comments[0] !== undefined ) {
       comments = this.props.comments.map(comment => {
+        console.log(comment);
         const authorId = comment.authorId;
         const author = this.props.users[authorId];
 
         // --Conditional that displays X to delete comment only if the current user is the owner--
         let deleteComment;
-        debugger
         if (this.props.currentUser.id === authorId) {
           deleteComment = <span className="comment-delete" onClick={() => this.deleteComment(comment.id)}>&times;</span>;
         } else {

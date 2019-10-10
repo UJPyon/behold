@@ -12,10 +12,11 @@ export const receiveAllComments = (comments) => {
   };
 };
 
-export const removeComment = (commentId) => {
+export const removeComment = ({commentId, projectId}) => {
   return {
     type: REMOVE_COMMENT,
     commentId,
+    projectId,
   };
 };
 
@@ -37,7 +38,7 @@ export const createNewComment = (comment) => dispatch => {
   .fail(error => dispatch(receiveErrors(error.responseJSON)));
 };
 
-export const deleteComment = (id) => dispatch => {
-  return CommentApiUtil.deleteComment(id)
-  .then(comment => dispatch(removeComment(comment)));
+export const deleteComment = ({commentId, projectId}) => dispatch => {
+  return CommentApiUtil.deleteComment(commentId)
+  .then(comment => dispatch(removeComment({commentId: commentId, projectId: projectId})));
 };

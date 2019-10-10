@@ -17,14 +17,20 @@ const msp = (state, ownProps) => {
   
   // --Grab comments of project by project's comment ID's--
   const commentIds = project.commentIds;
-  const comments = commentIds.map(id => state.entities.comments[id]);
+  const comments = commentIds.map(id => {
+    // TEMPORARY SOLUTION, GO CHANGE REDUCER AND COME BACK HERE TO DELETE THIS!!!
+    if (state.entities.comments[id] === undefined) {
+      console.log(id);
+    } else {
+      return state.entities.comments[id];
+    }
+  });
   
   // --All users--
   const users = state.entities.users;
 
   // --Current user--
   const currentUser = users[state.session.id];
-
   return {
     artist,
     users,
@@ -39,7 +45,7 @@ const mdp = dispatch => {
   return {
     closeModal: () => dispatch(closeModal()),
     fetchComments: () => dispatch(fetchComments()),
-    deleteComment: (id) => dispatch(deleteComment(id)),
+    deleteComment: (object) => dispatch(deleteComment(object)),
   };
 }
 
