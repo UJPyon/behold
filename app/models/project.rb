@@ -21,6 +21,11 @@ class Project < ApplicationRecord
   foreign_key: :artist_id,
   class_name: :User
 
+  has_many :comments,
+  primary_key: :id,
+  foreign_key: :project_id,
+  class_name: :Comment
+
   has_many_attached :images
 
 end

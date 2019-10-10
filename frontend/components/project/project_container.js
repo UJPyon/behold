@@ -1,22 +1,52 @@
 import { connect } from 'react-redux';
 import Project from './project';
 import { closeModal } from '../../actions/modal_actions';
+import { fetchComments, deleteComment } from '../../actions/comment_actions';
 
 const msp = (state, ownProps) => {
+  // --Grab project from state by project ID--
   const projectId = ownProps.projectId;
   const project = state.entities.projects[projectId];
+
+  // --Grab Image URL's for project--
   const imageUrls = project.imageUrls;
+
+  // --Grab artist of project by artist ID--
   const artistId = project.artistId;
   const artist = state.entities.users[artistId];
+  
+  // --Grab comments of project by project's comment ID's--
+  const commentIds = project.commentIds;
+  const comments = commentIds.map(id => {
+    // TEMPORARY SOLUTION, GO CHANGE REDUCER AND COME BACK HERE TO DELETE THIS!!!
+    if (state.entities.comments[id] === undefined) {
+      console.log(id);
+    } else {
+      return state.entities.comments[id];
+    }
+  });
+  
+  // --All users--
+  const users = state.entities.users;
+
+  // --Current user--
+  const currentUser = users[state.session.id];
   return {
     artist,
+    users,
+    currentUser,
     project,
     imageUrls,
+    comments,
   };
 }
 
 const mdp = dispatch => {
-  return {closeModal: () => dispatch(closeModal())};
+  return {
+    closeModal: () => dispatch(closeModal()),
+    fetchComments: () => dispatch(fetchComments()),
+    deleteComment: (object) => dispatch(deleteComment(object)),
+  };
 }
 
 export default connect(msp, mdp)(Project);

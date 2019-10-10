@@ -1,0 +1,129 @@
+.comments {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  min-height: 52px;
+  margin: 32px 32px 0 32px;
+}
+
+.comments li {
+  display: flex;
+  margin: 26px 0;
+  position: relative;
+}
+
+.comments li > div:first-of-type {
+  font-weight: bold;
+}
+
+.comments li > div:nth-of-type(2) {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow-wrap: break-word;
+  height: auto;
+  word-break: break-all;
+}
+
+.comments li > div:nth-of-type(2) a {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.comments li > div:nth-of-type(2) a:hover {
+  text-decoration: underline;
+}
+
+.comment-input {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.comment-form-textarea {
+  padding: 12px;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  margin: 0 32px;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.comment-form-textarea:hover {
+  border: 1px solid rgb(120, 120, 120);
+}
+
+.comment-form-textarea:focus {
+  border: 1px solid #2257ff;
+}
+
+/* TESTING BELOW FOR ERROR CLASS */
+.error-comment-form-textarea {
+  padding: 12px;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  flex-direction: column;
+  margin: 0 32px;
+  /* BELOW WIDTH SHOULD BE CHANGED IF WEBKIT IS NOT AVAILABLE */
+  width: 200px;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  border: 1px solid #ea400d;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.error-comment-form-textarea:hover {
+  border: 1px solid rgb(120, 120, 120);
+}
+
+.error-comment-form-textarea:focus {
+  border: 1px solid #2257ff;
+}
+
+.comment-form-button {
+  border: 1px solid #e8e8e8;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  width: 142px;
+  height: 35px;
+  transition: .5s;
+}
+
+.comment-form-button:hover {
+  background-color: #eeeeee;
+  transition: .5s;
+}
+
+.comment-delete {
+  color: gray;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  height: 15px;
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+}
+
+.comments li:hover span {
+  visibility: visible;
+}
+
+.comment-delete:hover {
+  color: black;
+}

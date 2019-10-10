@@ -14,13 +14,17 @@
 .project-header > div {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-left: 15px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .project-header > div > a {
   color: white;
   text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 12px;
 }
 
 .project-header > div > a:hover {
@@ -29,7 +33,7 @@
 }
 
 .project-section-info {
-  height: 500px;
+  min-height: 500px;
   background-color: #fafafa;
   padding: 70px 80px 80px 80px;
   display: flex;
@@ -41,7 +45,7 @@
   border: 1px solid #e8e8e8;
   background-color: white;
   border-radius: 2px;
-  padding: 32px;
+  padding: 32px 0;
   width: 100%;
   min-width: 400px;
   min-height: 350px;
@@ -50,12 +54,13 @@
 }
 
 .project-section-info-user {
-  min-width: 300px;
+  min-width: 435px;
+  width: 435px;
 }
 
 .project-section-info-user h4 {
   font-size: 11px;
-  color: #696969;
+  color: #a8a8a8;
 }
 
 .project-section-info-user > section:first-of-type {
@@ -68,6 +73,15 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.project-section-info-user > section:first-of-type > a:first-of-type {
+  transition: .4s;
+}
+
+.project-section-info-user > section:first-of-type > a:first-of-type:hover {
+  opacity: .85;
+  transition: .4s;
+}
+
 .project-section-info-user > section:first-of-type > div {
   display: flex;
   flex-direction: column;
@@ -75,9 +89,15 @@
   margin-left: 12px;
 }
 
-.project-section-info-user > section:first-of-type > div > p {
+.project-section-info-user > section:first-of-type > div > a {
   font-weight: bold;
   letter-spacing: .5px;
+  text-decoration: none;
+  color: black;
+}
+
+.project-section-info-user > section:first-of-type > div > a:hover {
+  text-decoration: underline;
 }
 
 .project-section-info-user > section:nth-of-type(2) {
@@ -96,17 +116,44 @@
 }
 
 .project-section-info-user > section:nth-of-type(2) > h1 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   letter-spacing: .5px;
 }
 
 .project-section-info-user > section:nth-of-type(2) > p {
   color: #696969;
+  font-weight: 100;
+  font-size: 15px;
 }
 
 .project-section-info-user > section:nth-of-type(2) > div {
   color: #696969;
+}
+
+.project-section-info-comments > form > div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-section-info-comments > form > div:first-of-type > a {
+  margin-left: 32px;
+  height: 52px;
+}
+
+.project-section-info-comments > form > div:nth-of-type(2) {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px 50px 116px;
+  border-bottom: 1px solid #e8e8e8;
+  align-items: center;
+}
+
+.project-section-info-comments > form > div > p {
+  color: #d3d3d3;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 12px;
 }
 
 .project-mask {

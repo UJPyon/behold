@@ -17,7 +17,7 @@
   padding-top: 60px;
   overflow: hidden;
   height: 212px;
-  background-color: lightgray;
+  background-color: #4b4b4b;
 }
 
 .profile-banner img {
@@ -49,10 +49,9 @@
   grid-gap: 20px;
   min-width: 280px;
   grid-template-columns: repeat(4, minmax(300px, 1fr));
-  // --TESTING: ABOVE IS THE TEMPORARY CODE, BELOW IS THE DESIRED BEHAVIOR CODE. TRY 
-  // PUTTING A GRID WITHIN A GRID TO GET BOTH THE MINIMUM NUMBER OF GRID COLUMNS WHILE
-  // MAINTAINING SCALABILITY!! --
-  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // @media (min-width: 280px){
+  //   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // }
 }
 
 .profile-project-index figure {
@@ -140,6 +139,7 @@
 
 .profile-about section:nth-of-type(3) {
   flex-direction: column;
+  width: 100%;
 }
 
 .profile-about section:nth-of-type(4) {
@@ -163,7 +163,9 @@
 
 .profile-about h1 {
   color: black;
-  font-size: 20px;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .profile-about h3 {

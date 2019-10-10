@@ -29,6 +29,7 @@ class Profile extends React.Component {
   }
 
   render() {
+
     // --Map out all artist's projects as clickable images that leads to project modal--
     let projects;
     if (this.props.projects[0] !== undefined) {
@@ -40,7 +41,6 @@ class Profile extends React.Component {
         <img
           onClick={() => this.handleModalClick(project.id)}
           src={project.imageUrls[0]}
-          // src={project.imageUrls[project.imageUrls.length - 1]}
         />
         <figcaption className="project-info">
           <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
@@ -57,10 +57,31 @@ class Profile extends React.Component {
 
     // --Conditional logic for default ABOUT ME text if it is a new user:--
     let aboutMeInfo;
-    if (this.props.artist.text) {
-      aboutMeInfo = this.props.artist.text;
-    } else {
+    if (!this.props.artist || !this.props.artist.text) {
       aboutMeInfo = "Welcome new user!";
+    } else {
+      aboutMeInfo = this.props.artist.text;
+    }
+    let avatarUrl;
+    if (!this.props.artist || !this.props.artist.avatarUrl) {
+      avatarUrl = window.defaultAvatar;
+    } else {
+      avatarUrl = this.props.artist.avatarUrl;
+    }
+    let fname;
+    let lname;
+    let email;
+    let createdAt;
+    if (!this.props.artist) {
+      fname = "";
+      lname = "";
+      email = "";
+      createdAt = "";
+    } else {
+      fname = this.props.artist.fname;
+      lname = this.props.artist.lname;
+      email = this.props.artist.email;
+      createdAt = this.props.artist.created_at;
     }
 
     return (
@@ -73,16 +94,16 @@ class Profile extends React.Component {
         <div>
           {/* Profile image */}
           <section>
-            <ProfileAvatar avatarUrl={this.props.artist.avatarUrl}/>
+            <ProfileAvatar avatarUrl={avatarUrl}/>
           </section>
 
           <section>
           {/* First name & last name */}
-            <h1>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</h1>
+            <h1>{fname}&nbsp;{lname}</h1>
             <h4>App Academy Student</h4>
             
             {/* Artist's email */}
-            <p>{this.props.artist.email}</p>
+            <p>{email}</p>
           </section>
 
           {/* About me text */}
@@ -101,7 +122,7 @@ class Profile extends React.Component {
           </section>
 
           {/* Member since date */}
-          <DateJoined timestamp={this.props.artist.created_at}/>
+          <DateJoined timestamp={createdAt}/>
         </div>
         </section>
         

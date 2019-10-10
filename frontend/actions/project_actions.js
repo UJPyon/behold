@@ -6,15 +6,17 @@ export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 
 export const receiveAllProjects = (projects) => {
   return {
-  type: RECEIVE_ALL_PROJECTS,
-  projects,
-}};
+    type: RECEIVE_ALL_PROJECTS,
+    projects,
+  }
+};
 
 export const receiveProject = (project) => {
   return {
-  type: RECEIVE_PROJECT,
-  project,
-}};
+    type: RECEIVE_PROJECT,
+    project,
+  }
+};
 
 // export const receiveUserProjects = ({ projects, id }) => {
 //   return {

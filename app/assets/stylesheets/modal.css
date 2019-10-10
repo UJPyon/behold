@@ -13,13 +13,18 @@
 
 .modal-child {
   position: absolute;
-  width: 90%;
+  width: 85%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow-y: auto;
   max-height: calc(100vh - 1px);
   max-width: 1400px;
+}
+
+.modal-child figure {
+  padding-bottom: 24px;
+  background-color: white;
 }
 
 .modal-child::-webkit-scrollbar { width: 0 }
