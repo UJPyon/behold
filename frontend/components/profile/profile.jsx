@@ -17,6 +17,7 @@ class Profile extends React.Component {
   componentDidMount() {
     this.props.receiveAllUsers();
     this.props.fetchProjects();
+    this.props.fetchComments();
   }
 
   handleClick(e) {

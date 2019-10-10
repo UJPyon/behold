@@ -47,7 +47,7 @@ class Project extends React.Component {
         } else {
           deleteComment = <span></span>
         }
-
+        
         return (
           <li key={comment.id}>
 
@@ -132,9 +132,16 @@ class Project extends React.Component {
               {/* Project description */}
               <p>{this.state.description}</p>
 
-              <div>
-                {/* Appreciation count will go here in future feature */}
-                FUTURE APPRECIATIONS: 25
+              <div className="project-section-counters">
+                {/* Appreciation & comment count */}
+                <div>
+                  <i className='fas'>&#xf164;</i>
+                  <p>{this.props.project.appreciations}</p>
+                </div>
+                <div>
+                  <i className='fas'>&#xf27a;</i>
+                  <p>{this.props.project.commentIds.length}</p>
+                </div>
               </div>
             </section>
           </section>

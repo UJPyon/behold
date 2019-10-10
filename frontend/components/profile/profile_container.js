@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Profile from './profile';
 import { fetchProject, fetchProjects } from '../../actions/project_actions';
 import { receiveAllUsers } from '../../actions/user_actions';
+import { fetchComments } from '../../actions/comment_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
@@ -27,6 +28,7 @@ const mdp = dispatch => {
   return {
     fetchProject: (id) => dispatch(fetchProject(id)),
     fetchProjects: () => dispatch(fetchProjects()),
+    fetchComments: () => dispatch(fetchComments()),
     receiveAllUsers: () => dispatch(receiveAllUsers()),
     openModal: (object) => dispatch(openModal(object)),
   };

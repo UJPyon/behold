@@ -222,3 +222,38 @@
   transition: .4s;
   cursor: pointer;
 }
+
+.project-section-counters {
+  display: flex;
+  align-items: center;
+}
+
+.project-section-counters p {
+  font-weight: 100;
+  font-size: 15px;
+}
+
+.project-section-counters div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 28px;
+  width: 30px;
+}
+
+.project-section-counters div:first-of-type i {
+  font-size: 14px;
+  padding-bottom: 2px;
+}
+
+.project-section-counters div:nth-of-type(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  padding-top: 2px;
+}
+
+.project-section-counters div:nth-of-type(2) i {
+  font-size: 14px;
+}
