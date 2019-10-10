@@ -10,6 +10,8 @@ require 'open-uri'
 
 User.destroy_all
 Project.destroy_all
+Comment.destroy_all
+Appreciation.destroy_all
 
 
 # ------Users Seed Data------
@@ -105,36 +107,36 @@ proj_4 = Project.create(
   description: "This is an illustrations project I started through sketching classmates. Thought I would share it with y'all!",
   artist_id: user1.id
 )
-# proj_5 = Project.create(
-#   title: "Misc. Drawings",
-#   description: "Haven't posted anything in awhile, so I decided to put up some doodles I've been working on.",
-#   artist_id: user1.id
-# )
-# proj_6 = Project.create(
-#   title: "Arch 101: Spatial Study",
-#   description: "This was my design project for freshman year of design at Pratt Institute. The final project was to design a space using interconnecting pieces ",
-#   artist_id: user1.id
-# )
-# proj_7 = Project.create(
-#   title: "Arch 301: Dormitory Project",
-#   description: "My design for the dormitory project: this involved a lot of milling and spatial studies, but in the end the facade came out pretty interesting!",
-#   artist_id: user1.id
-# )
-# proj_8 = Project.create(
-#   title: "Drafting 101: Hand Drawings",
-#   description: "This was done freshman year of architecture for hand-drafting drawings. The construction line creation was intense :O",
-#   artist_id: user1.id
-# )
-# proj_9 = Project.create(
-#   title: "Arch 302: Columbia Boathouse",
-#   description: "My proposal for redesigning the boathouse used by Columbia University for Arch 302 class. The proposal involved shaping the boathouse to have maximum access to the docks while providing amenities above.",
-#   artist_id: user1.id
-# )
-# proj_10 = Project.create(
-#   title: "The Enchiridion",
-#   description: "Portable wood box design for the Enchiridion from Adventure Time. Modeled in Rhino 3D and lasercut.",
-#   artist_id: user1.id
-# )
+proj_5 = Project.create(
+  title: "Misc. Drawings",
+  description: "Haven't posted anything in awhile, so I decided to put up some doodles I've been working on.",
+  artist_id: user1.id
+)
+proj_6 = Project.create(
+  title: "Arch 101: Spatial Study",
+  description: "This was my design project for freshman year of design at Pratt Institute. The final project was to design a space using interconnecting pieces ",
+  artist_id: user1.id
+)
+proj_7 = Project.create(
+  title: "Arch 301: Dormitory Project",
+  description: "My design for the dormitory project: this involved a lot of milling and spatial studies, but in the end the facade came out pretty interesting!",
+  artist_id: user1.id
+)
+proj_8 = Project.create(
+  title: "Drafting 101: Hand Drawings",
+  description: "This was done freshman year of architecture for hand-drafting drawings. The construction line creation was intense :O",
+  artist_id: user1.id
+)
+proj_9 = Project.create(
+  title: "Arch 302: Columbia Boathouse",
+  description: "My proposal for redesigning the boathouse used by Columbia University for Arch 302 class. The proposal involved shaping the boathouse to have maximum access to the docks while providing amenities above.",
+  artist_id: user1.id
+)
+proj_10 = Project.create(
+  title: "The Enchiridion",
+  description: "Portable wood box design for the Enchiridion from Adventure Time. Modeled in Rhino 3D and lasercut.",
+  artist_id: user1.id
+)
 
 ## --USER 2 PROJECTS--
 proj_11 = Project.create(
@@ -147,40 +149,40 @@ proj_12 = Project.create(
   description: "This was a project for my Industrial Design class where we were given a product to design a container for.",
   artist_id: user2.id
 )
-# proj_13 = Project.create(
-#   title: "Furniture Design: Table & Chair",
-#   description: "This was my design proposal for a table/chair set for cafes, which allows a customer to have a personal space under the chair to store their belongings and a hook on the back for coats.",
-#   artist_id: user2.id
-# )
-# proj_14 = Project.create(
-#   title: "Tableware Design Set",
-#   description: "Designed with ergonomics in mind, the curvature of the tableware design allows for easy handling while also presenting an elegant look.",
-#   artist_id: user2.id
-# )
+proj_13 = Project.create(
+  title: "Furniture Design: Table & Chair",
+  description: "This was my design proposal for a table/chair set for cafes, which allows a customer to have a personal space under the chair to store their belongings and a hook on the back for coats.",
+  artist_id: user2.id
+)
+proj_14 = Project.create(
+  title: "Tableware Design Set",
+  description: "Designed with ergonomics in mind, the curvature of the tableware design allows for easy handling while also presenting an elegant look.",
+  artist_id: user2.id
+)
 proj_15 = Project.create(
   title: "Industrial Design Sketches",
   description: "I had nowhere else to place these old drawings from class, so decided to post them here for you guys to look at :)",
   artist_id: user2.id
 )
 
-# # --USER 3 PROJECTS--
-# proj_16 = Project.create(
-#   title: "Eaglebrook Middle School Design",
-#   description: "These were some of my renders from my proposal for redesigning the Eaglebrook School for Architecture 402 class.",
-#   artist_id: user3.id
-# )
+# --USER 3 PROJECTS--
+proj_16 = Project.create(
+  title: "Eaglebrook Middle School Design",
+  description: "These were some of my renders from my proposal for redesigning the Eaglebrook School for Architecture 402 class.",
+  artist_id: user3.id
+)
 
-# # --USER 4 PROJECTS--
-# proj_17 = Project.create(
-#   title: "Skyscraper Project",
-#   description: "Skyscraper design for my architecture senior year thesis project.",
-#   artist_id: user4.id
-# )
-# proj_18 = Project.create(
-#   title: "Floating Houses",
-#   description: "Proposal for floating neighborhood that is better equipped to deal with its location in a flood zone.",
-#   artist_id: user4.id
-# )
+# --USER 4 PROJECTS--
+proj_17 = Project.create(
+  title: "Skyscraper Project",
+  description: "Skyscraper design for my architecture senior year thesis project.",
+  artist_id: user4.id
+)
+proj_18 = Project.create(
+  title: "Floating Houses",
+  description: "Proposal for floating neighborhood that is better equipped to deal with its location in a flood zone.",
+  artist_id: user4.id
+)
 
 
 # ------Image File URL Seed Data------
@@ -223,31 +225,31 @@ file4_3 = open('https://behold-seeds.s3.amazonaws.com/1_04_03s.jpg')
 file4_4 = open('https://behold-seeds.s3.amazonaws.com/1_04_04s.jpg')
 file4_5 = open('https://behold-seeds.s3.amazonaws.com/1_04_05s.jpg')
 
-# file5_1 = open('https://behold-seeds.s3.amazonaws.com/1_05_01s.jpg')
-# file5_2 = open('https://behold-seeds.s3.amazonaws.com/1_05_02s.jpg')
-# file5_3 = open('https://behold-seeds.s3.amazonaws.com/1_05_03s.jpg')
+file5_1 = open('https://behold-seeds.s3.amazonaws.com/1_05_01s.jpg')
+file5_2 = open('https://behold-seeds.s3.amazonaws.com/1_05_02s.jpg')
+file5_3 = open('https://behold-seeds.s3.amazonaws.com/1_05_03s.jpg')
 
-# file6_1 = open('https://behold-seeds.s3.amazonaws.com/1_06_01s.jpg')
-# file6_2 = open('https://behold-seeds.s3.amazonaws.com/1_06_02s.jpg')
-# file6_3 = open('https://behold-seeds.s3.amazonaws.com/1_06_03s.jpg')
+file6_1 = open('https://behold-seeds.s3.amazonaws.com/1_06_01s.jpg')
+file6_2 = open('https://behold-seeds.s3.amazonaws.com/1_06_02s.jpg')
+file6_3 = open('https://behold-seeds.s3.amazonaws.com/1_06_03s.jpg')
 
-# file7_1 = open('https://behold-seeds.s3.amazonaws.com/1_07_01s.jpg')
-# file7_2 = open('https://behold-seeds.s3.amazonaws.com/1_07_02s.jpg')
-# file7_3 = open('https://behold-seeds.s3.amazonaws.com/1_07_03s.jpg')
+file7_1 = open('https://behold-seeds.s3.amazonaws.com/1_07_01s.jpg')
+file7_2 = open('https://behold-seeds.s3.amazonaws.com/1_07_02s.jpg')
+file7_3 = open('https://behold-seeds.s3.amazonaws.com/1_07_03s.jpg')
 
-# file8_1 = open('https://behold-seeds.s3.amazonaws.com/1_08_01s.jpg')
-# file8_2 = open('https://behold-seeds.s3.amazonaws.com/1_08_02s.jpg')
-# file8_3 = open('https://behold-seeds.s3.amazonaws.com/1_08_03s.jpg')
-# file8_4 = open('https://behold-seeds.s3.amazonaws.com/1_08_04s.jpg')
+file8_1 = open('https://behold-seeds.s3.amazonaws.com/1_08_01s.jpg')
+file8_2 = open('https://behold-seeds.s3.amazonaws.com/1_08_02s.jpg')
+file8_3 = open('https://behold-seeds.s3.amazonaws.com/1_08_03s.jpg')
+file8_4 = open('https://behold-seeds.s3.amazonaws.com/1_08_04s.jpg')
 
-# file9_1 = open('https://behold-seeds.s3.amazonaws.com/1_09_01s.jpg')
-# file9_2 = open('https://behold-seeds.s3.amazonaws.com/1_09_02s.jpg')
-# file9_3 = open('https://behold-seeds.s3.amazonaws.com/1_09_03s.jpg')
-# file9_4 = open('https://behold-seeds.s3.amazonaws.com/1_09_04s.jpg')
+file9_1 = open('https://behold-seeds.s3.amazonaws.com/1_09_01s.jpg')
+file9_2 = open('https://behold-seeds.s3.amazonaws.com/1_09_02s.jpg')
+file9_3 = open('https://behold-seeds.s3.amazonaws.com/1_09_03s.jpg')
+file9_4 = open('https://behold-seeds.s3.amazonaws.com/1_09_04s.jpg')
 
-# file10_1 = open('https://behold-seeds.s3.amazonaws.com/1_10_01s.jpg')
-# file10_2 = open('https://behold-seeds.s3.amazonaws.com/1_10_02s.jpg')
-# file10_3 = open('https://behold-seeds.s3.amazonaws.com/1_10_03s.jpg')
+file10_1 = open('https://behold-seeds.s3.amazonaws.com/1_10_01s.jpg')
+file10_2 = open('https://behold-seeds.s3.amazonaws.com/1_10_02s.jpg')
+file10_3 = open('https://behold-seeds.s3.amazonaws.com/1_10_03s.jpg')
 
 
 # -USER 2 PROJECT IMAGES-
@@ -259,13 +261,13 @@ file12_1 = open('https://behold-seeds.s3.amazonaws.com/2_02_01s.jpg')
 file12_2 = open('https://behold-seeds.s3.amazonaws.com/2_02_02s.jpg')
 file12_3 = open('https://behold-seeds.s3.amazonaws.com/2_02_03s.jpg')
 
-# file13_1 = open('https://behold-seeds.s3.amazonaws.com/2_03_01s.jpg')
-# file13_2 = open('https://behold-seeds.s3.amazonaws.com/2_03_02s.jpg')
-# file13_3 = open('https://behold-seeds.s3.amazonaws.com/2_03_03s.jpg')
+file13_1 = open('https://behold-seeds.s3.amazonaws.com/2_03_01s.jpg')
+file13_2 = open('https://behold-seeds.s3.amazonaws.com/2_03_02s.jpg')
+file13_3 = open('https://behold-seeds.s3.amazonaws.com/2_03_03s.jpg')
 
-# file14_1 = open('https://behold-seeds.s3.amazonaws.com/2_04_01s.jpg')
-# file14_2 = open('https://behold-seeds.s3.amazonaws.com/2_04_02s.jpg')
-# file14_3 = open('https://behold-seeds.s3.amazonaws.com/2_04_03s.jpg')
+file14_1 = open('https://behold-seeds.s3.amazonaws.com/2_04_01s.jpg')
+file14_2 = open('https://behold-seeds.s3.amazonaws.com/2_04_02s.jpg')
+file14_3 = open('https://behold-seeds.s3.amazonaws.com/2_04_03s.jpg')
 
 file15_1 = open('https://behold-seeds.s3.amazonaws.com/2_05_01s.jpg')
 file15_2 = open('https://behold-seeds.s3.amazonaws.com/2_05_02s.jpg')
@@ -273,23 +275,23 @@ file15_3 = open('https://behold-seeds.s3.amazonaws.com/2_05_03s.jpg')
 file15_4 = open('https://behold-seeds.s3.amazonaws.com/2_05_04s.jpg')
 
 
-# ### -USER 3 PROJECT IMAGES-
-# file16_1 = open('https://behold-seeds.s3.amazonaws.com/3_01_01s.jpg')
-# file16_2 = open('https://behold-seeds.s3.amazonaws.com/3_01_02s.jpg')
-# file16_3 = open('https://behold-seeds.s3.amazonaws.com/3_01_03s.jpg')
-# file16_4 = open('https://behold-seeds.s3.amazonaws.com/3_01_04s.jpg')
+### -USER 3 PROJECT IMAGES-
+file16_1 = open('https://behold-seeds.s3.amazonaws.com/3_01_01s.jpg')
+file16_2 = open('https://behold-seeds.s3.amazonaws.com/3_01_02s.jpg')
+file16_3 = open('https://behold-seeds.s3.amazonaws.com/3_01_03s.jpg')
+file16_4 = open('https://behold-seeds.s3.amazonaws.com/3_01_04s.jpg')
 
 
-# ### -USER 4 PROJECT IMAGES-
-# file17_1 = open('https://behold-seeds.s3.amazonaws.com/4_01_01s.jpg')
-# file17_2 = open('https://behold-seeds.s3.amazonaws.com/4_01_02s.jpg')
-# file17_3 = open('https://behold-seeds.s3.amazonaws.com/4_01_03s.jpg')
-# file17_4 = open('https://behold-seeds.s3.amazonaws.com/4_01_04s.jpg')
+### -USER 4 PROJECT IMAGES-
+file17_1 = open('https://behold-seeds.s3.amazonaws.com/4_01_01s.jpg')
+file17_2 = open('https://behold-seeds.s3.amazonaws.com/4_01_02s.jpg')
+file17_3 = open('https://behold-seeds.s3.amazonaws.com/4_01_03s.jpg')
+file17_4 = open('https://behold-seeds.s3.amazonaws.com/4_01_04s.jpg')
 
-# file18_1 = open('https://behold-seeds.s3.amazonaws.com/4_02_01s.jpg')
-# file18_2 = open('https://behold-seeds.s3.amazonaws.com/4_02_02s.jpg')
-# file18_3 = open('https://behold-seeds.s3.amazonaws.com/4_02_03s.jpg')
-# file18_4 = open('https://behold-seeds.s3.amazonaws.com/4_02_04s.jpg')
+file18_1 = open('https://behold-seeds.s3.amazonaws.com/4_02_01s.jpg')
+file18_2 = open('https://behold-seeds.s3.amazonaws.com/4_02_02s.jpg')
+file18_3 = open('https://behold-seeds.s3.amazonaws.com/4_02_03s.jpg')
+file18_4 = open('https://behold-seeds.s3.amazonaws.com/4_02_04s.jpg')
 
 
 
@@ -330,31 +332,31 @@ proj_4.images.attach(io: file4_3, filename: '1_04_03s.jpg')
 proj_4.images.attach(io: file4_4, filename: '1_04_04s.jpg')
 proj_4.images.attach(io: file4_5, filename: '1_04_05s.jpg')
 
-# proj_5.images.attach(io: file5_1, filename: '1_05_01s.jpg')
-# proj_5.images.attach(io: file5_2, filename: '1_05_02s.jpg')
-# proj_5.images.attach(io: file5_3, filename: '1_05_03s.jpg')
+proj_5.images.attach(io: file5_1, filename: '1_05_01s.jpg')
+proj_5.images.attach(io: file5_2, filename: '1_05_02s.jpg')
+proj_5.images.attach(io: file5_3, filename: '1_05_03s.jpg')
 
-# proj_6.images.attach(io: file6_1, filename: '1_06_01s.jpg')
-# proj_6.images.attach(io: file6_2, filename: '1_06_02s.jpg')
-# proj_6.images.attach(io: file6_3, filename: '1_06_03s.jpg')
+proj_6.images.attach(io: file6_1, filename: '1_06_01s.jpg')
+proj_6.images.attach(io: file6_2, filename: '1_06_02s.jpg')
+proj_6.images.attach(io: file6_3, filename: '1_06_03s.jpg')
 
-# proj_7.images.attach(io: file7_1, filename: '1_07_01s.jpg')
-# proj_7.images.attach(io: file7_2, filename: '1_07_02s.jpg')
-# proj_7.images.attach(io: file7_3, filename: '1_07_03s.jpg')
+proj_7.images.attach(io: file7_1, filename: '1_07_01s.jpg')
+proj_7.images.attach(io: file7_2, filename: '1_07_02s.jpg')
+proj_7.images.attach(io: file7_3, filename: '1_07_03s.jpg')
 
-# proj_8.images.attach(io: file8_1, filename: '1_08_01s.jpg')
-# proj_8.images.attach(io: file8_2, filename: '1_08_02s.jpg')
-# proj_8.images.attach(io: file8_3, filename: '1_08_03s.jpg')
-# proj_8.images.attach(io: file8_4, filename: '1_08_04s.jpg')
+proj_8.images.attach(io: file8_1, filename: '1_08_01s.jpg')
+proj_8.images.attach(io: file8_2, filename: '1_08_02s.jpg')
+proj_8.images.attach(io: file8_3, filename: '1_08_03s.jpg')
+proj_8.images.attach(io: file8_4, filename: '1_08_04s.jpg')
 
-# proj_9.images.attach(io: file9_1, filename: '1_09_01s.jpg')
-# proj_9.images.attach(io: file9_2, filename: '1_09_02s.jpg')
-# proj_9.images.attach(io: file9_3, filename: '1_09_03s.jpg')
-# proj_9.images.attach(io: file9_4, filename: '1_09_04s.jpg')
+proj_9.images.attach(io: file9_1, filename: '1_09_01s.jpg')
+proj_9.images.attach(io: file9_2, filename: '1_09_02s.jpg')
+proj_9.images.attach(io: file9_3, filename: '1_09_03s.jpg')
+proj_9.images.attach(io: file9_4, filename: '1_09_04s.jpg')
 
-# proj_10.images.attach(io: file10_1, filename: '1_10_01s.jpg')
-# proj_10.images.attach(io: file10_2, filename: '1_10_02s.jpg')
-# proj_10.images.attach(io: file10_3, filename: '1_10_03s.jpg')
+proj_10.images.attach(io: file10_1, filename: '1_10_01s.jpg')
+proj_10.images.attach(io: file10_2, filename: '1_10_02s.jpg')
+proj_10.images.attach(io: file10_3, filename: '1_10_03s.jpg')
 
 proj_11.images.attach(io: file11_1, filename: '2_01_01s.jpg')
 proj_11.images.attach(io: file11_2, filename: '2_01_02s.jpg')
@@ -364,33 +366,33 @@ proj_12.images.attach(io: file12_1, filename: '2_02_01s.jpg')
 proj_12.images.attach(io: file12_2, filename: '2_02_02s.jpg')
 proj_12.images.attach(io: file12_3, filename: '2_02_03s.jpg')
 
-# proj_13.images.attach(io: file13_1, filename: '2_03_01s.jpg')
-# proj_13.images.attach(io: file13_2, filename: '2_03_02s.jpg')
-# proj_13.images.attach(io: file13_3, filename: '2_03_03s.jpg')
+proj_13.images.attach(io: file13_1, filename: '2_03_01s.jpg')
+proj_13.images.attach(io: file13_2, filename: '2_03_02s.jpg')
+proj_13.images.attach(io: file13_3, filename: '2_03_03s.jpg')
 
-# proj_14.images.attach(io: file14_1, filename: '2_04_01s.jpg')
-# proj_14.images.attach(io: file14_2, filename: '2_04_02s.jpg')
-# proj_14.images.attach(io: file14_3, filename: '2_04_03s.jpg')
+proj_14.images.attach(io: file14_1, filename: '2_04_01s.jpg')
+proj_14.images.attach(io: file14_2, filename: '2_04_02s.jpg')
+proj_14.images.attach(io: file14_3, filename: '2_04_03s.jpg')
 
 proj_15.images.attach(io: file15_1, filename: '2_05_01s.jpg')
 proj_15.images.attach(io: file15_2, filename: '2_05_02s.jpg')
 proj_15.images.attach(io: file15_3, filename: '2_05_03s.jpg')
 proj_15.images.attach(io: file15_4, filename: '2_05_04s.jpg')
 
-# proj_16.images.attach(io: file16_1, filename: '3_01_01s.jpg')
-# proj_16.images.attach(io: file16_2, filename: '3_01_02s.jpg')
-# proj_16.images.attach(io: file16_3, filename: '3_01_03s.jpg')
-# proj_16.images.attach(io: file16_4, filename: '3_01_04s.jpg')
+proj_16.images.attach(io: file16_1, filename: '3_01_01s.jpg')
+proj_16.images.attach(io: file16_2, filename: '3_01_02s.jpg')
+proj_16.images.attach(io: file16_3, filename: '3_01_03s.jpg')
+proj_16.images.attach(io: file16_4, filename: '3_01_04s.jpg')
 
-# proj_17.images.attach(io: file17_1, filename: '4_01_01s.jpg')
-# proj_17.images.attach(io: file17_2, filename: '4_01_02s.jpg')
-# proj_17.images.attach(io: file17_3, filename: '4_01_03s.jpg')
-# proj_17.images.attach(io: file17_4, filename: '4_01_04s.jpg')
+proj_17.images.attach(io: file17_1, filename: '4_01_01s.jpg')
+proj_17.images.attach(io: file17_2, filename: '4_01_02s.jpg')
+proj_17.images.attach(io: file17_3, filename: '4_01_03s.jpg')
+proj_17.images.attach(io: file17_4, filename: '4_01_04s.jpg')
 
-# proj_18.images.attach(io: file18_1, filename: '4_02_01s.jpg')
-# proj_18.images.attach(io: file18_2, filename: '4_02_02s.jpg')
-# proj_18.images.attach(io: file18_3, filename: '4_02_03s.jpg')
-# proj_18.images.attach(io: file18_4, filename: '4_02_04s.jpg')
+proj_18.images.attach(io: file18_1, filename: '4_02_01s.jpg')
+proj_18.images.attach(io: file18_2, filename: '4_02_02s.jpg')
+proj_18.images.attach(io: file18_3, filename: '4_02_03s.jpg')
+proj_18.images.attach(io: file18_4, filename: '4_02_04s.jpg')
 
 
 # --------Comments Seed Data--------
@@ -399,7 +401,7 @@ proj_15.images.attach(io: file15_4, filename: '2_05_04s.jpg')
 ## --PROJ 1 COMMENTS--
 comment_001 = Comment.create(
   body: "love it so my style",
-  author_id: user1.id,
+  author_id: user5.id,
   project_id: proj_1.id
 )
 
@@ -496,131 +498,131 @@ comment_016 = Comment.create(
   project_id: proj_4.id
 )
 
-# ## --PROJ 5 COMMENTS--
-# comment_017 = Comment.create(
-#   body: "AHHHH the pokemon are so cute~!",
-#   author_id: user2.id,
-#   project_id: proj_5.id
-# )
+## --PROJ 5 COMMENTS--
+comment_017 = Comment.create(
+  body: "AHHHH the pokemon are so cute~!",
+  author_id: user2.id,
+  project_id: proj_5.id
+)
 
-# comment_018 = Comment.create(
-#   body: "Awesome!!!!",
-#   author_id: user3.id,
-#   project_id: proj_5.id
-# )
+comment_018 = Comment.create(
+  body: "Awesome!!!!",
+  author_id: user3.id,
+  project_id: proj_5.id
+)
 
-# comment_019 = Comment.create(
-#   body: "Awesome work & Great artist",
-#   author_id: user4.id,
-#   project_id: proj_5.id
-# )
+comment_019 = Comment.create(
+  body: "Awesome work & Great artist",
+  author_id: user4.id,
+  project_id: proj_5.id
+)
 
-# comment_020 = Comment.create(
-#   body: "very nice!!! :D",
-#   author_id: user6.id,
-#   project_id: proj_5.id
-# )
+comment_020 = Comment.create(
+  body: "very nice!!! :D",
+  author_id: user6.id,
+  project_id: proj_5.id
+)
 
-# ## --PROJ 6 COMMENTS--
-# comment_021 = Comment.create(
-#   body: "Spatial design looks great!",
-#   author_id: user5.id,
-#   project_id: proj_6.id
-# )
+## --PROJ 6 COMMENTS--
+comment_021 = Comment.create(
+  body: "Spatial design looks great!",
+  author_id: user5.id,
+  project_id: proj_6.id
+)
 
-# comment_022 = Comment.create(
-#   body: "I love your hand drawings",
-#   author_id: user3.id,
-#   project_id: proj_6.id
-# )
+comment_022 = Comment.create(
+  body: "I love your hand drawings",
+  author_id: user3.id,
+  project_id: proj_6.id
+)
 
-# comment_023 = Comment.create(
-#   body: "cool work, what year was this for?",
-#   author_id: user6.id,
-#   project_id: proj_6.id
-# )
+comment_023 = Comment.create(
+  body: "cool work, what year was this for?",
+  author_id: user6.id,
+  project_id: proj_6.id
+)
 
-# comment_024 = Comment.create(
-#   body: "Thanks! this was for my first semester of freshman year :D",
-#   author_id: user1.id,
-#   project_id: proj_6.id
-# )
+comment_024 = Comment.create(
+  body: "Thanks! this was for my first semester of freshman year :D",
+  author_id: user1.id,
+  project_id: proj_6.id
+)
 
-# comment_025 = Comment.create(
-#   body: "dude sweet",
-#   author_id: user6.id,
-#   project_id: proj_6.id
-# )
+comment_025 = Comment.create(
+  body: "dude sweet",
+  author_id: user6.id,
+  project_id: proj_6.id
+)
 
-# ## --PROJ 7 COMMENTS--
-# comment_026 = Comment.create(
-#   body: "My dormitory project came out alright i guess",
-#   author_id: user1.id,
-#   project_id: proj_7.id
-# )
+## --PROJ 7 COMMENTS--
+comment_026 = Comment.create(
+  body: "My dormitory project came out alright i guess",
+  author_id: user1.id,
+  project_id: proj_7.id
+)
 
-# comment_027 = Comment.create(
-#   body: "cool project!",
-#   author_id: user2.id,
-#   project_id: proj_7.id
-# )
+comment_027 = Comment.create(
+  body: "cool project!",
+  author_id: user2.id,
+  project_id: proj_7.id
+)
 
-# comment_028 = Comment.create(
-#   body: "nice, I like the facade design",
-#   author_id: user3.id,
-#   project_id: proj_7.id
-# )
+comment_028 = Comment.create(
+  body: "nice, I like the facade design",
+  author_id: user3.id,
+  project_id: proj_7.id
+)
 
-# ## --PROJ 8 COMMENTS--
-# comment_029 = Comment.create(
-#   body: "handdrawn drafting looks intense!",
-#   author_id: user2.id,
-#   project_id: proj_8.id
-# )
+## --PROJ 8 COMMENTS--
+comment_029 = Comment.create(
+  body: "handdrawn drafting looks intense!",
+  author_id: user2.id,
+  project_id: proj_8.id
+)
 
-# comment_030 = Comment.create(
-#   body: "Yeah it's a shame they don't really teach hand drafting anymore :/",
-#   author_id: user1.id,
-#   project_id: proj_8.id
-# )
+comment_030 = Comment.create(
+  body: "Yeah it's a shame they don't really teach hand drafting anymore :/",
+  author_id: user1.id,
+  project_id: proj_8.id
+)
 
-# comment_031 = Comment.create(
-#   body: "nice job on these!",
-#   author_id: user5.id,
-#   project_id: proj_8.id
-# )
+comment_031 = Comment.create(
+  body: "nice job on these!",
+  author_id: user5.id,
+  project_id: proj_8.id
+)
 
-# ## --PROJ 9 COMMENTS--
-# comment_032 = Comment.create(
-#   body: "the boathouse project was wack lol",
-#   author_id: user3.id,
-#   project_id: proj_9.id
-# )
+## --PROJ 9 COMMENTS--
+comment_032 = Comment.create(
+  body: "the boathouse project was wack lol",
+  author_id: user3.id,
+  project_id: proj_9.id
+)
 
-# comment_033 = Comment.create(
-#   body: "Interesting design; I like the views that the design allows.",
-#   author_id: user2.id,
-#   project_id: proj_9.id
-# )
+comment_033 = Comment.create(
+  body: "Interesting design; I like the views that the design allows.",
+  author_id: user2.id,
+  project_id: proj_9.id
+)
 
-# ## --PROJ 10 COMMENTS--
-# comment_034 = Comment.create(
-#   body: "i love it!!!",
-#   author_id: user5.id,
-#   project_id: proj_10.id
-# )
+## --PROJ 10 COMMENTS--
+comment_034 = Comment.create(
+  body: "i love it!!!",
+  author_id: user5.id,
+  project_id: proj_10.id
+)
 
-# comment_035 = Comment.create(
-#   body: "Lasercutting is always cool",
-#   author_id: user4.id,
-#   project_id: proj_10.id
-# )
+comment_035 = Comment.create(
+  body: "Lasercutting is always cool",
+  author_id: user4.id,
+  project_id: proj_10.id
+)
 
-# comment_036 = Comment.create(
-#   body: "love it!!!",
-#   author_id: user2.id,
-#   project_id: proj_10.id
-# )
+comment_036 = Comment.create(
+  body: "love it!!!",
+  author_id: user2.id,
+  project_id: proj_10.id
+)
 
 ## --PROJ 11 COMMENTS--
 comment_037 = Comment.create(
@@ -666,43 +668,43 @@ comment_043 = Comment.create(
   project_id: proj_12.id
 )
 
-# ## --PROJ 13 COMMENTS--
-# comment_044 = Comment.create(
-#   body: "Ugh i remember the long nights in the woodshop making this :/",
-#   author_id: user2.id,
-#   project_id: proj_13.id
-# )
+## --PROJ 13 COMMENTS--
+comment_044 = Comment.create(
+  body: "Ugh i remember the long nights in the woodshop making this :/",
+  author_id: user2.id,
+  project_id: proj_13.id
+)
 
-# comment_045 = Comment.create(
-#   body: "I think it came out amazing!",
-#   author_id: user1.id,
-#   project_id: proj_13.id
-# )
+comment_045 = Comment.create(
+  body: "I think it came out amazing!",
+  author_id: user1.id,
+  project_id: proj_13.id
+)
 
-# ## --PROJ 14 COMMENTS--
-# comment_046 = Comment.create(
-#   body: "lovely design",
-#   author_id: user6.id,
-#   project_id: proj_14.id
-# )
+## --PROJ 14 COMMENTS--
+comment_046 = Comment.create(
+  body: "lovely design",
+  author_id: user6.id,
+  project_id: proj_14.id
+)
 
-# comment_047 = Comment.create(
-#   body: "Cool, keep up the good work!",
-#   author_id: user1.id,
-#   project_id: proj_14.id
-# )
+comment_047 = Comment.create(
+  body: "Cool, keep up the good work!",
+  author_id: user1.id,
+  project_id: proj_14.id
+)
 
-# comment_048 = Comment.create(
-#   body: "AMAZING",
-#   author_id: user3.id,
-#   project_id: proj_14.id
-# )
+comment_048 = Comment.create(
+  body: "AMAZING",
+  author_id: user3.id,
+  project_id: proj_14.id
+)
 
-# comment_049 = Comment.create(
-#   body: "Nice Work",
-#   author_id: user5.id,
-#   project_id: proj_14.id
-# )
+comment_049 = Comment.create(
+  body: "Nice Work",
+  author_id: user5.id,
+  project_id: proj_14.id
+)
 
 ## --PROJ 15 COMMENTS--
 comment_050 = Comment.create(
@@ -723,62 +725,62 @@ comment_052 = Comment.create(
   project_id: proj_15.id
 )
 
-# ## --PROJ 16 COMMENTS--
-# comment_053 = Comment.create(
-#   body: "School design looks awesome!",
-#   author_id: user1.id,
-#   project_id: proj_16.id
-# )
+## --PROJ 16 COMMENTS--
+comment_053 = Comment.create(
+  body: "School design looks awesome!",
+  author_id: user1.id,
+  project_id: proj_16.id
+)
 
-# comment_054 = Comment.create(
-#   body: "Looks great!!",
-#   author_id: user5.id,
-#   project_id: proj_16.id
-# )
+comment_054 = Comment.create(
+  body: "Looks great!!",
+  author_id: user5.id,
+  project_id: proj_16.id
+)
 
-# comment_055 = Comment.create(
-#   body: "Awesome work as usual man",
-#   author_id: user3.id,
-#   project_id: proj_16.id
-# )
+comment_055 = Comment.create(
+  body: "Awesome work as usual man",
+  author_id: user3.id,
+  project_id: proj_16.id
+)
 
-# ## --PROJ 17 COMMENTS--
-# comment_056 = Comment.create(
-#   body: "WOAH, skyscraper design!",
-#   author_id: user2.id,
-#   project_id: proj_17.id
-# )
+## --PROJ 17 COMMENTS--
+comment_056 = Comment.create(
+  body: "WOAH, skyscraper design!",
+  author_id: user2.id,
+  project_id: proj_17.id
+)
 
-# comment_057 = Comment.create(
-#   body: "that looks like an intense project to have done! :O",
-#   author_id: user1.id,
-#   project_id: proj_17.id
-# )
+comment_057 = Comment.create(
+  body: "that looks like an intense project to have done! :O",
+  author_id: user1.id,
+  project_id: proj_17.id
+)
 
-# comment_058 = Comment.create(
-#   body: "Yeah, thesis projects always suck lol",
-#   author_id: user4.id,
-#   project_id: proj_17.id
-# )
+comment_058 = Comment.create(
+  body: "Yeah, thesis projects always suck lol",
+  author_id: user4.id,
+  project_id: proj_17.id
+)
 
-# ## --PROJ 18 COMMENTS--
-# comment_059 = Comment.create(
-#   body: "Nice work on this!",
-#   author_id: user1.id,
-#   project_id: proj_18.id
-# )
+## --PROJ 18 COMMENTS--
+comment_059 = Comment.create(
+  body: "Nice work on this!",
+  author_id: user1.id,
+  project_id: proj_18.id
+)
 
-# comment_060 = Comment.create(
-#   body: "The idea is very unique, floating houses!",
-#   author_id: user2.id,
-#   project_id: proj_18.id
-# )
+comment_060 = Comment.create(
+  body: "The idea is very unique, floating houses!",
+  author_id: user2.id,
+  project_id: proj_18.id
+)
 
-# comment_061 = Comment.create(
-#   body: "niceee",
-#   author_id: user6.id,
-#   project_id: proj_18.id
-# )
+comment_061 = Comment.create(
+  body: "niceee",
+  author_id: user6.id,
+  project_id: proj_18.id
+)
 
 
 # --------Appreciations Seed Data--------

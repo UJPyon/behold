@@ -243,7 +243,6 @@
 
 .project-section-counters div:first-of-type i {
   font-size: 14px;
-  padding-bottom: 2px;
 }
 
 .project-section-counters div:nth-of-type(2) {
@@ -255,5 +254,100 @@
 }
 
 .project-section-counters div:nth-of-type(2) i {
+  font-size: 14px;
+}
+
+.project-section-appreciation {
+  height: 290px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.project-section-appreciation > h2 {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 24px 0 16px 0;
+}
+
+.project-section-like-button {
+  font-size: 24px;
+  background-color: #2257ff;
+  color: white;
+  padding: 25px;
+  border: none;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  width: 75px;
+}
+
+.project-section-like-button:hover {
+  background-color: #1a45d2;
+}
+
+.project-section-unlike-button {
+  font-size: 24px;
+  background-color: #3c3c3c;
+  color: white;
+  border: none;
+  padding: 25px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  width: 75px;
+}
+
+.project-section-unlike-button > p {
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.project-section-unlike-button:hover {
+  background-color: #303030;
+}
+
+.project-section-appr-counters {
+  display: flex;
+  align-items: center;
+  color: #a4a4a4;
+}
+
+.project-section-appr-counters p {
+  font-weight: 100;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.project-section-appr-counters div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 16px;
+  width: 30px;
+}
+
+.project-section-appr-counters div:first-of-type i {
+  font-size: 14px;
+}
+
+.project-section-appr-counters div:nth-of-type(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  padding-top: 2px;
+}
+
+.project-section-appr-counters div:nth-of-type(2) i {
   font-size: 14px;
 }

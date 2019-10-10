@@ -2,6 +2,13 @@ import { connect } from 'react-redux';
 import Project from './project';
 import { closeModal } from '../../actions/modal_actions';
 import { fetchComments, deleteComment } from '../../actions/comment_actions';
+import { 
+  createAppreciation, 
+  removeAppreciation, 
+  removeAppreciationFromUser,
+  addAppreciationToUser,
+} from "../../actions/appreciation_actions";
+
 
 const msp = (state, ownProps) => {
   // --Grab project from state by project ID--
@@ -45,7 +52,11 @@ const mdp = dispatch => {
   return {
     closeModal: () => dispatch(closeModal()),
     fetchComments: () => dispatch(fetchComments()),
-    deleteComment: (object) => dispatch(deleteComment(object)),
+    deleteComment: object => dispatch(deleteComment(object)),
+    createAppreciation: projectId => dispatch(createAppreciation(projectId)),
+    removeAppreciation: id => dispatch(removeAppreciation(id)),
+    removeAppreciationFromUser: (object) => dispatch(removeAppreciationFromUser(object)),
+    addAppreciationToUser: (object) => dispatch(addAppreciationToUser(object)),
   };
 }
 

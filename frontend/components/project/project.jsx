@@ -9,11 +9,32 @@ class Project extends React.Component {
     this.state = this.props.project;
     this.handleModalClick = this.handleModalClick.bind(this);
     this.deleteComment = this.deleteComment.bind(this);
+    this.handleLikeClick = this.handleLikeClick.bind(this);
+    this.handleUnlikeClick = this.handleUnlikeClick.bind(this);
   }
 
   handleModalClick() {
     this.props.closeModal();
   }
+
+  // TESTING BELOW NEW METHOD!!!!
+  handleLikeClick(projectId) {
+    this.props.createAppreciation(projectId).then(() => {
+      const userId = this.props.currentUser.id;
+      const currentProjectId = this.state.id;
+      this.props.addAppreciationToUser({ projectId: currentProjectId, userId: userId });
+    });
+  }
+
+  handleUnlikeClick(id) {
+    this.props.removeAppreciation(id).then(() => {
+      const userId = this.props.currentUser.id;
+      const currentProjectId = this.state.id;
+      this.props.removeAppreciationFromUser({ projectId: currentProjectId, userId: userId });
+    });
+  }
+
+  //--END TESTING CODE AREA!!!!!--
 
   deleteComment(commentId) {
     const projectId = this.state.id;
@@ -21,6 +42,22 @@ class Project extends React.Component {
   }
 
   render() {
+
+    // --Conditional button for appreciations--
+    let likeButton;
+    if (!this.props.currentUser.appreciatedProjectIds.includes(this.state.id)) {
+      likeButton = 
+      <button className="project-section-like-button" onClick={() => this.handleLikeClick(this.state.id)}>
+        <i className='fas'>&#xf164;</i>
+      </button>
+    } else {
+      likeButton = 
+      <button className="project-section-unlike-button" onClick={() => this.handleUnlikeClick(this.state.id)}>
+        <i className='fas'>&#xf164;</i>
+        <p>{this.props.project.appreciations}</p>
+      </button>
+    }
+
     // --Map out all images for this particular project--
     let images;
     if (this.props.imageUrls[0] !== undefined) {
@@ -99,6 +136,25 @@ class Project extends React.Component {
 
       {/* All images load here */}
       {images}
+
+      {/* Appreciation section */}
+      <section className="project-section-appreciation">
+        {/* Appreciate button & project title */}
+        {likeButton}
+        <h2>{this.state.title}</h2>
+
+        <div className="project-section-appr-counters">
+          {/* Appreciation & comment count */}
+          <div>
+            <i className='fas'>&#xf164;</i>
+            <p>{this.props.project.appreciations}</p>
+          </div>
+          <div>
+            <i className='fas'>&#xf27a;</i>
+            <p>{this.props.project.commentIds.length}</p>
+          </div>
+        </div>
+      </section>
 
       {/* Comment section & author info */}
       <div>

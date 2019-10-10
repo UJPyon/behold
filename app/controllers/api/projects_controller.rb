@@ -12,26 +12,23 @@ class Api::ProjectsController < ApplicationController
   end
 
   def like
-    @appreciation = Appreciation.new(appreciator_id: current_user.id, project_id: appreciation_params)
-    @appreciation.save
+    appreciation = Appreciation.new(project_id: params[:project_id], appreciator_id: current_user.id)
+    appreciation.save
+    @project = Project.find(appreciation.project_id)
     render :show
   end
-
+  
   def unlike
-    @appreciation = Appreciation.find(params[:id])
-    @appreciation.destroy
+    appreciation = Appreciation.find_by(project_id: params[:project_id], appreciator_id: current_user.id)
+    appreciation.destroy
+    @project = Project.find(appreciation.project_id)
     render :show
   end
-
 
   private
 
   def project_params
     params.require(:post).permit(:title, :description, images: [])
-  end
-
-  def appreciation_params
-    params.require(:appreciation).permit(:project_id)
   end
 
 end
