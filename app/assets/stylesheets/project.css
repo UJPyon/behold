@@ -7,6 +7,21 @@
 
 }
 
+.project-close {
+  font-size: 22px;
+  position: fixed;
+  right: 12px;
+  top: 8px;
+  color: white;
+  transition: .4s;
+}
+
+.project-close:hover {
+  color: gray;
+  transition: .4s;
+  cursor: pointer;
+}
+
 .project-header {
   display: flex;
 }
@@ -24,7 +39,7 @@
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .project-header > div > a:hover {

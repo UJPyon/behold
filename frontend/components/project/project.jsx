@@ -18,7 +18,6 @@ class Project extends React.Component {
   deleteComment(commentId) {
     const projectId = this.state.id;
     this.props.deleteComment({commentId: commentId, projectId: projectId});
-    // .then(() => this.props.fetchComments());
   }
 
   render() {
@@ -88,15 +87,17 @@ class Project extends React.Component {
     // ----------------------------
     return (
     <>
+    {/* Project header with artist avatar, artist name, and project title */}
     <header className="project-header">
-          <Link to={`/home/${this.props.artist.id}`} onClick={this.handleModalClick}>
-            <ProfileAvatar avatarUrl={this.props.artist.avatarUrl} size={{ width: "40px", height: "40px" }} />
-          </Link>
+      <Link to={`/home/${this.props.artist.id}`} onClick={this.handleModalClick}>
+        <ProfileAvatar avatarUrl={this.props.artist.avatarUrl} size={{ width: "40px", height: "40px" }} />
+      </Link>
       <div>
         <h1>{this.state.title}</h1>
         <Link to={`/home/${this.props.artist.id}`} onClick={this.handleModalClick}>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</Link>
       </div>
     </header>
+
       {/* All images load here */}
       {images}
 
