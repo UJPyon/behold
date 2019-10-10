@@ -10,7 +10,10 @@ Rails.application.routes.draw do
       end
     end
     resource :session, only: [:create, :destroy]
-    resources :projects, only: [:index, :show]
+    resources :projects, only: [:index, :show] do
+      resources :appreciations, only: [:create, :destroy, :show]
+    end
+    resources :appreciations, only: [:index]
     resources :comments, only: [:index, :create, :destroy, :show]
   end
 

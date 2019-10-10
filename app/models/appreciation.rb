@@ -10,15 +10,17 @@
 #
 
 class Appreciation < ApplicationRecord
+  # --Appreciation Validations--
   validates :project_id, uniqueness: { scope: :appreciator_id }
 
+  # --Appreciation Associations--
   belongs_to :project,
-  pimary_key: :id,
+  primary_key: :id,
   foreign_key: :project_id,
   class_name: :Project
 
   belongs_to :appreciator,
   primary_key: :id,
-  foreign_key: :apreciator_id,
+  foreign_key: :appreciator_id,
   class_name: :User
 end
