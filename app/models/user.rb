@@ -31,6 +31,15 @@ class User < ApplicationRecord
   foreign_key: :author_id,
   class_name: :Comment
 
+  has_many :appreciations_given,
+  primary_key: :id,
+  foreign_key: :appreciator_id,
+  class_name: :Appreciaton
+
+  has_many :appreciations_received,
+  through: :projects,
+  source: :appreciations
+
   has_one_attached :avatar
   has_one_attached :banner
 

@@ -156,6 +156,10 @@ class Profile extends React.Component {
           <ul className="profile-project-index">
             {/* list items of each project as Project Component */}
             {projects}
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
           </ul>
 
         </section>

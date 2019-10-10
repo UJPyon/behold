@@ -54,12 +54,7 @@
   display: grid;
   grid-gap: 20px;
   min-width: 280px;
-  // --TESTING BELOW: FIGURE OUT HOW TO GET BOTH BEHAVIORS OF THE BELOW GRID: REPEAT AUTO-FIT AND MIN 4 COLUMNS!!!--
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  // grid-template-columns: repeat(4, minmax(300px, 1fr));
-  // @media (min-width: 280px){
-  //   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  // }
 }
 
 .profile-project-index figure {
