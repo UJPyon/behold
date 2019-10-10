@@ -78,7 +78,10 @@ class Project extends React.Component {
       // TESTING CODE BELOW: CREATE CLASS IN CSS FOR LOADING COMMENTS
       comments = <p className="loading-comments"></p>;
     }
-    comments = comments.reverse();
+    // If there are no existing comments, don't call reverse or it'll error out!
+    if (comments.length) {
+      comments = comments.reverse();
+    }
 
     // ----------------------------
     // FINAL PROJECT RENDER RETURN: 
