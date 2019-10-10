@@ -35,9 +35,14 @@ class DateJoined extends React.Component {
   }
 
   render() {
-    return (
-      <h5>MEMBER SINCE:&nbsp;{this.createdDate(this.props.timestamp)}</h5>
-    );
+
+    if (!this.props.timestamp) {
+      return <h5></h5>;
+    } else {
+      return (
+        <h5>MEMBER SINCE:&nbsp;{this.createdDate(this.props.timestamp)}</h5>
+      );
+    }
   }
 }
 

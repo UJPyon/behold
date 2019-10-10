@@ -31,6 +31,13 @@ class Navbar extends React.Component {
   // }
 
   render() {
+    // let avatar;
+    // if (!this.props.currentUser) {
+    //   avatar = window.defaultAvatar;
+    // } else {
+    //   avatar = this.props.currentUser.avatarUrl;
+    // }
+
     let navbarItems;
     if (this.props.currentUser) {
     navbarItems = (
@@ -46,7 +53,7 @@ class Navbar extends React.Component {
         <div>
           <section className="header-drop-content-section">
             <button onClick={this.handleAvatarClick}>
-                  <img style={{width: "70px", height: "70px"}} src={this.props.currentUser.avatarUrl} />
+              <ProfileAvatar size={{width: "70px", height: "70px"}} avatarUrl={this.props.currentUser.avatarUrl} />
             </button>
             <div>
               <h3>{this.props.currentUser.fname}</h3>

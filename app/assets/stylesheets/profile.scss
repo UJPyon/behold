@@ -17,7 +17,7 @@
   padding-top: 60px;
   overflow: hidden;
   height: 212px;
-  background-color: lightgray;
+  background-color: #4b4b4b;
 }
 
 .profile-banner img {
@@ -139,6 +139,7 @@
 
 .profile-about section:nth-of-type(3) {
   flex-direction: column;
+  width: 100%;
 }
 
 .profile-about section:nth-of-type(4) {
@@ -162,7 +163,9 @@
 
 .profile-about h1 {
   color: black;
-  font-size: 20px;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .profile-about h3 {

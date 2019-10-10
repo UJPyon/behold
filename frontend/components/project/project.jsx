@@ -94,7 +94,7 @@ class Project extends React.Component {
           </Link>
       <div>
         <h1>{this.state.title}</h1>
-        <Link to={`/home/${this.props.artist.id}`}>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</Link>
+        <Link to={`/home/${this.props.artist.id}`} onClick={this.handleModalClick}>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</Link>
       </div>
     </header>
       {/* All images load here */}
