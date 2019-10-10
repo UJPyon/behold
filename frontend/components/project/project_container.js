@@ -20,7 +20,7 @@ const msp = (state, ownProps) => {
   const comments = commentIds.map(id => {
     // TEMPORARY SOLUTION, GO CHANGE REDUCER AND COME BACK HERE TO DELETE THIS!!!
     if (state.entities.comments[id] === undefined) {
-      console.log(id);
+      let nothing;
     } else {
       return state.entities.comments[id];
     }

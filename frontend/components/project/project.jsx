@@ -37,7 +37,6 @@ class Project extends React.Component {
     let comments;
     if (this.props.comments[0] !== undefined ) {
       comments = this.props.comments.map(comment => {
-        console.log(comment);
         const authorId = comment.authorId;
         const author = this.props.users[authorId];
 

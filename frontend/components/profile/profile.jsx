@@ -62,6 +62,8 @@ class Profile extends React.Component {
     } else {
       aboutMeInfo = this.props.artist.text;
     }
+
+    // --Conditional logic for when a user refreshes a page and data needs to be fetched again--
     let avatarUrl;
     if (!this.props.artist || !this.props.artist.avatarUrl) {
       avatarUrl = window.defaultAvatar;
@@ -84,9 +86,25 @@ class Profile extends React.Component {
       createdAt = this.props.artist.created_at;
     }
 
+    // --Conditional logic for whether the user has a banner or to use the default banner--
+    let bannerUrl;
+    if (!this.props.artist) {
+      // bannerUrl = <div style={{ backgroundColor: "#4b4b4b", width: "1920px", height: "210px"}}></div>;
+      bannerUrl = window.defaultBanner;
+    } else if (!this.props.artist.bannerUrl) {
+      bannerUrl = window.defaultBanner;
+    } else {
+      bannerUrl = this.props.artist.bannerUrl;
+    }
+
+    // ----------------------------
+    // FINAL PROFILE RENDER RETURN: 
+    // ----------------------------
     return (
     <>
+    {/* Profile banner */}
       <section className="profile-banner">
+        <img src={bannerUrl}></img>
       </section>
 
       <div className="profile-body">

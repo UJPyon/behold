@@ -17,12 +17,18 @@
   padding-top: 60px;
   overflow: hidden;
   height: 212px;
-  background-color: #4b4b4b;
+  // background-color: #4b4b4b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .profile-banner img {
-  width: auto;
-  min-height: 100%;
+  // width: auto;
+  // min-height: 100%;
+  max-height: 100%;
+  position: absolute;
 }
 
 .profile-banner div {
@@ -48,7 +54,9 @@
   display: grid;
   grid-gap: 20px;
   min-width: 280px;
-  grid-template-columns: repeat(4, minmax(300px, 1fr));
+  // --TESTING BELOW: FIGURE OUT HOW TO GET BOTH BEHAVIORS OF THE BELOW GRID: REPEAT AUTO-FIT AND MIN 4 COLUMNS!!!--
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // grid-template-columns: repeat(4, minmax(300px, 1fr));
   // @media (min-width: 280px){
   //   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   // }
