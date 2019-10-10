@@ -49,6 +49,11 @@ class Api::UsersController < ApplicationController
     render 'api/users/index'
   end
 
+  def liked
+    @appreciations = current_user.appreciated_projects
+    render 'api/users/index'
+  end
+
   private 
   
   def user_params
