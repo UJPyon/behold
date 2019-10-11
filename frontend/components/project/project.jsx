@@ -115,7 +115,7 @@ class Project extends React.Component {
     }
     // If there are no existing comments, don't call reverse or it'll error out!
     if (comments.length) {
-      comments = comments.reverse();
+      comments = comments.sort((a, b) => (a.key > b.key) ? 1 : -1).reverse();
     }
 
     // ----------------------------
