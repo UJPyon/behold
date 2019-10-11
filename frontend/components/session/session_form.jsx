@@ -66,6 +66,7 @@ class SessionForm extends React.Component {
     };
   }
 
+  // --Method for displaying errors if it exists, or an empty placeholder if it doesn't
   errorDoesExist(errorMsg, additErrorMsg = null) {
     if (this.props.errors.includes(errorMsg)) {
       return errorMsg;
@@ -73,6 +74,15 @@ class SessionForm extends React.Component {
       return additErrorMsg;
     } else {
       return null;
+    }
+  }
+
+  // --Method to display form input classes with or without errors
+  inputBorderType(errorMsg, additErrorMsg = null) {
+    if (this.props.errors.includes(errorMsg) || this.props.errors.includes(additErrorMsg)) {
+      return "error-";
+    } else {
+      return "";
     }
   }
 
@@ -86,13 +96,6 @@ class SessionForm extends React.Component {
     }
   }
 
-  inputBorderType(errorMsg, additErrorMsg = null) {
-    if (this.props.errors.includes(errorMsg) || this.props.errors.includes(additErrorMsg)) {
-      return "error-";
-    } else {
-      return "";
-    }
-  }
 
   // -------------------------------------------------------------------------------------------------------
   // ----- COME BACK TO THIS IN THE FUTURE: CREATING A LINK TO GO BACK AND SIGN IN AS DIFFERENT EMAIL ------
@@ -151,21 +154,29 @@ class SessionForm extends React.Component {
       return (
         <section>
           
+          {/* --SIGN UP FORM-- */}
           <form onSubmit={this.handleSubmit}>
+
+            {/* Sign up form header with link to switch forms */}
             <div className="session-header">
               <h1>{this.props.formType}</h1>
               <div className="session-signup-login-link"><div>Already have an account?</div>&nbsp;<Link to="/login">Log in</Link></div>
             </div>
             <div className="session-all-inputs">
+              
+              {/* Email input */}
               <section>
                 <label htmlFor="email">Email address</label>
+                {/* Conditional errors rendering through class name */}
                 <input
                   className={this.inputBorderType(this.state.error1, this.state.error7) + "session-input"}
                   id="email"
                   type="email"
                   onChange={this.update("email")}
                 />
+                {/* Conditional error display depending on input error; error 7 includes a link to switch forms */}
                 <p>{this.errorDoesExist(this.state.error1, this.state.error7)}&nbsp;{this.errorLink(this.state.error7)}</p>
+              
               </section>
               <div className="session-input-name">
                 <section>

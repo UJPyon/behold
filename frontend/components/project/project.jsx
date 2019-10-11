@@ -17,7 +17,6 @@ class Project extends React.Component {
     this.props.closeModal();
   }
 
-  // TESTING BELOW NEW METHOD!!!!
   handleLikeClick(projectId) {
     this.props.createAppreciation(projectId).then(() => {
       const userId = this.props.currentUser.id;
@@ -33,8 +32,6 @@ class Project extends React.Component {
       this.props.removeAppreciationFromUser({ projectId: currentProjectId, userId: userId });
     });
   }
-
-  //--END TESTING CODE AREA!!!!!--
 
   deleteComment(commentId) {
     const projectId = this.state.id;
@@ -77,12 +74,12 @@ class Project extends React.Component {
         const authorId = comment.authorId;
         const author = this.props.users[authorId];
 
-        // --Conditional that displays X to delete comment only if the current user is the owner--
+        // --Conditional that displays X to delete comment only if the current user is the author--
         let deleteComment;
         if (this.props.currentUser.id === authorId) {
           deleteComment = <span className="comment-delete" onClick={() => this.deleteComment(comment.id)}>&times;</span>;
         } else {
-          deleteComment = <span></span>
+          deleteComment = <span></span>;
         }
         
         return (
