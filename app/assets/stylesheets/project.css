@@ -205,6 +205,28 @@
   cursor: pointer;
 }
 
+.project-info > div {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  width: 30px;
+  justify-content: space-around;
+}
+
+.project-info h5 {
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Quicksand', sans-serif;
+  box-shadow: none;
+}
+
+.project-info i {
+  font-size: 13px;
+  box-shadow: none;
+}
+
 .project-info p {
   position: absolute;
   bottom: 17px;

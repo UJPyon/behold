@@ -50,6 +50,10 @@ class Home extends React.Component {
               <Link to={`/home/${project.artistId}`} onClick={e => e.stopPropagation()}>
                 <p>{this.props.users[project.artistId].fname}&nbsp;{this.props.users[project.artistId].lname}</p>
               </Link>
+              <div>
+                <i className='fas'>&#xf164;</i>
+                <h5>{project.appreciations}</h5>
+              </div>
             </figcaption>
           </figure>
         );
