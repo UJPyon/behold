@@ -98,6 +98,14 @@ class Profile extends React.Component {
       bannerUrl = this.props.artist.bannerUrl;
     }
 
+    // --Conditional logic for artist's appreciation count--
+    let appreciationCount;
+    if (!this.props.artist) {
+      appreciationCount = 0;
+    } else {
+      appreciationCount = this.props.artist.appreciations;
+    }
+
     // ----------------------------
     // FINAL PROFILE RENDER RETURN: 
     // ----------------------------
@@ -122,13 +130,18 @@ class Profile extends React.Component {
             <h4>App Academy Student</h4>
             
             {/* Artist's email */}
-            <p>{email}</p>
+            <h6>{email}</h6>
           </section>
 
           {/* About me text */}
           <section>
             <h3>ABOUT ME</h3>
             <p>{aboutMeInfo}</p>
+          </section>
+
+          <section className="profile-appr-counter">
+            <h2>Appreciations</h2>
+            <p>{appreciationCount}</p>
           </section>
 
           {/* Link icons to Github & LinkedIn */}

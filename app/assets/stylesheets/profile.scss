@@ -116,11 +116,12 @@
   background-color: #ffffff;
   box-shadow: 0 0 3px #bdbdbd;
   // font-family: acumin-pro,sans-serif;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
+  // font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
   font-style: normal;
   font-size: 14px;
-  color: gray;
+  color: #6c6c6c;
 }
 
 .profile-about section {
@@ -145,18 +146,18 @@
   width: 100%;
 }
 
-.profile-about section:nth-of-type(4) {
+.profile-about section:nth-of-type(5) {
   flex-direction: column;
   height: 50px;
   width: 100%;
 }
 
-.profile-about section:nth-of-type(4) a {
+.profile-about section:nth-of-type(5) a {
   height: fit-content;
   width: fit-content;
 }
 
-.profile-about section:nth-of-type(4) span {
+.profile-about section:nth-of-type(5) span {
   flex-direction: row;
   display: flex;
   height: 70px;
@@ -169,6 +170,8 @@
   font-size: 24px;
   text-align: center;
   margin-bottom: 10px;
+  font-weight: 400;
+  letter-spacing: .4px;
 }
 
 .profile-about h3 {
@@ -180,16 +183,28 @@
 
 .profile-about h4 {
   margin-top: 5px;
+  font-size: 15px;
 }
 
 .profile-about h5 {
-  font-size: 12px;
+  font-size: 11px;
+  color: black;
+}
+
+.profile-about h6 {
+  line-height: 20px;
+  font-size: 15px;
 }
 
 .profile-about p {
   line-height: 20px;
+  font-size: 13px;
+  color: black;
 }
 
+.profile-about p:nth-of-type(2) {
+  color: black;
+}
 
 .profile-icon {
   width: 28px;
@@ -207,7 +222,14 @@
   opacity: .7;
 }
 
-
+.profile-appr-counter {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  width: 100%;
+  justify-content: space-between;
+  color: black;
+}
 
 
 

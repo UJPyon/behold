@@ -31,8 +31,8 @@ class Home extends React.Component {
   render() {
 
     let projects;
-    // This may look like a strange bit of conditional logic, but the first time the page is rendered there will only be the 
-    // current user and no projects loaded, which is what makes these conditional checks necessary
+    // --This may look like a strange bit of conditional logic, but the first time the page is rendered there will only be the 
+    // current user and no projects loaded, which is what makes these conditional checks necessary--
     if (this.props.projects[0] !== undefined && Object.values(this.props.users).length >= 2) {
       projects = this.props.projects.map(project => {
         return (
@@ -41,7 +41,7 @@ class Home extends React.Component {
             className="project-mask" key={project.id} >
             <img
               onClick={() => this.handleModalClick(project.id)}
-              // Grab the first image in the project set OR switch out for line after for last image in project
+              // --Grab the first image in the project set OR switch out for line after for last image in project--
               src={project.imageUrls[0]}
             // src={project.imageUrls[project.imageUrls.length - 1]}
             />
@@ -58,6 +58,9 @@ class Home extends React.Component {
       return <figure></figure>;
     }
 
+    // -------------------------
+    // FINAL HOME RENDER RETURN: 
+    // -------------------------
     return (
       <section className="home-body">
         <section className="home-banner">
@@ -65,6 +68,11 @@ class Home extends React.Component {
           <h1>Creative Student Work</h1>
           <img src={window.homeBanner} />
         </section>
+
+        <section>
+          <h2>Projects from creatives just like you</h2>  
+        </section>
+
         <ul className="home-project-index">
           {projects}
         </ul>

@@ -55,22 +55,26 @@ body {
   cursor: pointer;
 }
 
-// --TEST HERE--
-// .home-navbar-avatar {
-//   height: 30px;
-//   width: 30px;
-// }
-
 .home-body {
   height: 100%;
   padding-top: 60px;
   padding-bottom: 42px;
 }
 
+.home-body section:nth-of-type(2) > h2 {
+  margin-top: 210px;
+  height: 100px;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  padding-left: 42px;
+  letter-spacing: .4px;
+}
 
 .home-project-index {
-  margin: 210px 0 0 0;
-  padding: 50px;
+  padding: 0 42px 42px 42px;
   background-color: #f9f9f9;
   display: grid;
   grid-gap: 20px;
@@ -135,7 +139,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: white;
-  // font-size: 60px;
   position: fixed;
   z-index: 5;
   animation: 1.2s ease 0s 1 fadein;
