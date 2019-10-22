@@ -17,6 +17,7 @@ class Home extends React.Component {
     this.props.fetchProjects();
     this.props.receiveAllUsers();
     this.props.fetchComments();
+    this.props.fetchCategories();
   }
 
   handleClick(e) {

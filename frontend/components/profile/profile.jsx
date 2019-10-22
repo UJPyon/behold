@@ -11,16 +11,19 @@ class Profile extends React.Component {
     // this.artist = this.props.artist;
     this.state = {
       projects: this.props.projects,
+      appreciatedProjects: this.props.appreciatedProjects,
       view: "userProjects",
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleModalClick = this.handleModalClick.bind(this);
+    this.handleViewSwitch = this.handleViewSwitch.bind(this);
   }
 
   componentDidMount() {
     this.props.receiveAllUsers();
     this.props.fetchProjects();
     this.props.fetchComments();
+    this.props.fetchCategories();
   }
 
   handleClick(e) {
@@ -32,18 +35,24 @@ class Profile extends React.Component {
     this.props.openModal({modal: "open project", projectId: id});
   }
 
-  handleViewSwitch() {
-    this.setState({ view: "appreciatedProjects" });
+  handleViewSwitch(viewType) {
+    debugger
+    let altViewType = (viewType === "userProjects") ? "appreciatedProjects" : "userProjects" ;
+    if (this.state.view !== viewType) {
+      this.setState({ view: altViewType });
+    }
   }
 
   render() {
-  // --------------------------------------
-  // FOR SEEING ALL PROJECTS BY THAT ARTIST
-  // --------------------------------------
-    // --Map out all artist's projects as clickable images that leads to project modal--
+  // -----------------------------------------------------------------------------
+  // FOR SEEING ALL PROJECTS BY THAT ARTIST OR PROJECTS APPRECIATED BY THAT ARTIST
+  // -----------------------------------------------------------------------------
+
+    // --Conditional mapping of either all artist's projects or all artist's appreciated projects as clickable images that leads to project modal--
     let projects;
     if (this.props.projects[0] !== undefined) {
-    projects = this.props.projects.map(project => {
+      const currentProjects = (this.state.view === "userProjects") ? this.props.projects : this.props.appreciatedProjects;
+      projects = currentProjects.map(project => {
       return (
       <figure 
       onClick={() => this.handleModalClick(project.id)}
@@ -161,7 +170,9 @@ class Profile extends React.Component {
           <section>
             <h3>LINKS</h3>
             <span>
-              <a href="https://www.linkedin.com/in/unjae-pyon-9a833972?trk=people-guest_profile-result-card_result-card_full-click"><img className="profile-icon" src={window.linkedInDark} /></a>
+              <a href="https://www.linkedin.com/in/unjae-pyon-9a833972?trk=people-guest_profile-result-card_result-card_full-click">
+                <img className="profile-icon" src={window.linkedInDark} />
+              </a>
               <a href="https://github.com/UJPyon"><img className="profile-icon" src={window.gitHubDark} /></a>
             </span>
           </section>
@@ -176,7 +187,17 @@ class Profile extends React.Component {
             {/* *--Future user category bar will go here--* */}
           </div>
           <div>
-            {/* *--Future category NavBar will go here--* */}
+            {/* *--Links to switch between user projects and user appreciated projects--* */}
+            <h4 
+            className="profile-projects-link p-active" 
+            onClick={() => this.handleViewSwitch("userProjects")}>
+              Work
+            </h4>
+            <h4 
+            className="profile-projects-link" 
+            onClick={() => this.handleViewSwitch("appreciatedProjects")}>
+              Appreciations
+            </h4>
           </div>
 
           {/* Profile-Project-Index */}       
