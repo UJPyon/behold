@@ -185,6 +185,20 @@ proj_18 = Project.create(
 )
 
 
+# ------Categories Seed Data------
+# vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+## --All Categories--
+cat_1 = Category.create(name: "Illustration")
+cat_2 = Category.create(name: "Architecture")
+cat_3 = Category.create(name: "Industrial Design")
+
+## --Add Projects to Categories--
+cat_1.projects += [proj_1, proj_2, proj_3, proj_4, proj_5, proj_11]
+cat_2.projects += [proj_6, proj_7, proj_8, proj_9, proj_16, proj_17, proj_18]
+cat_3.projects += [proj_10, proj_12, proj_13, proj_14, proj_15]
+
+
 # ------Image File URL Seed Data------
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
@@ -193,7 +207,7 @@ user1_avatar = open('https://behold-seeds.s3.amazonaws.com/user1_avatar.png')
 user2_avatar = open('https://behold-seeds.s3.amazonaws.com/user2_avatar.png')
 default_avatar = open('https://behold-seeds.s3.amazonaws.com/default_avatar.png')
 
-# --User Banners--
+## --User Banners--
 user1_banner = open('https://behold-seeds.s3.amazonaws.com/user1_banner.jpg')
 user2_banner = open('https://behold-seeds.s3.amazonaws.com/user2_banner.jpg')
 
@@ -252,7 +266,7 @@ file10_2 = open('https://behold-seeds.s3.amazonaws.com/1_10_02s.jpg')
 file10_3 = open('https://behold-seeds.s3.amazonaws.com/1_10_03s.jpg')
 
 
-# -USER 2 PROJECT IMAGES-
+### -USER 2 PROJECT IMAGES-
 file11_1 = open('https://behold-seeds.s3.amazonaws.com/2_01_01s.jpg')
 file11_2 = open('https://behold-seeds.s3.amazonaws.com/2_01_02s.jpg')
 file11_3 = open('https://behold-seeds.s3.amazonaws.com/2_01_03s.jpg')
