@@ -36,10 +36,8 @@ class Profile extends React.Component {
   }
 
   handleViewSwitch(viewType) {
-    debugger
-    let altViewType = (viewType === "userProjects") ? "appreciatedProjects" : "userProjects" ;
     if (this.state.view !== viewType) {
-      this.setState({ view: altViewType });
+      this.setState({ view: viewType });
     }
   }
 
@@ -128,6 +126,29 @@ class Profile extends React.Component {
       appreciationCount = this.props.artist.appreciations;
     }
 
+    // --Add click event listener that will add an active css class to whichever link is current selected--
+    let linkClass1;
+    let linkClass2;
+    const baseClass = "profile-projects-link"
+    if (this.state.view === "userProjects") {
+      linkClass1 = baseClass + " p-active";
+      linkClass2 = baseClass;
+    } else {
+      linkClass1 = baseClass;
+      linkClass2 = baseClass + " p-active";
+    }
+
+    // document.getElementsByClassName("profile-projects-link");
+    // for (let i = 0; i < linkClass.length; i++) {
+    //   linkClass[i].addEventListener("click", () => {
+    //     const current = document.getElementsByClassName("p-active");
+    //     if (current.length > 0) {
+    //       current[0].className = current[0].className.replace(" p-active", "");
+    //     }
+    //     this.className = this.className + " p-active";
+    //   });
+    // }
+
     // ----------------------------
     // FINAL PROFILE RENDER RETURN: 
     // ----------------------------
@@ -189,12 +210,12 @@ class Profile extends React.Component {
           <div>
             {/* *--Links to switch between user projects and user appreciated projects--* */}
             <h4 
-            className="profile-projects-link p-active" 
+            className={linkClass1}
             onClick={() => this.handleViewSwitch("userProjects")}>
               Work
             </h4>
             <h4 
-            className="profile-projects-link" 
+            className={linkClass2}
             onClick={() => this.handleViewSwitch("appreciatedProjects")}>
               Appreciations
             </h4>

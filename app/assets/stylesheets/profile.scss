@@ -49,7 +49,7 @@
 }
 
 .profile-project-index {
-  margin: 100px 50px 50px 0;
+  margin: 20px 50px 50px 0;
   background-color: #f9f9f9;
   display: grid;
   grid-gap: 20px;
@@ -229,11 +229,33 @@
   color: black;
 }
 
+.profile-projects div:nth-of-type(2) {
+  display: flex;
+  height: 60px;
+  align-items: flex-end;
+}
 
+.profile-projects-link {
+  margin-right: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  transition: .4s;
+  color: #696969;
+}
 
+.profile-projects-link:hover {
+  cursor: pointer;
+  margin-right: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  transition: .4s;
+  color: black;
+}
 
-
-
+.p-active {
+  text-decoration: underline;
+  color: black;
+}
 
 
 
