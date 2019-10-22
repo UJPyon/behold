@@ -17,6 +17,7 @@ class Profile extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleModalClick = this.handleModalClick.bind(this);
     this.handleViewSwitch = this.handleViewSwitch.bind(this);
+    this.handleArtistClick = this.handleArtistClick.bind(this);
   }
 
   componentDidMount() {
@@ -41,10 +42,32 @@ class Profile extends React.Component {
     }
   }
 
+  handleArtistClick(e) {
+    e.stopPropagation();
+    this.setState({ view: "userProjects" })
+  }
+
   render() {
   // -----------------------------------------------------------------------------
   // FOR SEEING ALL PROJECTS BY THAT ARTIST OR PROJECTS APPRECIATED BY THAT ARTIST
   // -----------------------------------------------------------------------------
+
+    // --Conditional category banners--
+    let categoryBanners = <strong></strong>;
+    let categories = [];
+    if (this.state.projects[0] !== undefined) {
+      this.state.projects.forEach(project => {
+        categories = categories.concat(project.categoryIds);
+        
+      })
+      const unique = (value, index, self) => self.indexOf(value) === index;
+      categories = categories.filter(unique);
+      categoryBanners = categories.map(categoryId => {
+        const category1 = <strong className="category1">Il</strong>;
+        const category2 = <strong className="category2">Ar</strong>;
+        const category3 = <strong className="category3">Id</strong>;
+        return <strong className={`category${categoryId}`}></strong>;
+    })
 
     // --Conditional mapping of either all artist's projects or all artist's appreciated projects as clickable images that leads to project modal--
     let projects;
@@ -60,8 +83,9 @@ class Profile extends React.Component {
           src={project.imageUrls[0]}
         />
         <figcaption className="project-info">
+          {}
           <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
-          <Link to={`/home/${project.artistId}`} onClick={e => e.stopPropagation()}>
+          <Link to={`/home/${project.artistId}`} onClick={e => this.handleArtistClick(e)}>
               <p>{this.props.users[project.artistId].fname}&nbsp;{this.props.users[project.artistId].lname}</p>
           </Link> 
           <div>
