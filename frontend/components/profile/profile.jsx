@@ -62,7 +62,7 @@ class Profile extends React.Component {
         <figcaption className="project-info">
           <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
           <Link to={`/home/${project.artistId}`} onClick={e => e.stopPropagation()}>
-            <p>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</p>
+              <p>{this.props.users[project.artistId].fname}&nbsp;{this.props.users[project.artistId].lname}</p>
           </Link> 
           <div>
             <i className='fas'>&#xf164;</i>

@@ -12,16 +12,19 @@ const msp = (state, ownProps) => {
   let projects;
   let appreciatedProjectIds;
   let appreciatedProjects;
+  let users;
   if (Object.keys(state.entities.users).includes(userId)) {
     projectIds = state.entities.users[userId].projectIds;
     projects = projectIds.map(id => state.entities.projects[id]);
     appreciatedProjectIds = state.entities.users[userId].appreciatedProjectIds;
     appreciatedProjects = appreciatedProjectIds.map(id => state.entities.projects[id]);
+    users = state.entities.users;
   } else {
     projectIds = null;
     projects = [];
     appreciatedProjectIds = null;
     appreciatedProjects = [];
+    users = null;
   }
   const artist = state.entities.users[userId];
   return {
@@ -29,6 +32,7 @@ const msp = (state, ownProps) => {
     appreciatedProjects,
     artist,
     userId,
+    users,
   };
 }
 
