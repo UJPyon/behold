@@ -31,6 +31,8 @@ class Project < ApplicationRecord
   foreign_key: :project_id,
   class_name: :Appreciation
 
+  has_and_belongs_to_many :categories
+
   has_many_attached :images
 
 end

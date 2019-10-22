@@ -11,4 +11,7 @@
 class Category < ApplicationRecord
   # --Category Validations--
   validates :name, presence: true
+
+  # --Category Associations--
+  has_and_belongs_to_many :projects
 end

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :projects, only: [:index, :show]
     resources :comments, only: [:index, :create, :destroy, :show]
+    resources :categories, only: [:index, :show]
   end
 
   post 'api/projects/:id/appreciations', to: 'api/projects#like'
