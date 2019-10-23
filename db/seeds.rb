@@ -189,9 +189,9 @@ proj_18 = Project.create(
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
 ## --All Categories--
-cat_1 = Category.create(name: "Illustration")
-cat_2 = Category.create(name: "Architecture")
-cat_3 = Category.create(name: "Industrial Design")
+cat_1 = Category.create(name: "Illustration", description: "View illustration work in its many forms, including everything from sketches to digital art and more")
+cat_2 = Category.create(name: "Architecture", description: "From school projects to simple drafting exercises, browse the latest in student-submitted architectural designs")
+cat_3 = Category.create(name: "Industrial Design", description: "Browse briliant student creations, products, and ideas for the field of industrial design")
 
 ## --Add Projects to Categories--
 cat_1.projects += [proj_1, proj_2, proj_3, proj_4, proj_5, proj_11]
