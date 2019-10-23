@@ -67,7 +67,8 @@ class Profile extends React.Component {
         const category2 = <strong className="category2">Ar</strong>;
         const category3 = <strong className="category3">Id</strong>;
         return <strong className={`category${categoryId}`}></strong>;
-    })
+      });
+    }
 
     // --Conditional mapping of either all artist's projects or all artist's appreciated projects as clickable images that leads to project modal--
     let projects;
@@ -83,7 +84,8 @@ class Profile extends React.Component {
           src={project.imageUrls[0]}
         />
         <figcaption className="project-info">
-          {}
+          {/* TESTING CODE BELOW FOR CATEGORIES */}
+          {/* <strong className={`category${}`}></strong> */}
           <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
           <Link to={`/home/${project.artistId}`} onClick={e => this.handleArtistClick(e)}>
               <p>{this.props.users[project.artistId].fname}&nbsp;{this.props.users[project.artistId].lname}</p>

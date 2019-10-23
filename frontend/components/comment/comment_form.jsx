@@ -27,6 +27,7 @@ class CommentForm extends React.Component {
       this.props.fetchProject(this.props.projectId);
       if (this.state.body) {
         this.setState({ body: "" });
+        this.props.clearErrors();
       }
     });
   }
