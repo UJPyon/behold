@@ -18,6 +18,7 @@ class Profile extends React.Component {
     this.handleModalClick = this.handleModalClick.bind(this);
     this.handleViewSwitch = this.handleViewSwitch.bind(this);
     this.handleArtistClick = this.handleArtistClick.bind(this);
+    this.handleCategoryClick = this.handleCategoryClick.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +31,10 @@ class Profile extends React.Component {
   handleClick(e) {
     e.preventDefault();
     this.props.history.push("/home");
+  }
+
+  handleCategoryClick(categoryId) {
+    this.props.history.push(`/home/category/${categoryId}`);
   }
 
   handleModalClick(id) {
@@ -52,24 +57,6 @@ class Profile extends React.Component {
   // FOR SEEING ALL PROJECTS BY THAT ARTIST OR PROJECTS APPRECIATED BY THAT ARTIST
   // -----------------------------------------------------------------------------
 
-    // --Conditional category banners--
-    let categoryBanners = <strong></strong>;
-    let categories = [];
-    if (this.state.projects[0] !== undefined) {
-      this.state.projects.forEach(project => {
-        categories = categories.concat(project.categoryIds);
-        
-      })
-      const unique = (value, index, self) => self.indexOf(value) === index;
-      categories = categories.filter(unique);
-      categoryBanners = categories.map(categoryId => {
-        const category1 = <strong className="category1">Il</strong>;
-        const category2 = <strong className="category2">Ar</strong>;
-        const category3 = <strong className="category3">Id</strong>;
-        return <strong className={`category${categoryId}`}></strong>;
-      });
-    }
-
     // --Conditional mapping of either all artist's projects or all artist's appreciated projects as clickable images that leads to project modal--
     let projects;
     if (this.props.projects[0] !== undefined) {
@@ -85,7 +72,9 @@ class Profile extends React.Component {
         />
         <figcaption className="project-info">
           {/* TESTING CODE BELOW FOR CATEGORIES */}
-          {/* <strong className={`category${}`}></strong> */}
+          <strong className={`category${project.categoryIds[0]}`} onClick={() => this.handleCategoryClick(project.categoryIds[0])}>
+            {this.props.categories[project.categoryIds[0]].tag}
+          </strong>
           <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
           <Link to={`/home/${project.artistId}`} onClick={e => this.handleArtistClick(e)}>
               <p>{this.props.users[project.artistId].fname}&nbsp;{this.props.users[project.artistId].lname}</p>

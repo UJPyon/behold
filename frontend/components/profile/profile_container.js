@@ -13,18 +13,21 @@ const msp = (state, ownProps) => {
   let appreciatedProjectIds = [];
   let appreciatedProjects = [];
   let users = null;
+  let categories = null;
   if (Object.keys(state.entities.users).includes(userId)) {
     projectIds = state.entities.users[userId].projectIds;
     projects = projectIds.map(id => state.entities.projects[id]);
     appreciatedProjectIds = state.entities.users[userId].appreciatedProjectIds;
     appreciatedProjects = appreciatedProjectIds.map(id => state.entities.projects[id]);
     users = state.entities.users;
+    categories = state.entities.categories;
   } 
   const artist = state.entities.users[userId];
   return {
     projects,
     appreciatedProjects,
     artist,
+    categories,
     userId,
     users,
   };
