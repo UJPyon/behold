@@ -8,24 +8,18 @@ import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
-  let projectIds;
-  let projects;
-  let appreciatedProjectIds;
-  let appreciatedProjects;
-  let users;
+  let projectIds = null;
+  let projects = [];
+  let appreciatedProjectIds = [];
+  let appreciatedProjects = [];
+  let users = null;
   if (Object.keys(state.entities.users).includes(userId)) {
     projectIds = state.entities.users[userId].projectIds;
     projects = projectIds.map(id => state.entities.projects[id]);
     appreciatedProjectIds = state.entities.users[userId].appreciatedProjectIds;
     appreciatedProjects = appreciatedProjectIds.map(id => state.entities.projects[id]);
     users = state.entities.users;
-  } else {
-    projectIds = null;
-    projects = [];
-    appreciatedProjectIds = null;
-    appreciatedProjects = [];
-    users = null;
-  }
+  } 
   const artist = state.entities.users[userId];
   return {
     projects,

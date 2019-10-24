@@ -1,7 +1,7 @@
 import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import Footer from '../footer/footer';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Category extends React.Component {
   constructor(props) {
@@ -19,8 +19,8 @@ class Category extends React.Component {
     let projects;
     // --This may look like a strange bit of conditional logic, but the first time the page is rendered there will only be the 
     // current user and no projects loaded, which is what makes these conditional checks necessary--
-    if (this.props.projects[0] !== undefined && Object.values(this.props.users).length >= 2) {
-      projects = this.props.projects.map(project => {
+    if (this.props.categoryProjects[0] !== undefined && Object.values(this.props.users).length >= 2) {
+      projects = this.props.categoryProjects.map(project => {
         return (
           <figure
             onClick={() => this.handleModalClick(project.id)}
@@ -54,7 +54,8 @@ class Category extends React.Component {
     return (
       <section className="home-body">
         <section>
-          <h2>{}</h2>
+          <h2>{this.props.categories[this.props.categoryId].name}</h2>
+          <h3>{this.props.categories[this.props.categoryId].description}</h3>
         </section>
 
         <ul className="home-project-index">
@@ -65,4 +66,4 @@ class Category extends React.Component {
   }
 }
 
-export default Category;
+export default withRouter(Category);

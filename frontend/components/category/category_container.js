@@ -6,12 +6,18 @@ import { fetchCategories, fetchCategory } from "../../actions/category_actions";
 import { openModal } from "../../actions/modal_actions";
 import Category from './category';
 
-const msp = state => {
-  const projects = Object.values(state.entities.projects);
-  const users = state.entities.users;
+const msp = (state, ownProps) => {
+  const categoryId = ownProps.match.params.categoryId;
+  let projects = Object.values(state.entities.projects);
+  let users = state.entities.users;
+  let categories = state.entities.categories;
+  let categoryProjects = categories[categoryId] 
   return {
+    categoryProjects,
     projects,
     users,
+    categories,
+    categoryId,
   };
 }
 

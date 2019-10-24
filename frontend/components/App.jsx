@@ -5,7 +5,7 @@ import LoginFormContainer from './session/login_form_container';
 import SplashPageContainer from './splash/splash_form_container';
 import HomeContainer from './home/home_container';
 import ProfileContainer from './profile/profile_container';
-import ProjectContainer from './project/project_container';
+import CategoryContainer from './category/category_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 import Footer from './footer/footer';
 import Navbar from './navbar/navbar_container';
@@ -30,6 +30,7 @@ const App = () => {
     <ProtectedRoute path='/home' component={Navbar} /> 
     <ProtectedRoute exact path='/home' component={HomeContainer} />
     <ProtectedRoute exact path='/home/:userId' component={ProfileContainer} />
+    <ProtectedRoute exact path='/home/category/:categoryId' component={CategoryContainer} />
     <ProtectedRoute path='/home' component={Footer} /> 
   </div>
   </>
