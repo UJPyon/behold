@@ -40,6 +40,9 @@ class Home extends React.Component {
           <figure
             onClick={() => this.handleModalClick(project.id)}
             className="project-mask" key={project.id} >
+            <strong>
+              
+            </strong>
             <img
               onClick={() => this.handleModalClick(project.id)}
               // --Grab the first image in the project set OR switch out for line after for last image in project--
