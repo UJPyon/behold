@@ -1,0 +1,36 @@
+.hide {
+  display: none;
+}
+
+.category7 {
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  right: 30px;
+  background-color: blue;
+  font-family: 'Heebo', sans-serif;
+  opacity: 0;
+  transition: .4s;
+}
+
+.category8 {
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  right: 30px;
+  background-color: green;
+  font-family: 'Heebo', sans-serif;
+  opacity: 0;
+  transition: .4s;
+}
+
+.category9 {
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  right: 30px;
+  background-color: red;
+  font-family: 'Heebo', sans-serif;
+  opacity: 0;
+  transition: .4s;
+}

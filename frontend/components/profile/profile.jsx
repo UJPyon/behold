@@ -33,8 +33,9 @@ class Profile extends React.Component {
     this.props.history.push("/home");
   }
 
-  handleCategoryClick(categoryId) {
-    this.props.history.push(`/home/category/${categoryId}`);
+  handleCategoryClick({e, id}) {
+    e.stopPropagation();
+    this.props.history.push(`/home/category/${id}`);
   }
 
   handleModalClick(id) {
@@ -62,6 +63,16 @@ class Profile extends React.Component {
     if (this.props.projects[0] !== undefined) {
       const currentProjects = (this.state.view === "userProjects") ? this.props.projects : this.props.appreciatedProjects;
       projects = currentProjects.map(project => {
+        // --Conditional rendering of project's category banner--
+      let category = <strong className="hide"></strong>;
+      if (project.categoryIds.length) {
+        category = <strong 
+          className={`category${project.categoryIds[0]}`} 
+          onClick={(event) => this.handleCategoryClick({e: event, id: project.categoryIds[0]})}>
+          {this.props.categories[project.categoryIds[0]].tag}
+        </strong>
+      }
+      // --Final return render for each project--
       return (
       <figure 
       onClick={() => this.handleModalClick(project.id)}
@@ -70,11 +81,9 @@ class Profile extends React.Component {
           onClick={() => this.handleModalClick(project.id)}
           src={project.imageUrls[0]}
         />
+        {/* TESTING CODE BELOW FOR CATEGORIES */}
+        {category}
         <figcaption className="project-info">
-          {/* TESTING CODE BELOW FOR CATEGORIES */}
-          <strong className={`category${project.categoryIds[0]}`} onClick={() => this.handleCategoryClick(project.categoryIds[0])}>
-            {this.props.categories[project.categoryIds[0]].tag}
-          </strong>
           <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
           <Link to={`/home/${project.artistId}`} onClick={e => this.handleArtistClick(e)}>
               <p>{this.props.users[project.artistId].fname}&nbsp;{this.props.users[project.artistId].lname}</p>

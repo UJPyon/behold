@@ -176,6 +176,12 @@
   overflow: hidden;
 }
 
+.project-mask:hover .project-info {
+  opacity: 1;
+  transition: .4s;
+  cursor: pointer;
+}
+
 .project-info {
   color: white;
   position: absolute;
@@ -188,7 +194,6 @@
   height: 40%;
   width: 100%;
   border-radius: 3px;
-
 }
 
 .project-info h4 {
@@ -237,12 +242,6 @@
 
 .project-info p:hover {
   text-decoration: underline;
-}
-
-.project-mask:hover .project-info {
-  opacity: 1;
-  transition: .4s;
-  cursor: pointer;
 }
 
 .project-section-counters {
