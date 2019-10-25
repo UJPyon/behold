@@ -11,7 +11,11 @@ const msp = (state, ownProps) => {
   let projects = Object.values(state.entities.projects);
   let users = state.entities.users;
   let categories = state.entities.categories;
-  let categoryProjects = categories[categoryId] || [];
+  let categoryProjectIds = categories[categoryId].projectIds || [];
+  let categoryProjects = [];
+  if (categoryProjectIds.length) {
+    categoryProjects = categoryProjectIds.map(id => state.entities.projects[id]);
+  }
   debugger
   return {
     categoryProjects,

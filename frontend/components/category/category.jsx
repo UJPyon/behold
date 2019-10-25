@@ -27,6 +27,7 @@ class Category extends React.Component {
     // current user and no projects loaded, which is what makes these conditional checks necessary--
     if (this.props.categoryProjects[0] !== undefined && Object.values(this.props.users).length >= 2) {
       projects = this.props.categoryProjects.map(project => {
+        debugger
         return (
           <figure
             onClick={() => this.handleModalClick(project.id)}
