@@ -1,3 +1,39 @@
+@-webkit-keyframes slidefromside {
+  0% {
+    opacity: 0;
+    transform: translateX(8%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes slidefromside {
+  0% {
+    opacity: 0;
+    transform: translateX(8%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@-o-keyframes slidefromside {
+  0% {
+    opacity: 0;
+    transform: translateX(8%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @keyframes slidefromside {
   0% {
     opacity: 0;

@@ -182,6 +182,27 @@
   cursor: pointer;
 }
 
+.project-mask:hover .category7 {
+  opacity: 1;  
+  transition: .4s;
+  padding-top: 6px;
+  cursor: pointer;
+}
+
+.project-mask:hover .category8 {
+  opacity: 1;
+  transition: .4s;
+  padding-top: 6px;
+  cursor: pointer;
+}
+
+.project-mask:hover .category9 {
+  opacity: 1;
+  transition: .4s;
+  padding-top: 6px;
+  cursor: pointer;
+}
+
 .project-info {
   color: white;
   position: absolute;
