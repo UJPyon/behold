@@ -60,25 +60,29 @@ class Profile extends React.Component {
 
     // --Conditional mapping of either all artist's projects or all artist's appreciated projects as clickable images that leads to project modal--
     let projects;
+    let categoryCount = {};
     if (this.props.projects[0] !== undefined) {
       const currentProjects = (this.state.view === "userProjects") ? this.props.projects : this.props.appreciatedProjects;
       projects = currentProjects.map(project => {
+        const id = project.categoryIds[0];
+        // --Keep count of all project categories by this artist--
+        categoryCount[id] === undefined && id !== undefined ? categoryCount[id] = 1 : categoryCount[id] += 1;
         // --Conditional rendering of project's category banner--
-      let category = <strong className="hide"></strong>;
-      if (project.categoryIds.length) {
-        category = <strong 
-          className={`category${project.categoryIds[0]}`} 
-          onClick={(event) => this.handleCategoryClick({e: event, id: project.categoryIds[0]})}>
-          {this.props.categories[project.categoryIds[0]].tag}
-          <span className={`category${project.categoryIds[0]}-triangle-left`}></span>
-          <span className={`category${project.categoryIds[0]}-triangle-right`}></span>
+        let category = <strong className="hide"></strong>;
+        if (project.categoryIds.length) {
+          category = <strong 
+          className={`category${id}`} 
+          onClick={(event) => this.handleCategoryClick({e: event, id: id})}>
+          {this.props.categories[id].tag}
+          <span className={`category${id}-triangle-left`}></span>
+          <span className={`category${id}-triangle-right`}></span>
         </strong>
       }
       // --Final return render for each project--
       return (
       <figure 
       onClick={() => this.handleModalClick(project.id)}
-      className="project-mask" key={project.id} >
+      className="project-mask" key={project.id}>
         <img
           onClick={() => this.handleModalClick(project.id)}
           src={project.imageUrls[0]}
@@ -88,7 +92,7 @@ class Profile extends React.Component {
         <figcaption className="project-info">
           <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
           <Link to={`/home/${project.artistId}`} onClick={e => this.handleArtistClick(e)}>
-              <p>{this.props.users[project.artistId].fname}&nbsp;{this.props.users[project.artistId].lname}</p>
+            <p>{this.props.users[project.artistId].fname}&nbsp;{this.props.users[project.artistId].lname}</p>
           </Link> 
           <div>
             <i className='fas'>&#xf164;</i>
@@ -100,6 +104,28 @@ class Profile extends React.Component {
     });
     } else {
       projects = <figure></figure>;
+    }
+
+    // --Mapping out category counts and banners--
+    let banners = <strong className="hide"></strong>;
+    let catKeys = Object.keys(categoryCount);
+    debugger
+    if (catKeys.length) {
+      banners = catKeys.map(id => {
+        if (id !== "undefined") {
+        return <> 
+          <strong
+            id={id}
+            className={`profile-category${id}`}
+            onClick={(event) => this.handleCategoryClick({ e: event, id: id })}>
+            {this.props.categories[id].tag}
+            <span className={`category${id}-triangle-left`}></span>
+            <span className={`category${id}-triangle-right`}></span>
+          </strong>
+          <p id={id} className="category-count">{categoryCount[id]}</p>
+        </>
+        }
+      });
     }
 
     // --Conditional logic for default ABOUT ME text if it is a new user:--
@@ -230,8 +256,9 @@ class Profile extends React.Component {
         </section>
         
         <section className="profile-projects">
-          <div>
+          <div className="profile-projects-categories">
             {/* *--Future user category bar will go here--* */}
+            {banners}
           </div>
           <div>
             {/* *--Links to switch between user projects and user appreciated projects--* */}
