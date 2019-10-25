@@ -64,13 +64,13 @@ class Profile extends React.Component {
       const currentProjects = (this.state.view === "userProjects") ? this.props.projects : this.props.appreciatedProjects;
       projects = currentProjects.map(project => {
         // --Conditional rendering of project's category banner--
-      let category = <strong className="hide"></strong>;
+      let category = <h2 className="hide"></h2>;
       if (project.categoryIds.length) {
-        category = <strong 
+        category = <h2 
           className={`category${project.categoryIds[0]}`} 
           onClick={(event) => this.handleCategoryClick({e: event, id: project.categoryIds[0]})}>
           {this.props.categories[project.categoryIds[0]].tag}
-        </strong>
+        </h2>
       }
       // --Final return render for each project--
       return (

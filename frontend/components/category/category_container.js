@@ -11,7 +11,8 @@ const msp = (state, ownProps) => {
   let projects = Object.values(state.entities.projects);
   let users = state.entities.users;
   let categories = state.entities.categories;
-  let categoryProjects = categories[categoryId] 
+  let categoryProjects = categories[categoryId] || [];
+  debugger
   return {
     categoryProjects,
     projects,

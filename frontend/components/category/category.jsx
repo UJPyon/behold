@@ -9,6 +9,12 @@ class Category extends React.Component {
     this.handleModalClick = this.handleModalClick.bind(this);
   }
 
+  componentDidMount() {
+    this.props.receiveAllUsers();
+    this.props.fetchProjects();
+    this.props.fetchComments();
+    this.props.fetchCategories();
+  }
 
   handleModalClick(id) {
     this.props.openModal({ modal: "open project", projectId: id });
@@ -24,9 +30,8 @@ class Category extends React.Component {
         return (
           <figure
             onClick={() => this.handleModalClick(project.id)}
-            className="project-mask" key={project.id} >
-            <img
-              onClick={() => this.handleModalClick(project.id)}
+            className="project-mask" key={project.id}>
+            <img onClick={() => this.handleModalClick(project.id)}
               // --Grab the first image in the project set OR switch out for line after for last image in project--
               src={project.imageUrls[0]}
             // src={project.imageUrls[project.imageUrls.length - 1]}
@@ -45,7 +50,15 @@ class Category extends React.Component {
         );
       });
     } else {
-      return <figure></figure>;
+      projects = <figure></figure>;
+    }
+
+    // --Conditional logic to display project name & description upon refreshing page--
+    let projectName = "";
+    let projectDescription = "";
+    if (this.props.categories[this.props.categoryId] !== undefined) {
+      projectName = this.props.categories[this.props.categoryId].name;
+      projectDescription = this.props.categories[this.props.categoryId].description;
     }
 
     // -----------------------------
@@ -54,8 +67,8 @@ class Category extends React.Component {
     return (
       <section className="home-body">
         <section>
-          <h2>{this.props.categories[this.props.categoryId].name}</h2>
-          <h3>{this.props.categories[this.props.categoryId].description}</h3>
+          <h2>{projectName}</h2>
+          <h3>{projectDescription}</h3>
         </section>
 
         <ul className="home-project-index">
