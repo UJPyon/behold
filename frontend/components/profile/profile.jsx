@@ -78,7 +78,7 @@ class Profile extends React.Component {
         let category = <strong className="hide"></strong>;
         if (project.categoryIds.length) {
           category = <strong 
-          id={project.id}
+          key={project.id}
           className={`category${id}`} 
           onClick={(event) => this.handleCategoryClick({e: event, id: id})}>
           {this.props.categories[id].tag}

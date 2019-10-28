@@ -6,9 +6,10 @@ import { Link, withRouter } from 'react-router-dom';
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.state = this.props.projects;
     this.handleClick = this.handleClick.bind(this);
-    this.state = this.props.projects || {};
     this.handleModalClick = this.handleModalClick.bind(this);
+    this.handleCategoryClick = this.handleCategoryClick.bind(this);
   }
 
   componentDidMount() {
@@ -29,13 +30,34 @@ class Home extends React.Component {
     this.props.openModal({ modal: "open project", projectId: id });
   }
 
+  handleCategoryClick({ e, id }) {
+    e.stopPropagation();
+    this.props.history.push(`/home/category/${id}`);
+  }
+
   render() {
 
     let projects;
+    let categories = this.props.categories;
     // --This may look like a strange bit of conditional logic, but the first time the page is rendered there will only be the 
     // current user and no projects loaded, which is what makes these conditional checks necessary--
     if (this.props.projects[0] !== undefined && Object.values(this.props.users).length >= 2) {
       projects = this.props.projects.map(project => {
+        // --Conditional rendering of project's category banner--
+        const id = project.categoryIds[0];
+        let category = <strong className="hide"></strong>;
+        if (project.categoryIds.length) {
+          debugger
+          category = <strong
+            key={project.id}
+            className={`category${id}`}
+            onClick={(event) => this.handleCategoryClick({ e: event, id: id })}>
+            {categories[id].tag}
+            <span className={`category${id}-triangle-left`}></span>
+            <span className={`category${id}-triangle-right`}></span>
+          </strong>;
+        }
+
         return (
           <figure
             onClick={() => this.handleModalClick(project.id)}
@@ -49,6 +71,8 @@ class Home extends React.Component {
               src={project.imageUrls[0]}
             // src={project.imageUrls[project.imageUrls.length - 1]}
             />
+            {/* --Project category banner-- */}
+            {category}
             <figcaption className="project-info">
               <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
               <Link to={`/home/${project.artistId}`} onClick={e => e.stopPropagation()}>

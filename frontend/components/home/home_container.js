@@ -7,9 +7,9 @@ import { openModal } from '../../actions/modal_actions';
 import Home from './home';
 
 const msp = state => {
-  const projects = Object.values(state.entities.projects);
+  const projects = Object.values(state.entities.projects) || {};
   const users = state.entities.users;
-  const categories = Object.values(state.entities.categories)
+  const categories = state.entities.categories;
   return {
     projects,
     users,
