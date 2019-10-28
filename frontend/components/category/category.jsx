@@ -73,6 +73,10 @@ class Category extends React.Component {
 
         <ul className="home-project-index">
           {projects}
+          <figure></figure>
+          <figure></figure>
+          <figure></figure>
+          <figure></figure>
         </ul>
       </section>
     );

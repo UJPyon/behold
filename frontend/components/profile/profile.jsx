@@ -54,23 +54,31 @@ class Profile extends React.Component {
   }
 
   render() {
-  // -----------------------------------------------------------------------------
-  // FOR SEEING ALL PROJECTS BY THAT ARTIST OR PROJECTS APPRECIATED BY THAT ARTIST
-  // -----------------------------------------------------------------------------
+    // -----------------------------------------------------------------------------
+    // FOR SEEING ALL PROJECTS BY THAT ARTIST OR PROJECTS APPRECIATED BY THAT ARTIST
+    // -----------------------------------------------------------------------------
 
-    // --Conditional mapping of either all artist's projects or all artist's appreciated projects as clickable images that leads to project modal--
     let projects;
     let categoryCount = {};
+    
+    // --Keep count of all project categories by this artist--
+    if (this.props.projects[0] !== undefined) {
+      this.props.projects.map(project => {
+        const id = project.categoryIds[0];
+        categoryCount[id] === undefined && id !== undefined ? categoryCount[id] = 1 : categoryCount[id] += 1;
+      });
+    }
+  
+    // --Conditional mapping of either all artist's projects or all artist's appreciated projects as clickable images that leads to project modal--
     if (this.props.projects[0] !== undefined) {
       const currentProjects = (this.state.view === "userProjects") ? this.props.projects : this.props.appreciatedProjects;
       projects = currentProjects.map(project => {
         const id = project.categoryIds[0];
-        // --Keep count of all project categories by this artist--
-        categoryCount[id] === undefined && id !== undefined ? categoryCount[id] = 1 : categoryCount[id] += 1;
         // --Conditional rendering of project's category banner--
         let category = <strong className="hide"></strong>;
         if (project.categoryIds.length) {
           category = <strong 
+          id={project.id}
           className={`category${id}`} 
           onClick={(event) => this.handleCategoryClick({e: event, id: id})}>
           {this.props.categories[id].tag}
@@ -87,7 +95,7 @@ class Profile extends React.Component {
           onClick={() => this.handleModalClick(project.id)}
           src={project.imageUrls[0]}
         />
-        {/* TESTING CODE BELOW FOR CATEGORIES */}
+        {/* --Project category banner-- */}
         {category}
         <figcaption className="project-info">
           <h4 onClick={() => this.handleModalClick(project.id)}>{project.title}</h4>
@@ -109,21 +117,22 @@ class Profile extends React.Component {
     // --Mapping out category counts and banners--
     let banners = <strong className="hide"></strong>;
     let catKeys = Object.keys(categoryCount);
-    debugger
     if (catKeys.length) {
+      let bannerCount = 0;
       banners = catKeys.map(id => {
         if (id !== "undefined") {
-        return <> 
-          <strong
-            id={id}
-            className={`profile-category${id}`}
-            onClick={(event) => this.handleCategoryClick({ e: event, id: id })}>
-            {this.props.categories[id].tag}
-            <span className={`category${id}-triangle-left`}></span>
-            <span className={`category${id}-triangle-right`}></span>
-          </strong>
-          <p id={id} className="category-count">{categoryCount[id]}</p>
-        </>
+          bannerCount += 1;
+          return <> 
+            <strong
+              id={id}
+              className={`profile-category${id} banner-${bannerCount}`}
+              onClick={(event) => this.handleCategoryClick({ e: event, id: id })}>
+              {this.props.categories[id].tag}
+              <span className={`category${id}-triangle-left`}></span>
+              <span className={`category${id}-triangle-right`}></span>
+            </strong>
+            <p id={id} className="category-count">{categoryCount[id]}</p>
+          </>
         }
       });
     }
@@ -257,7 +266,7 @@ class Profile extends React.Component {
         
         <section className="profile-projects">
           <div className="profile-projects-categories">
-            {/* *--Future user category bar will go here--* */}
+            {/* *--User category bar--* */}
             {banners}
           </div>
           <div>
@@ -278,10 +287,10 @@ class Profile extends React.Component {
           <ul className="profile-project-index">
             {/* list items of each project as Project Component */}
             {projects}
-            <figure></figure>
-            <figure></figure>
-            <figure></figure>
-            <figure></figure>
+            <figure id="t1"></figure>
+            <figure id="t2"></figure>
+            <figure id="t3"></figure>
+            <figure id="t4"></figure>
           </ul>
 
         </section>
