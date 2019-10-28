@@ -7,7 +7,7 @@
   font-size: 13px;
   position: absolute;
   top: 48px;
-  right: 43px;
+  right: 63px;
 }
 
 .category-count-2 {
@@ -15,7 +15,7 @@
   font-size: 13px;
   position: absolute;
   top: 48px;
-  right: 93px;
+  right: 113px;
 }
 
 .category-count-3 {
@@ -23,7 +23,7 @@
   font-size: 13px;
   position: absolute;
   top: 48px;
-  right: 143px;
+  right: 163px;
 }
 
 .profile-projects-categories {
@@ -36,7 +36,6 @@
   width: 32px;
   height: 30px;
   position: absolute;
-  /* right: 30px; */
   background-color: #c19f62;
   color: white;
   font-family: 'Share', cursive;
@@ -52,7 +51,6 @@
   width: 32px;
   height: 30px;
   position: absolute;
-  /* right: 30px; */
   background-color: #37271a;
   color: #fe7f17;
   font-family: 'Share', cursive;
@@ -68,7 +66,6 @@
   width: 32px;
   height: 30px;
   position: absolute;
-  /* right: 30px; */
   background-color: #391525;
   color: #fd408b;
   font-family: 'Share', cursive;
@@ -204,13 +201,31 @@
 }
 
 .banner-1 {
-  right: 30px;
+  right: 50px;
 }
 
 .banner-2 {
-  right: 80px;
+  right: 100px;
 }
 
 .banner-3 {
-  right: 130px;
+  right: 150px;
+}
+
+.categories-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  justify-content: space-evenly;
+}
+
+.categories-header > h2 {
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.categories-header > h3 {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
 }

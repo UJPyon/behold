@@ -47,7 +47,6 @@ class Home extends React.Component {
         const id = project.categoryIds[0];
         let category = <strong className="hide"></strong>;
         if (project.categoryIds.length) {
-          debugger
           category = <strong
             key={project.id}
             className={`category${id}`}
