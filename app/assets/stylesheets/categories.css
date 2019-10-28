@@ -2,9 +2,28 @@
   display: none;
 }
 
-.category-count {
+.category-count-1 {
   font-family:'Roboto', sans-serif;
   font-size: 13px;
+  position: absolute;
+  top: 48px;
+  right: 43px;
+}
+
+.category-count-2 {
+  font-family:'Roboto', sans-serif;
+  font-size: 13px;
+  position: absolute;
+  top: 48px;
+  right: 93px;
+}
+
+.category-count-3 {
+  font-family:'Roboto', sans-serif;
+  font-size: 13px;
+  position: absolute;
+  top: 48px;
+  right: 143px;
 }
 
 .profile-projects-categories {
@@ -17,7 +36,7 @@
   width: 32px;
   height: 30px;
   position: absolute;
-  right: 30px;
+  /* right: 30px; */
   background-color: #c19f62;
   color: white;
   font-family: 'Share', cursive;
@@ -33,7 +52,7 @@
   width: 32px;
   height: 30px;
   position: absolute;
-  right: 30px;
+  /* right: 30px; */
   background-color: #37271a;
   color: #fe7f17;
   font-family: 'Share', cursive;
@@ -49,7 +68,7 @@
   width: 32px;
   height: 30px;
   position: absolute;
-  right: 30px;
+  /* right: 30px; */
   background-color: #391525;
   color: #fd408b;
   font-family: 'Share', cursive;
@@ -182,4 +201,16 @@
   position: absolute;
   left: 0;
   bottom: -10px;
+}
+
+.banner-1 {
+  right: 30px;
+}
+
+.banner-2 {
+  right: 80px;
+}
+
+.banner-3 {
+  right: 130px;
 }

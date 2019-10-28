@@ -115,7 +115,7 @@ class Profile extends React.Component {
     }
 
     // --Mapping out category counts and banners--
-    let banners = <strong className="hide"></strong>;
+    let banners = <strong id="none" className="hide"></strong>;
     let catKeys = Object.keys(categoryCount);
     if (catKeys.length) {
       let bannerCount = 0;
@@ -124,14 +124,14 @@ class Profile extends React.Component {
           bannerCount += 1;
           return <> 
             <strong
-              id={id}
+              key={id}
               className={`profile-category${id} banner-${bannerCount}`}
               onClick={(event) => this.handleCategoryClick({ e: event, id: id })}>
               {this.props.categories[id].tag}
               <span className={`category${id}-triangle-left`}></span>
               <span className={`category${id}-triangle-right`}></span>
             </strong>
-            <p id={id} className="category-count">{categoryCount[id]}</p>
+            <p key={id + "p"} className={`category-count-${bannerCount}`}>{categoryCount[id]}</p>
           </>
         }
       });
