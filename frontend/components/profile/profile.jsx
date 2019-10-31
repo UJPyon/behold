@@ -78,7 +78,7 @@ class Profile extends React.Component {
         let category = <strong className="hide"></strong>;
         if (project.categoryIds.length) {
           category = <strong 
-          key={project.id}
+          key={id}
           className={`category${id}`} 
           onClick={(event) => this.handleCategoryClick({e: event, id: id})}>
           {this.props.categories[id].tag}
@@ -88,7 +88,8 @@ class Profile extends React.Component {
       }
       // --Final return render for each project--
       return (
-      <figure 
+      <figure  
+      key={project.id}
       onClick={() => this.handleModalClick(project.id)}
       className="project-mask" key={project.id}>
         <img
@@ -252,10 +253,11 @@ class Profile extends React.Component {
           <section>
             <h3>LINKS</h3>
             <span>
-              <a href="https://www.linkedin.com/in/unjae-pyon-9a833972?trk=people-guest_profile-result-card_result-card_full-click">
+              <a key="1" href="https://www.linkedin.com/in/unjae-pyon-9a833972?trk=people-guest_profile-result-card_result-card_full-click">
                 <img className="profile-icon" src={window.linkedInDark} />
               </a>
-              <a href="https://github.com/UJPyon"><img className="profile-icon" src={window.gitHubDark} /></a>
+              <a key="2" href="https://github.com/UJPyon"><img className="profile-icon" src={window.gitHubDark} /></a>
+              <a key="3" href="https://angel.co/unjae-pyon"><img className="profile-icon" src={window.angelList} /></a>
             </span>
           </section>
 
@@ -287,10 +289,10 @@ class Profile extends React.Component {
           <ul className="profile-project-index">
             {/* list items of each project as Project Component */}
             {projects}
-            <figure id="t1"></figure>
-            <figure id="t2"></figure>
-            <figure id="t3"></figure>
-            <figure id="t4"></figure>
+            <figure key="t1" id="t1"></figure>
+            <figure key="t2" id="t2"></figure>
+            <figure key="t3" id="t3"></figure>
+            <figure key="t4" id="t4"></figure>
           </ul>
 
         </section>
