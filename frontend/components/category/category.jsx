@@ -8,6 +8,7 @@ class Category extends React.Component {
     super(props);
     this.handleModalClick = this.handleModalClick.bind(this);
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
+    this.handleHomeClick = this.handleHomeClick.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +25,11 @@ class Category extends React.Component {
   handleCategoryClick({ e, id }) {
     e.stopPropagation();
     this.props.history.push(`/home/category/${id}`);
+  }
+
+  handleHomeClick(e) {
+    e.preventDefault();
+    this.props.history.push("/home");
   }
 
   render() {
@@ -88,9 +94,13 @@ class Category extends React.Component {
     // -----------------------------
     return (
       <section className="home-body">
+        <header>
+
+        </header>
         <section className="categories-header">
           <h2>{projectName}</h2>
           <h3>{projectDescription}</h3>
+          <button onClick={(e) => this.handleHomeClick(e)}>Back to Home</button>
         </section>
 
         <ul className="home-project-index">
