@@ -393,3 +393,118 @@
 .project-section-appr-counters div:nth-of-type(2) i {
   font-size: 14px;
 }
+
+.project-category7 {
+  width: 32px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  background-color: #c19f62;
+  color: white;
+  font-family: 'Share', cursive;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 6px;
+}
+
+.project-category8 {
+  width: 32px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  background-color: #37271a;
+  color: #fe7f17;
+  font-family: 'Share', cursive;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 6px;
+}
+
+.project-category9 {
+  width: 32px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  background-color: #391525;
+  color: #fd408b;
+  font-family: 'Share', cursive;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 6px;
+}
+
+.project-category7-triangle-right {
+  width: 0;
+  height: 0;
+  border-right: 0 solid transparent;
+  border-left: 16px solid transparent;
+  border-top: 10px solid #c19f62;
+  position: absolute;
+  right: 0;
+  bottom: -9.9px;
+}
+
+.project-category7-triangle-left {
+  width: 0;
+  height: 0;
+  border-right: 16px solid transparent;
+  border-left: 0 solid transparent;
+  border-top: 10px solid #c19f62;
+  position: absolute;
+  left: 0;
+  bottom: -9.9px;
+}
+
+.project-category8-triangle-right {
+  width: 0;
+  height: 0;
+  border-right: 0 solid transparent;
+  border-left: 16px solid transparent;
+  border-top: 10px solid #37271a;
+  position: absolute;
+  right: 0;
+  bottom: -9.9px;
+}
+
+.project-category8-triangle-left {
+  width: 0;
+  height: 0;
+  border-right: 16px solid transparent;
+  border-left: 0 solid transparent;
+  border-top: 10px solid #37271a;
+  position: absolute;
+  left: 0;
+  bottom: -9.9px;
+}
+
+.project-category9-triangle-right {
+  width: 0;
+  height: 0;
+  border-right: 0 solid transparent;
+  border-left: 16px solid transparent;
+  border-top: 10px solid #391525;
+  position: absolute;
+  right: 0;
+  bottom: -9.9px;
+}
+
+.project-category9-triangle-left {
+  width: 0;
+  height: 0;
+  border-right: 16px solid transparent;
+  border-left: 0 solid transparent;
+  border-top: 10px solid #391525;
+  position: absolute;
+  left: 0;
+  bottom: -9.9px;
+}
+
+.project-category7:hover, .project-category8:hover, .project-category9:hover {
+  height: 42px;
+}

@@ -15,6 +15,10 @@ const msp = (state, ownProps) => {
   const projectId = ownProps.projectId;
   const project = state.entities.projects[projectId];
 
+  // -- Grab project category--
+  const categoryId = project.categoryIds[0];
+  const category = state.entities.categories[categoryId];
+
   // --Grab Image URL's for project--
   const imageUrls = project.imageUrls;
 
@@ -25,7 +29,6 @@ const msp = (state, ownProps) => {
   // --Grab comments of project by project's comment ID's--
   const commentIds = project.commentIds;
   const comments = commentIds.map(id => {
-    // TEMPORARY SOLUTION, GO CHANGE REDUCER AND COME BACK HERE TO DELETE THIS!!!
     if (state.entities.comments[id] === undefined) {
       let nothing;
     } else {
@@ -45,6 +48,8 @@ const msp = (state, ownProps) => {
     project,
     imageUrls,
     comments,
+    category,
+    categoryId,
   };
 }
 

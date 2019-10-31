@@ -1,16 +1,22 @@
 import React from 'react';
 import ProfileAvatar from '../navbar/profile_avatar';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import CommentForm from '../comment/comment_form_container';
 
 class Project extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.project;
+    this.handleCategoryClick = this.handleCategoryClick.bind(this);
     this.handleModalClick = this.handleModalClick.bind(this);
     this.deleteComment = this.deleteComment.bind(this);
     this.handleLikeClick = this.handleLikeClick.bind(this);
     this.handleUnlikeClick = this.handleUnlikeClick.bind(this);
+  }
+
+  handleCategoryClick(id) {
+    this.props.closeModal();
+    this.props.history.push(`/home/category/${id}`);
   }
 
   handleModalClick() {
@@ -115,12 +121,17 @@ class Project extends React.Component {
       comments = comments.sort((a, b) => (a.key > b.key) ? 1 : -1).reverse();
     }
 
+    const catId = this.props.categoryId;
+    let tag = <strong></strong>;
+    if (this.props.category) {
+      tag = this.props.category.tag;
+    }
     // ----------------------------
     // FINAL PROJECT RENDER RETURN: 
     // ----------------------------
     return (
     <>
-    {/* Project header with artist avatar, artist name, and project title */}
+    {/* Project header with artist avatar, artist name, project category, and project title */}
     <header className="project-header">
       <Link to={`/home/${this.props.artist.id}`} onClick={this.handleModalClick}>
         <ProfileAvatar avatarUrl={this.props.artist.avatarUrl} size={{ width: "40px", height: "40px" }} />
@@ -129,6 +140,14 @@ class Project extends React.Component {
         <h1>{this.state.title}</h1>
         <Link to={`/home/${this.props.artist.id}`} onClick={this.handleModalClick}>{this.props.artist.fname}&nbsp;{this.props.artist.lname}</Link>
       </div>
+      {/* Clickable Project Category Banner */}
+      <strong
+        className={`project-category${catId}`}
+        onClick={() => this.handleCategoryClick(catId)}>
+        {tag}
+        <span className={`project-category${catId}-triangle-left`}></span>
+        <span className={`project-category${catId}-triangle-right`}></span>
+      </strong>
     </header>
 
       {/* All images load here */}
@@ -206,4 +225,4 @@ class Project extends React.Component {
   }
 }
 
-export default Project;
+export default withRouter(Project);
