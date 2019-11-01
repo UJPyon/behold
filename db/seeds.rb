@@ -201,7 +201,7 @@ cat_2 = Category.create(
 )
 cat_3 = Category.create(
   name: "Industrial Design", 
-  description: "Browse briliant student creations, products, and ideas for the field of industrial design",
+  description: "Browse brilliant student creations, products, and ideas for the field of industrial design",
   tag: "ID"
 )
 

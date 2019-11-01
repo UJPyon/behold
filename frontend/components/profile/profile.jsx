@@ -75,10 +75,10 @@ class Profile extends React.Component {
       projects = currentProjects.map(project => {
         const id = project.categoryIds[0];
         // --Conditional rendering of project's category banner--
-        let category = <strong className="hide"></strong>;
+        let category = <strong key="none" className="hide"></strong>;
         if (project.categoryIds.length) {
           category = <strong 
-          key={id}
+          key={project.id}
           className={`category${id}`} 
           onClick={(event) => this.handleCategoryClick({e: event, id: id})}>
           {this.props.categories[id].tag}
@@ -91,7 +91,7 @@ class Profile extends React.Component {
       <figure  
       key={project.id}
       onClick={() => this.handleModalClick(project.id)}
-      className="project-mask" key={project.id}>
+      className="project-mask">
         <img
           onClick={() => this.handleModalClick(project.id)}
           src={project.imageUrls[0]}
@@ -123,9 +123,8 @@ class Profile extends React.Component {
       banners = catKeys.map(id => {
         if (id !== "undefined") {
           bannerCount += 1;
-          return <> 
+          return <div key={id}> 
             <strong
-              key={id}
               className={`profile-category${id} banner-${bannerCount}`}
               onClick={(event) => this.handleCategoryClick({ e: event, id: id })}>
               {this.props.categories[id].tag}
@@ -133,7 +132,7 @@ class Profile extends React.Component {
               <span className={`category${id}-triangle-right`}></span>
             </strong>
             <p key={id + "p"} className={`category-count-${bannerCount}`}>{categoryCount[id]}</p>
-          </>
+          </div>
         }
       });
     }

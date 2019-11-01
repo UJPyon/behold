@@ -7,6 +7,7 @@ class Footer extends React.Component {
     <footer className="home-footer">
       <div className="home-footer-icons">
         <a href="https://www.linkedin.com/in/unjae-pyon-9a833972?trk=people-guest_profile-result-card_result-card_full-click"><img className="home-footer-icon" src={window.linkedIn} /></a>
+        <a href="https://angel.co/unjae-pyon"><img className="home-footer-icon-angel" src={window.angelListWhite}/></a>
         <a href="https://github.com/UJPyon"><img className="home-footer-icon" src={window.gitHub}/></a>
       </div>
       <a href="https://www.adobe.com/creativecloud.html" className="footer-adobe-logo">

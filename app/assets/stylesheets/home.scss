@@ -241,9 +241,26 @@ body {
   opacity: 1;
 }
 
+.home-footer-icon-angel {
+  width: 26px;
+  height: 26px;
+  margin-top: 2px;
+  opacity: .7;
+  transition: .2s;
+}
+
+.home-footer-icon-angel:hover {
+  opacity: 1;
+  transition: .2s;
+}
+
+.home-footer-icon-angel:focus {
+  opacity: 1;
+}
+
 .home-footer-icons {
   display: flex;
   justify-content: space-between;
-  width: 65px;
+  width: 100px;
   margin-left: 30px;
 }
