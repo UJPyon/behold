@@ -123,7 +123,7 @@ class Profile extends React.Component {
       banners = catKeys.map(id => {
         if (id !== "undefined") {
           bannerCount += 1;
-          return <div key={id}> 
+          return <article key={id}> 
             <strong
               className={`profile-category${id} banner-${bannerCount}`}
               onClick={(event) => this.handleCategoryClick({ e: event, id: id })}>
@@ -132,7 +132,7 @@ class Profile extends React.Component {
               <span className={`category${id}-triangle-right`}></span>
             </strong>
             <p key={id + "p"} className={`category-count-${bannerCount}`}>{categoryCount[id]}</p>
-          </div>
+          </article>
         }
       });
     }
