@@ -144,6 +144,18 @@
   width: 100%;
 }
 
+.profile-about section:nth-of-type(3) a {
+  color: #6c6c6c;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.profile-about section:nth-of-type(3) a:hover {
+  color: black;
+}
+
 .profile-about section:nth-of-type(5) {
   flex-direction: column;
   height: 50px;

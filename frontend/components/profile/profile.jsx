@@ -147,8 +147,12 @@ class Profile extends React.Component {
 
     // --Conditional logic for when a user refreshes a page and data needs to be fetched again--
     let avatarUrl;
+    let personalSite;
     if (!this.props.artist || !this.props.artist.avatarUrl) {
       avatarUrl = window.defaultAvatar;
+    } else if (this.props.artist.fname === "UnJae") {
+      personalSite = <a href="www.unjaepyon.com">Check out my personal site!</a>;
+      avatarUrl = this.props.artist.avatarUrl;
     } else {
       avatarUrl = this.props.artist.avatarUrl;
     }
@@ -241,6 +245,7 @@ class Profile extends React.Component {
           <section>
             <h3>ABOUT ME</h3>
             <p>{aboutMeInfo}</p>
+            {personalSite}
           </section>
 
           <section className="profile-appr-counter">
