@@ -16,16 +16,11 @@ const App = () => {
   return (
   <>
   <Modal />
-  {/* <div className="main-session-containers"> */}
-  {/* </div> */}
-  {/* <div className={mainClass}> */}
   <div className="main-home">
     <Switch>
-      {/* <Route exact path='/' component={Navbar} />   */}
       <AuthRoute exact path='/' component={SplashPageContainer} />
       <AuthRoute exact path='/signup' component={SignUpFormContainer} />
       <AuthRoute exact path='/login' component={LoginFormContainer} />
-      {/* <Route exact path='/' component={Footer} />  */}
     </Switch>
     <ProtectedRoute path='/home' component={Navbar} /> 
     <ProtectedRoute exact path='/home' component={HomeContainer} />
