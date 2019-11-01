@@ -32,7 +32,7 @@
   position: relative;
 }
 
-.profile-category7 {
+.profile-category1 {
   width: 32px;
   height: 30px;
   position: absolute;
@@ -47,7 +47,7 @@
   z-index: 2;
 }
 
-.profile-category8 {
+.profile-category2 {
   width: 32px;
   height: 30px;
   position: absolute;
@@ -62,7 +62,7 @@
   z-index: 2;
 }
 
-.profile-category9 {
+.profile-category3 {
   width: 32px;
   height: 30px;
   position: absolute;
@@ -77,12 +77,12 @@
   z-index: 2;
 }
 
-.profile-category7:hover, .profile-category8:hover, .profile-category9:hover {
+.profile-category1:hover, .profile-category2:hover, .profile-category3:hover {
   height: 42px;
   cursor: pointer;
 }
 
-.category7 {
+.category1 {
   width: 32px;
   height: 30px;
   position: absolute;
@@ -98,7 +98,7 @@
   padding-bottom: 6px;
 }
 
-.category8 {
+.category2 {
   width: 32px;
   height: 30px;
   position: absolute;
@@ -114,7 +114,7 @@
   padding-bottom: 6px;
 }
 
-.category9 {
+.category3 {
   width: 32px;
   height: 30px;
   position: absolute;
@@ -130,11 +130,11 @@
   padding-bottom: 6px;
 }
 
-.category7:hover, .category8:hover, .category9:hover {
+.category1:hover, .category2:hover, .category3:hover {
   height: 42px;
 }
 
-.category7-triangle-right {
+.category1-triangle-right {
   width: 0;
   height: 0;
   border-right: 0 solid transparent;
@@ -145,7 +145,7 @@
   bottom: -10px;
 }
 
-.category7-triangle-left {
+.category1-triangle-left {
   width: 0;
   height: 0;
   border-right: 16px solid transparent;
@@ -156,7 +156,7 @@
   bottom: -10px;
 }
 
-.category8-triangle-right {
+.category2-triangle-right {
   width: 0;
   height: 0;
   border-right: 0 solid transparent;
@@ -167,7 +167,7 @@
   bottom: -10px;
 }
 
-.category8-triangle-left {
+.category2-triangle-left {
   width: 0;
   height: 0;
   border-right: 16px solid transparent;
@@ -178,7 +178,7 @@
   bottom: -10px;
 }
 
-.category9-triangle-right {
+.category3-triangle-right {
   width: 0;
   height: 0;
   border-right: 0 solid transparent;
@@ -189,7 +189,7 @@
   bottom: -10px;
 }
 
-.category9-triangle-left {
+.category3-triangle-left {
   width: 0;
   height: 0;
   border-right: 16px solid transparent;

@@ -182,21 +182,21 @@
   cursor: pointer;
 }
 
-.project-mask:hover .category7 {
+.project-mask:hover .category1 {
   opacity: 1;  
   transition: .4s;
   padding-top: 6px;
   cursor: pointer;
 }
 
-.project-mask:hover .category8 {
+.project-mask:hover .category2 {
   opacity: 1;
   transition: .4s;
   padding-top: 6px;
   cursor: pointer;
 }
 
-.project-mask:hover .category9 {
+.project-mask:hover .category3 {
   opacity: 1;
   transition: .4s;
   padding-top: 6px;
@@ -394,7 +394,7 @@
   font-size: 14px;
 }
 
-.project-category7 {
+.project-category1 {
   width: 32px;
   height: 30px;
   position: absolute;
@@ -409,7 +409,7 @@
   padding-bottom: 6px;
 }
 
-.project-category8 {
+.project-category2 {
   width: 32px;
   height: 30px;
   position: absolute;
@@ -424,7 +424,7 @@
   padding-bottom: 6px;
 }
 
-.project-category9 {
+.project-category3 {
   width: 32px;
   height: 30px;
   position: absolute;
@@ -439,7 +439,7 @@
   padding-bottom: 6px;
 }
 
-.project-category7-triangle-right {
+.project-category1-triangle-right {
   width: 0;
   height: 0;
   border-right: 0 solid transparent;
@@ -450,7 +450,7 @@
   bottom: -9.9px;
 }
 
-.project-category7-triangle-left {
+.project-category1-triangle-left {
   width: 0;
   height: 0;
   border-right: 16px solid transparent;
@@ -461,7 +461,7 @@
   bottom: -9.9px;
 }
 
-.project-category8-triangle-right {
+.project-category2-triangle-right {
   width: 0;
   height: 0;
   border-right: 0 solid transparent;
@@ -472,7 +472,7 @@
   bottom: -9.9px;
 }
 
-.project-category8-triangle-left {
+.project-category2-triangle-left {
   width: 0;
   height: 0;
   border-right: 16px solid transparent;
@@ -483,7 +483,7 @@
   bottom: -9.9px;
 }
 
-.project-category9-triangle-right {
+.project-category3-triangle-right {
   width: 0;
   height: 0;
   border-right: 0 solid transparent;
@@ -494,7 +494,7 @@
   bottom: -9.9px;
 }
 
-.project-category9-triangle-left {
+.project-category3-triangle-left {
   width: 0;
   height: 0;
   border-right: 16px solid transparent;
@@ -505,6 +505,6 @@
   bottom: -9.9px;
 }
 
-.project-category7:hover, .project-category8:hover, .project-category9:hover {
+.project-category1:hover, .project-category2:hover, .project-category3:hover {
   height: 42px;
 }
