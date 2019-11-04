@@ -27,7 +27,7 @@ user1 = User.create(
 
 user2 = User.create(
   email: "soloak@gmail.com", 
-  password: "go_project_go",
+  password: "go_extras_go",
   fname:"Sol", 
   lname: "Oak", 
   text: "My name is Sol Oak, and I'm a Pratt Institute graduate of Industrial Design."
@@ -35,7 +35,7 @@ user2 = User.create(
 
 user3 = User.create(
   email: "spence@gmail.com", 
-  password: "youwillneverguessthisyouwillneverguessthislalalalala",
+  password: "go_extras_go",
   fname:"Spencer", 
   lname: "Cambridge", 
   text: "I make cool projects! BIZZZAM, take a look!"
@@ -43,7 +43,7 @@ user3 = User.create(
 
 user4 = User.create(
   email: "ash@gmail.com", 
-  password: "youwillneverguessthisyouwillneverguessthislalalalala",
+  password: "go_extras_go",
   fname:"Ash", 
   lname: "C. Yeung", 
   text: "Graduate of Pratt Institute School of Architecture. Find me on LinkedIn for more info."
@@ -51,7 +51,7 @@ user4 = User.create(
 
 user5 = User.create(
   email: "hmoon@gmail.com", 
-  password: "youwillneverguessthisyouwillneverguessthislalalalala",
+  password: "go_extras_go",
   fname:"Hailey", 
   lname: "Moon", 
   text: "I'm a chill girl, making chill things."
@@ -59,7 +59,7 @@ user5 = User.create(
 
 user6 = User.create(
   email: "pko@gmail.com", 
-  password: "youwillneverguessthisyouwillneverguessthislalalalala",
+  password: "go_extras_go",
   fname:"Peter", 
   lname: "Koo", 
   text: "I'm a cool guy, doing cool things."
