@@ -95,8 +95,10 @@
   margin: 0 10px;
 }
 
-.material-icons:focus {
+.material-icons:hover {
   opacity: 1;
+  transition: .2s;
+  cursor: pointer;
 }
 /* 
 .header-drop:hover .header-drop-content {
@@ -146,7 +148,7 @@
 .menu-drop-content-links a {
   text-decoration: none;
   color: gray;
-  padding: 10px 20px;
+  padding: 13px 20px;
   border-top: 1px solid #e4e4e4;
 }
 
