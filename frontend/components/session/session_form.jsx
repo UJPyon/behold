@@ -90,7 +90,7 @@ class SessionForm extends React.Component {
     } else if (this.props.errors.includes(errorMsg) && errorMsg === "An account with this email address already exists.") {
       return <Link className="session-input-link-text" to="/login">Sign in</Link>;
     } else {
-      return <div></div>;
+      return "";
     }
   }
 
