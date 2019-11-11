@@ -117,6 +117,9 @@ class Navbar extends React.Component {
       );
     }
 
+    // ----------------------------
+    // FINAL PROFILE RENDER RETURN: 
+    // ----------------------------
     return (
 
     <nav className="home-navbar" fixed="top">

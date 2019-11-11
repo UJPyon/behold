@@ -26,8 +26,6 @@ class SessionForm extends React.Component {
     this.inputBorderType = this.inputBorderType.bind(this);
     this.whichForm = this.whichForm.bind(this);
     this.errorLink = this.errorLink.bind(this);
-    // this.changeUserLink = this.changeUserLink.bind(this);
-    // this.showLink = this.showLink.bind(this);
   }
 
   componentDidMount() {
@@ -95,28 +93,6 @@ class SessionForm extends React.Component {
       return <div></div>;
     }
   }
-
-
-  // -------------------------------------------------------------------------------------------------------
-  // ----- COME BACK TO THIS IN THE FUTURE: CREATING A LINK TO GO BACK AND SIGN IN AS DIFFERENT EMAIL ------
-  // -------------------------------------------------------------------------------------------------------
-  // changeUserLink() {
-  //   if (this.state.loginNextStep) {
-  //     this.setState({loginNextStep: false});
-  //   }
-  // }
-
-  // showLink() {
-  //   if (this.state.email && this.state.loginNextStep === true && !this.props.errors.includes("Check your email addess or ")) {
-  //     return <Link 
-  //       onClick={this.changeUserLink()} 
-  //       className="session-input-link-text" 
-  //       to="/login">Sign in with a different email address
-  //     </Link>
-  //   } else {
-  //     return <div></div>
-  //   }
-  // }
 
   // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   // %%%%%%%%% FREEZA: THIS ISN'T EVEN MY FINAL FORM %%%%%%%%%%
@@ -233,6 +209,9 @@ class SessionForm extends React.Component {
       </div>
     );
 
+    // ----------------------------
+    // FINAL PROFILE RENDER RETURN: 
+    // ----------------------------
     return (
       <div className="main-session-containers">
         <section>
