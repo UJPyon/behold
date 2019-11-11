@@ -6,6 +6,10 @@ import ProfileAvatar from './profile_avatar';
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      avatarDropdown: "hide",
+      categoryDropdown: "hide",
+    };
     this.handleLogout = this.handleLogout.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleAvatarClick = this.handleAvatarClick.bind(this);
@@ -24,11 +28,6 @@ class Navbar extends React.Component {
     const currentUserId = this.props.currentUser.id
     this.props.history.push(`/home/${currentUserId}`);
   }
-
-  // closeDropdown() {
-  //   let dropClass = "header-drop-content";
-  //   setTimeout
-  // }
 
   render() {
 
@@ -62,6 +61,20 @@ class Navbar extends React.Component {
       </div>
     </div>
     <i className="material-icons">&#xe5c3;</i>
+    {/* TESTING CATEGORY DROPDOWN MENU BELOW */}
+    <div className="header-drop-content">
+        <span className="header-drop-content-triangle"></span>
+        <div>
+          <section className="header-drop-content-section">
+              <h3>View by Category</h3>
+          </section>
+        </div>
+        <section className="header-drop-content-links">
+          <Link to="/home">Back to Home Page</Link>
+          <Link to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
+          <button onClick={this.handleLogout}>Sign Out</button>
+        </section>
+      </div>
     </>
     );
     } else {

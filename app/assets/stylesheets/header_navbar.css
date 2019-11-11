@@ -140,7 +140,6 @@
 .header-drop-btn {
   width: 40px;
   border: none;
-  /* margin: 0 10px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,10 +147,7 @@
 }
 
 .header-drop-btn img {
-  /* height: 20px; */
-  /* width: 20px; */
   border: none;
-  /* margin: 0 10px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -261,6 +257,13 @@
   transition: .4s;
 }
 
+/* TESTING CSS BELOW: */
+.header-drop:hover .header-drop-content {
+  visibility: visible;
+  opacity: 1;
+  transition: .4s;
+}
+
 .header-drop:focus {
   visibility: visible;
 }
@@ -282,3 +285,8 @@
 .header-drop-content-links button:hover {
   background-color: #f7f7f7;
 }
+/* 
+.header-drop-content-section button:focus .header-drop-content {
+  visibility: hidden;
+  opacity: 0;
+} */
