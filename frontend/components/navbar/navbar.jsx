@@ -31,12 +31,6 @@ class Navbar extends React.Component {
   // }
 
   render() {
-    // let avatar;
-    // if (!this.props.currentUser) {
-    //   avatar = window.defaultAvatar;
-    // } else {
-    //   avatar = this.props.currentUser.avatarUrl;
-    // }
 
     let navbarItems;
     if (this.props.currentUser) {
@@ -45,7 +39,6 @@ class Navbar extends React.Component {
     {/* Dropdown menu on User Avatar icon */ }
     <div className="header-drop">
       <section onClick={this.handleAvatarClick} className="header-drop-btn">
-        {/* TEST HERE */}
         <ProfileAvatar size={{ width: "34px", height: "34px" }} avatarUrl={this.props.currentUser.avatarUrl} />
       </section>
       <div className="header-drop-content">
@@ -97,7 +90,7 @@ class Navbar extends React.Component {
         {navbarItems}
 
         {/* Clickable Adobe logo & icon that leads to Adobe website */}
-        <a href="https://www.adobe.com/creativecloud.html" className="header-adobe-logo">
+        <a href="https://www.adobe.com/creativecloud.html" target="_blank" className="header-adobe-logo">
           <div><AdobeIcon /></div>
           <div className="header-adobe-logo-text">Adobe</div>
         </a>

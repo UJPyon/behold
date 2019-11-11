@@ -151,7 +151,7 @@ class Profile extends React.Component {
     if (!this.props.artist || !this.props.artist.avatarUrl) {
       avatarUrl = window.defaultAvatar;
     } else if (this.props.artist.fname === "UnJae") {
-      personalSite = <a href="www.unjaepyon.com">Check out my personal site!</a>;
+      personalSite = <a href="www.unjaepyon.com" target="_blank">Check out my personal site!</a>;
       avatarUrl = this.props.artist.avatarUrl;
     } else {
       avatarUrl = this.props.artist.avatarUrl;
@@ -257,11 +257,11 @@ class Profile extends React.Component {
           <section>
             <h3>LINKS</h3>
             <span>
-              <a key="1" href="https://www.linkedin.com/in/unjae-pyon-9a833972?trk=people-guest_profile-result-card_result-card_full-click">
+              <a key="1" href="https://www.linkedin.com/in/unjae-pyon-9a833972?trk=people-guest_profile-result-card_result-card_full-click" target="_blank">
                 <img className="profile-icon" src={window.linkedInDark} />
               </a>
-              <a key="2" href="https://github.com/UJPyon"><img className="profile-icon" src={window.gitHubDark} /></a>
-              <a key="3" href="https://angel.co/unjae-pyon"><img className="profile-icon" src={window.angelList} /></a>
+              <a key="2" href="https://github.com/UJPyon" target="_blank"><img className="profile-icon" src={window.gitHubDark} /></a>
+              <a key="3" href="https://angel.co/unjae-pyon" target="_blank"><img className="profile-icon" src={window.angelList} /></a>
             </span>
           </section>
 
