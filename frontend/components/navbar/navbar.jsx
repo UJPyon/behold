@@ -6,10 +6,6 @@ import ProfileAvatar from './profile_avatar';
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      avatarDropdown: "hide",
-      categoryDropdown: "hide",
-    };
     this.handleLogout = this.handleLogout.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleAvatarClick = this.handleAvatarClick.bind(this);

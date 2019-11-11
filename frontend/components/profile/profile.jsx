@@ -26,6 +26,11 @@ class Profile extends React.Component {
     this.props.fetchProjects();
     this.props.fetchComments();
     this.props.fetchCategories();
+    window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate() {
+    window.scrollTo(0, 0);
   }
 
   handleClick(e) {

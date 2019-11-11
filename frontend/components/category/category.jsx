@@ -16,6 +16,11 @@ class Category extends React.Component {
     this.props.fetchComments();
     this.props.fetchCategories();
     this.props.fetchProjects();
+    window.scrollTo(0,0);
+  }
+
+  componentDidUpdate() {
+    window.scrollTo(0,0);
   }
 
   handleModalClick(id) {

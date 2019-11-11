@@ -20,6 +20,10 @@ class Home extends React.Component {
     this.props.fetchComments();
     this.props.fetchCategories();
   }
+  
+  componentDidUpdate() {
+    window.scrollTo(0, 0);
+  }
 
   handleClick(e) {
     e.preventDefault();
