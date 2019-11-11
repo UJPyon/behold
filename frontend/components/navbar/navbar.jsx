@@ -13,6 +13,8 @@ class Navbar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleAvatarClick = this.handleAvatarClick.bind(this);
+    this.hideDropdown = this.hideDropdown.bind(this);
+    this.showDropdown = this.showDropdown.bind(this);
   }
 
   handleLogout() {
@@ -25,10 +27,30 @@ class Navbar extends React.Component {
   }
 
   handleAvatarClick() {
-    const currentUserId = this.props.currentUser.id
+    const currentUserId = this.props.currentUser.id;
     this.props.history.push(`/home/${currentUserId}`);
   }
 
+  hideDropdown(type) {
+    let ele = document.getElementById(type);
+    debugger
+    if (ele) {
+      ele.style.visibility = "hidden";
+      ele.style.transition = ".2s";
+      ele.style.opacity = "0";
+    }
+  }
+
+  showDropdown(type) {
+    let ele = document.getElementById(type);
+    debugger
+    if (ele) {
+      ele.style.visibility = "visible";
+      ele.style.transition = ".2s";
+      ele.style.opacity = "1";
+    }
+  }
+  
   render() {
 
     let navbarItems;
@@ -36,7 +58,7 @@ class Navbar extends React.Component {
     navbarItems = (
     <>
     {/* Dropdown menu on User Avatar icon */ }
-    <div className="header-drop">
+    <div className="header-drop" id="drop">
       <section onClick={this.handleAvatarClick} className="header-drop-btn">
         <ProfileAvatar size={{ width: "34px", height: "34px" }} avatarUrl={this.props.currentUser.avatarUrl} />
       </section>
@@ -61,10 +83,10 @@ class Navbar extends React.Component {
       </div>
     </div>
 
-    {/* TESTING CATEGORY DROPDOWN MENU BELOW */}
-    <div className="menu-drop">
+    {/* Category dropdown menu */}
+      <div className="menu-drop" onMouseOver={() => this.showDropdown("menu")} onMouseLeave={() => this.hideDropdown("menu")}>
       <i className="material-icons">&#xe5c3;</i>
-      <div className="menu-drop-content">
+        <div className="menu-drop-content" id="menu" onMouseLeave={() => this.hideDropdown("menu")}>
         <span className="menu-drop-content-triangle"></span>
         <div>
           <section className="menu-drop-content-section">
@@ -72,9 +94,9 @@ class Navbar extends React.Component {
           </section>
         </div>
         <section className="menu-drop-content-links">
-          <Link to="/home/category/1">Illustration</Link>
-          <Link to="/home/category/2">Architecture</Link>
-          <Link to="/home/category/3">Industrial Design</Link>
+          <Link onClick={() => this.hideDropdown("menu")} to="/home/category/1">Illustration</Link>
+          <Link onClick={() => this.hideDropdown("menu")} to="/home/category/2">Architecture</Link>
+          <Link onClick={() => this.hideDropdown("menu")} to="/home/category/3">Industrial Design</Link>
         </section>
       </div>
     </div>

@@ -100,12 +100,7 @@
   transition: .2s;
   cursor: pointer;
 }
-/* 
-.header-drop:hover .header-drop-content {
-  visibility: visible;
-  opacity: 1;
-  transition: .4s;
-} */
+
 .menu-drop {
   display: flex;
   height: 100%;
@@ -119,7 +114,7 @@
 .menu-drop:hover .menu-drop-content {
   visibility: visible;
   opacity: 1;
-  transition: .4s;
+  transition: .2s;
 }
 
 .menu-drop-content {
@@ -133,7 +128,7 @@
   min-height: 160px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 3;
-  transition: .4s;
+  transition: .2s;
   font-family: Arial, Helvetica, sans-serif;
   opacity: 0;
   border-radius: 3px;
@@ -260,7 +255,7 @@
   min-height: 200px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 3;
-  transition: .4s;
+  transition: .2s;
   font-family: Arial, Helvetica, sans-serif;
   opacity: 0;
   border-radius: 3px;
@@ -341,7 +336,7 @@
 .header-drop:hover .header-drop-content {
   visibility: visible;
   opacity: 1;
-  transition: .4s;
+  transition: .2s;
 }
 
 .header-drop:focus {
@@ -366,10 +361,7 @@
   background-color: #f7f7f7;
 }
 
-
-
-/* 
-.header-drop-content-section button:focus .header-drop-content {
+/* .testing:focus .menu-drop-content {
   visibility: hidden;
   opacity: 0;
 } */
