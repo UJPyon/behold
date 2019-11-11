@@ -192,6 +192,24 @@ proj_18 = Project.create(
   artist_id: user4.id
 )
 
+# --USER 7 PROJECTS--
+proj_19 = Project.create(
+  title: "My Baby Loves Christmas",
+  description: "This was another children's book I helped put together. It's a very cute one about Christmas, hope you guys like!",
+  artist_id: user7.id
+)
+
+proj_20 = Project.create(
+  title: "Summer Vacation: Children's Book",
+  description: "This is a children's book I helped work on about the first day of summer vacation for children, and it was a joy to work on!",
+  artist_id: user7.id
+)
+
+proj_21 = Project.create(
+  title: "The Arctic Fox's Journey",
+  description: "Cover design was done by me! This was a book I helped work on about the arctic fox, and wanted to share because I love animals!",
+  artist_id: user7.id
+)
 
 # ------Categories Seed Data------
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
@@ -214,7 +232,7 @@ cat_3 = Category.create(
 )
 
 ## --Add Projects to Categories--
-cat_1.projects += [proj_1, proj_2, proj_3, proj_4, proj_5, proj_11]
+cat_1.projects += [proj_1, proj_2, proj_3, proj_4, proj_5, proj_11, proj_19, proj_20, proj_21]
 cat_2.projects += [proj_6, proj_7, proj_8, proj_9, proj_16, proj_17, proj_18]
 cat_3.projects += [proj_10, proj_12, proj_13, proj_14, proj_15]
 
@@ -287,6 +305,18 @@ file9_4 = open('https://behold-seeds.s3.amazonaws.com/1_09_04s.jpg')
 file10_1 = open('https://behold-seeds.s3.amazonaws.com/1_10_01s.jpg')
 file10_2 = open('https://behold-seeds.s3.amazonaws.com/1_10_02s.jpg')
 file10_3 = open('https://behold-seeds.s3.amazonaws.com/1_10_03s.jpg')
+
+# file11_1 = open('https://behold-seeds.s3.amazonaws.com/1_11_01s.jpg')
+# file11_2 = open('https://behold-seeds.s3.amazonaws.com/1_11_02s.jpg')
+# file11_3 = open('https://behold-seeds.s3.amazonaws.com/1_11_03s.jpg')
+
+# file12_1 = open('https://behold-seeds.s3.amazonaws.com/1_12_01s.jpg')
+# file12_2 = open('https://behold-seeds.s3.amazonaws.com/1_12_02s.jpg')
+# file12_3 = open('https://behold-seeds.s3.amazonaws.com/1_12_03s.jpg')
+
+# file13_1 = open('https://behold-seeds.s3.amazonaws.com/1_13_01s.jpg')
+# file13_2 = open('https://behold-seeds.s3.amazonaws.com/1_13_02s.jpg')
+# file13_3 = open('https://behold-seeds.s3.amazonaws.com/1_13_03s.jpg')
 
 
 ### -USER 2 PROJECT IMAGES-
@@ -433,6 +463,7 @@ proj_18.images.attach(io: file18_2, filename: '4_02_02s.jpg')
 proj_18.images.attach(io: file18_3, filename: '4_02_03s.jpg')
 proj_18.images.attach(io: file18_4, filename: '4_02_04s.jpg')
 
+proj_19
 
 # --------Comments Seed Data--------
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
