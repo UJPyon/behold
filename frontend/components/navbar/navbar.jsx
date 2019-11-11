@@ -60,21 +60,24 @@ class Navbar extends React.Component {
         </section>
       </div>
     </div>
-    <i className="material-icons">&#xe5c3;</i>
+
     {/* TESTING CATEGORY DROPDOWN MENU BELOW */}
-    <div className="header-drop-content">
-        <span className="header-drop-content-triangle"></span>
+    <div className="menu-drop">
+      <i className="material-icons">&#xe5c3;</i>
+      <div className="menu-drop-content">
+        <span className="menu-drop-content-triangle"></span>
         <div>
-          <section className="header-drop-content-section">
+          <section className="menu-drop-content-section">
               <h3>View by Category</h3>
           </section>
         </div>
-        <section className="header-drop-content-links">
-          <Link to="/home">Back to Home Page</Link>
-          <Link to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
-          <button onClick={this.handleLogout}>Sign Out</button>
+        <section className="menu-drop-content-links">
+          <Link to="/home/category/1">Illustration</Link>
+          <Link to="/home/category/2">Architecture</Link>
+          <Link to="/home/category/3">Industrial Design</Link>
         </section>
       </div>
+    </div>
     </>
     );
     } else {

@@ -4,8 +4,13 @@ import Navbar from './navbar';
 
 const msp = state => {
   const currentUserId = state.session.id;
+  let categories = {};
+  if (Object.keys(state.entities.categories).length > 0) {
+    categories = state.entities.categories;
+  }
   return ({
     currentUser: state.entities.users[currentUserId],
+    categories,
   });
 }
 

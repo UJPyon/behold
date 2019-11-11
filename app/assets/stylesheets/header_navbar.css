@@ -95,14 +95,99 @@
   margin: 0 10px;
 }
 
-.material-icons:hover {
-  opacity: 1;
-  transition: .2s;
-  cursor: pointer;
-}
-
 .material-icons:focus {
   opacity: 1;
+}
+/* 
+.header-drop:hover .header-drop-content {
+  visibility: visible;
+  opacity: 1;
+  transition: .4s;
+} */
+.menu-drop {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  margin: 0 3px 0 10px;
+  position: relative;
+}
+
+.menu-drop:hover .menu-drop-content {
+  visibility: visible;
+  opacity: 1;
+  transition: .4s;
+}
+
+.menu-drop-content {
+  visibility: hidden;
+  position: absolute;
+  right: -21px;
+  top: 60px;
+  color: gray;
+  background-color: white;
+  min-width: 240px;
+  min-height: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 3;
+  transition: .4s;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0;
+  border-radius: 3px;
+}
+
+.menu-drop-content-links {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.menu-drop-content-links a {
+  text-decoration: none;
+  color: gray;
+  padding: 10px 20px;
+  border-top: 1px solid #e4e4e4;
+}
+
+.menu-drop-content-links a:hover {
+  background-color: #f7f7f7;
+}
+
+.menu-drop-content-links button {
+  border: none;
+  height: 40px;
+  border-top: 1px solid #e4e4e4;
+  margin: 5px 0;
+  text-align: left;
+  padding-left: 20px;
+  color: gray;
+}
+
+.menu-drop-content-links button:hover {
+  background-color: #f7f7f7;
+}
+
+.menu-drop-content-section {
+  display: flex;
+  height: 20px;
+  padding: 20px 20px 15px 20px;
+}
+
+.menu-drop-content-triangle {
+    width: 0;
+    height: 0;
+    border-right: 16px solid transparent;
+    border-left: 16px solid transparent;
+    border-bottom: 17px solid white;
+    position: absolute;
+    left: 191px;
+    top: -7.3px;
+}
+
+.menu-drop-content-section h3 {
+  color: black;
+  font-weight: bold;
 }
 
 .fa-envelope {
@@ -257,13 +342,6 @@
   transition: .4s;
 }
 
-/* TESTING CSS BELOW: */
-.header-drop:hover .header-drop-content {
-  visibility: visible;
-  opacity: 1;
-  transition: .4s;
-}
-
 .header-drop:focus {
   visibility: visible;
 }
@@ -285,6 +363,9 @@
 .header-drop-content-links button:hover {
   background-color: #f7f7f7;
 }
+
+
+
 /* 
 .header-drop-content-section button:focus .header-drop-content {
   visibility: hidden;
