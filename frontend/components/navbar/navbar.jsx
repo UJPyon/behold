@@ -13,6 +13,7 @@ class Navbar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleAvatarClick = this.handleAvatarClick.bind(this);
+    this.handleAvatarDropClick = this.handleAvatarDropClick.bind(this);
     this.hideDropdown = this.hideDropdown.bind(this);
     this.showDropdown = this.showDropdown.bind(this);
   }
@@ -29,6 +30,11 @@ class Navbar extends React.Component {
   handleAvatarClick() {
     const currentUserId = this.props.currentUser.id;
     this.props.history.push(`/home/${currentUserId}`);
+  }
+
+  handleAvatarDropClick() {
+    this.handleAvatarClick();
+    this.hideDropdown("drop");
   }
 
   hideDropdown(type) {
@@ -58,15 +64,15 @@ class Navbar extends React.Component {
     navbarItems = (
     <>
     {/* Dropdown menu on User Avatar icon */ }
-    <div className="header-drop" id="drop">
+    <div className="header-drop" onMouseOver={() => this.showDropdown("drop")} onMouseLeave={() => this.hideDropdown("drop")}>
       <section onClick={this.handleAvatarClick} className="header-drop-btn">
         <ProfileAvatar size={{ width: "34px", height: "34px" }} avatarUrl={this.props.currentUser.avatarUrl} />
       </section>
-      <div className="header-drop-content">
+      <div className="header-drop-content" id="drop" onMouseOver={() => this.showDropdown("drop")} onMouseLeave={() => this.hideDropdown("drop")}>
         <span className="header-drop-content-triangle"></span>
         <div>
           <section className="header-drop-content-section">
-            <button onClick={this.handleAvatarClick}>
+            <button onClick={this.handleAvatarDropClick}>
               <ProfileAvatar size={{width: "70px", height: "70px"}} avatarUrl={this.props.currentUser.avatarUrl} />
             </button>
             <div>
@@ -76,8 +82,8 @@ class Navbar extends React.Component {
           </section>
         </div>
         <section className="header-drop-content-links">
-          <Link to="/home">Back to Home Page</Link>
-          <Link to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
+          <Link onClick={() => this.hideDropdown("drop")} to="/home">Back to Home Page</Link>
+          <Link onClick={() => this.hideDropdown("drop")} to={`/home/${this.props.currentUser.id}`}>Behold Profile</Link>
           <button onClick={this.handleLogout}>Sign Out</button>
         </section>
       </div>
