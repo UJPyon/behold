@@ -65,6 +65,14 @@ user6 = User.create(
   text: "I'm a cool guy, doing cool things."
 )
 
+user7 = User.create(
+  email: "honee@gmail.com", 
+  password: "go_extras_go",
+  fname:"Honee", 
+  lname: "Lemon", 
+  text: "I'm a designer/illustrator based in New York. I love creating works of art that inspire new ideas from something completely ordinary or presenting lesser known, field-specific subject matters that evoke curiosity."
+)
+
 demo_user = User.create(
   email: "demo_user@gmail.com", 
   password: "123456",
@@ -217,11 +225,14 @@ cat_3.projects += [proj_10, proj_12, proj_13, proj_14, proj_15]
 ## --User Avatars--
 user1_avatar = open('https://behold-seeds.s3.amazonaws.com/user1_avatar.png')
 user2_avatar = open('https://behold-seeds.s3.amazonaws.com/user2_avatar.png')
+user7_avatar = open('https://behold-seeds.s3.amazonaws.com/user7_avatar.png')
 default_avatar = open('https://behold-seeds.s3.amazonaws.com/default_avatar.png')
+
 
 ## --User Banners--
 user1_banner = open('https://behold-seeds.s3.amazonaws.com/user1_banner.jpg')
 user2_banner = open('https://behold-seeds.s3.amazonaws.com/user2_banner.jpg')
+user7_banner = open('https://behold-seeds.s3.amazonaws.com/user7_banner.jpg')
 
 
 ##--Project Images--
@@ -327,11 +338,13 @@ file18_4 = open('https://behold-seeds.s3.amazonaws.com/4_02_04s.jpg')
 ## --Attach User Avatars--
 user1.avatar.attach(io: user1_avatar, filename: 'user1_avatar.png')
 user2.avatar.attach(io: user2_avatar, filename: 'user2_avatar.png')
+user7.avatar.attach(io: user7_avatar, filename: 'user7_avatar.png')
 # test_user.avatar.attach(io: default_avatar, filename: 'default_avatar.png')
 
 ## --Attach User Banners--
 user1.banner.attach(io: user1_banner, filename: 'user1_banner.jpg')
 user2.banner.attach(io: user2_banner, filename: 'user2_banner.jpg')
+user7.banner.attach(io: user7_banner, filename: 'user7_banner.jpg')
 
 ## --Attach Project Images--
 proj_1.images.attach(io: file1_1, filename: '1_01_01s.jpg')
@@ -808,6 +821,49 @@ comment_061 = Comment.create(
   project_id: proj_18.id
 )
 
+# --New User (user7) Comments for Projects--
+
+comment_062 = Comment.create(
+  body: "I didn't know Pratt's architecture projects were so cool!",
+  author_id: user7.id,
+  project_id: proj_17.id
+)
+
+comment_063 = Comment.create(
+  body: "Cool project! Educational design is super important nowadays :)",
+  author_id: user7.id,
+  project_id: proj_16.id
+)
+
+comment_064 = Comment.create(
+  body: "Pokemon and Super Mario combo, nice~",
+  author_id: user7.id,
+  project_id: proj_5.id
+)
+
+comment_065 = Comment.create(
+  body: "This makes me appreciate digital art lol, so intense!",
+  author_id: user7.id,
+  project_id: proj_8.id
+)
+
+comment_066 = Comment.create(
+  body: "I love your illustration style!",
+  author_id: user7.id,
+  project_id: proj_1.id 
+)
+
+comment_067 = Comment.create(
+  body: "Lovely drawings~ :D",
+  author_id: user7.id,
+  project_id: proj_11.id
+)
+
+comment_068 = Comment.create(
+  body: "Woah, really nice work on the furniture design!",
+  author_id: user7.id,
+  project_id: proj_13.id
+)
 
 # --------Appreciations Seed Data--------
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
