@@ -868,33 +868,102 @@ comment_061 = Comment.create(
   project_id: proj_18.id
 )
 
+## --PROJ 19 COMMENTS--
+comment_062 = Comment.create(
+  body: "Beautiful stuff, the design look well put together.",
+  author_id: user4.id,
+  project_id: proj_19.id
+)
+
+comment_063 = Comment.create(
+  body: "this is your work from after graduation right?? it looks great!",
+  author_id: user5.id,
+  project_id: proj_19.id
+)
+
+comment_064 = Comment.create(
+  body: "Absolutely fantastic",
+  author_id: user6.id,
+  project_id: proj_19.id
+)
+
+comment_065 = Comment.create(
+  body: "I'd buy this book :)",
+  author_id: user2.id,
+  project_id: proj_19.id
+)
+
+## --PROJ 20 COMMENTS--
+comment_066 = Comment.create(
+  body: "WOW! Amazing work! This book has a really cute style",
+  author_id: user1.id,
+  project_id: proj_20.id
+)
+
+comment_067 = Comment.create(
+  body: "Nice job!",
+  author_id: user3.id,
+  project_id: proj_20.id
+)
+
+comment_068 = Comment.create(
+  body: "I miss the summertime, great work on this!",
+  author_id: user2.id,
+  project_id: proj_20.id
+)
+
+## --PROJ 21 COMMENTS--
+comment_069 = Comment.create(
+  body: "Amazing design work as always!",
+  author_id: user2.id,
+  project_id: proj_21.id
+)
+
+comment_070 = Comment.create(
+  body: "ahhhh my favorite animal!! very cute!",
+  author_id: user6.id,
+  project_id: proj_21.id
+)
+
+comment_071 = Comment.create(
+  body: "Great work !",
+  author_id: user3.id,
+  project_id: proj_21.id
+)
+
+comment_072 = Comment.create(
+  body: "I like it",
+  author_id: user4.id,
+  project_id: proj_21.id
+)
+
 # --New User (user7) Comments for Projects--
 
-comment_062 = Comment.create(
+comment_073 = Comment.create(
   body: "I didn't know Pratt's architecture projects were so cool!",
   author_id: user7.id,
   project_id: proj_17.id
 )
 
-comment_063 = Comment.create(
+comment_074 = Comment.create(
   body: "Cool project! Educational design is super important nowadays :)",
   author_id: user7.id,
   project_id: proj_16.id
 )
 
-comment_064 = Comment.create(
+comment_075 = Comment.create(
   body: "Pokemon and Super Mario combo, nice~",
   author_id: user7.id,
   project_id: proj_5.id
 )
 
-comment_065 = Comment.create(
+comment_076 = Comment.create(
   body: "This makes me appreciate digital art lol, so intense!",
   author_id: user7.id,
   project_id: proj_8.id
 )
 
-comment_066 = Comment.create(
+comment_077 = Comment.create(
   body: "I love your illustration style!",
   author_id: user7.id,
   project_id: proj_1.id 
