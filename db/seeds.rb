@@ -198,13 +198,11 @@ proj_19 = Project.create(
   description: "This was another children's book I helped put together. It's a very cute one about Christmas, hope you guys like!",
   artist_id: user7.id
 )
-
 proj_20 = Project.create(
   title: "Summer Vacation: Children's Book",
   description: "This is a children's book I helped work on about the first day of summer vacation for children, and it was a joy to work on!",
   artist_id: user7.id
 )
-
 proj_21 = Project.create(
   title: "The Arctic Fox's Journey",
   description: "Cover design was done by me! This was a book I helped work on about the arctic fox, and wanted to share because I love animals!",
@@ -306,18 +304,6 @@ file10_1 = open('https://behold-seeds.s3.amazonaws.com/1_10_01s.jpg')
 file10_2 = open('https://behold-seeds.s3.amazonaws.com/1_10_02s.jpg')
 file10_3 = open('https://behold-seeds.s3.amazonaws.com/1_10_03s.jpg')
 
-# file11_1 = open('https://behold-seeds.s3.amazonaws.com/1_11_01s.jpg')
-# file11_2 = open('https://behold-seeds.s3.amazonaws.com/1_11_02s.jpg')
-# file11_3 = open('https://behold-seeds.s3.amazonaws.com/1_11_03s.jpg')
-
-# file12_1 = open('https://behold-seeds.s3.amazonaws.com/1_12_01s.jpg')
-# file12_2 = open('https://behold-seeds.s3.amazonaws.com/1_12_02s.jpg')
-# file12_3 = open('https://behold-seeds.s3.amazonaws.com/1_12_03s.jpg')
-
-# file13_1 = open('https://behold-seeds.s3.amazonaws.com/1_13_01s.jpg')
-# file13_2 = open('https://behold-seeds.s3.amazonaws.com/1_13_02s.jpg')
-# file13_3 = open('https://behold-seeds.s3.amazonaws.com/1_13_03s.jpg')
-
 
 ### -USER 2 PROJECT IMAGES-
 file11_1 = open('https://behold-seeds.s3.amazonaws.com/2_01_01s.jpg')
@@ -359,6 +345,22 @@ file18_1 = open('https://behold-seeds.s3.amazonaws.com/4_02_01s.jpg')
 file18_2 = open('https://behold-seeds.s3.amazonaws.com/4_02_02s.jpg')
 file18_3 = open('https://behold-seeds.s3.amazonaws.com/4_02_03s.jpg')
 file18_4 = open('https://behold-seeds.s3.amazonaws.com/4_02_04s.jpg')
+
+
+### -USER 7 PROJECT IMAGES-
+file19_1 = open('https://behold-seeds.s3.amazonaws.com/7_01_01s.jpg')
+file19_2 = open('https://behold-seeds.s3.amazonaws.com/7_01_02s.jpg')
+file19_3 = open('https://behold-seeds.s3.amazonaws.com/7_01_03s.jpg')
+
+file20_1 = open('https://behold-seeds.s3.amazonaws.com/7_02_01s.jpg')
+file20_2 = open('https://behold-seeds.s3.amazonaws.com/7_02_02s.jpg')
+file20_3 = open('https://behold-seeds.s3.amazonaws.com/7_02_03s.jpg')
+file20_4 = open('https://behold-seeds.s3.amazonaws.com/7_02_04s.jpg')
+
+file21_1 = open('https://behold-seeds.s3.amazonaws.com/7_03_01s.jpg')
+file21_2 = open('https://behold-seeds.s3.amazonaws.com/7_03_02s.jpg')
+file21_3 = open('https://behold-seeds.s3.amazonaws.com/7_03_03s.jpg')
+file21_4 = open('https://behold-seeds.s3.amazonaws.com/7_03_04s.jpg')
 
 
 
@@ -463,7 +465,21 @@ proj_18.images.attach(io: file18_2, filename: '4_02_02s.jpg')
 proj_18.images.attach(io: file18_3, filename: '4_02_03s.jpg')
 proj_18.images.attach(io: file18_4, filename: '4_02_04s.jpg')
 
-proj_19
+proj_19.images.attach(io: file19_1, filename: '7_01_01s.jpg')
+proj_19.images.attach(io: file19_2, filename: '7_01_02s.jpg')
+proj_19.images.attach(io: file19_3, filename: '7_01_03s.jpg')
+
+proj_20.images.attach(io: file20_1, filename: '7_02_01s.jpg')
+proj_20.images.attach(io: file20_2, filename: '7_02_02s.jpg')
+proj_20.images.attach(io: file20_3, filename: '7_02_03s.jpg')
+proj_20.images.attach(io: file20_4, filename: '7_02_04s.jpg')
+
+proj_21.images.attach(io: file21_1, filename: '7_03_01s.jpg')
+proj_21.images.attach(io: file21_2, filename: '7_03_02s.jpg')
+proj_21.images.attach(io: file21_3, filename: '7_03_03s.jpg')
+proj_21.images.attach(io: file21_4, filename: '7_03_04s.jpg')
+
+
 
 # --------Comments Seed Data--------
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
