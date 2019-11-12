@@ -35,7 +35,6 @@ class Navbar extends React.Component {
 
   hideDropdown(type) {
     let ele = document.getElementById(type);
-    debugger
     if (ele) {
       ele.style.visibility = "hidden";
       ele.style.transition = ".2s";
@@ -45,7 +44,6 @@ class Navbar extends React.Component {
 
   showDropdown(type) {
     let ele = document.getElementById(type);
-    debugger
     if (ele) {
       ele.style.visibility = "visible";
       ele.style.transition = ".2s";
