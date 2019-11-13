@@ -1,0 +1,120 @@
+svg {
+
+  .path {
+    stroke-dasharray: 140;
+    stroke-dashoffset: 140;
+    animation: dash-untrace 1.75s linear alternate forwards;
+  }
+  .path-long {
+    stroke-dasharray: 160;
+    stroke-dashoffset: 160;
+    animation: dash-long-untrace 1.5s linear alternate forwards;
+  }
+  
+  @keyframes dash-trace {
+    from {
+      stroke-dashoffset: 140;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes dash-untrace {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: 140;
+    }
+  }
+
+  @keyframes dash-long-trace {
+    from {
+      stroke-dashoffset: 160;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes dash-long-untrace {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: 160;
+    }
+  }
+}
+
+.logo-size {
+  transform: scale(1.75);
+}
+
+.logo-init {
+  position: absolute;
+  right: 220px;
+  top: -30px;
+  z-index: 20;
+  width: 220px;
+  height: 160px;
+  transition: .6s;
+
+  #b {
+    opacity: 0;
+    transition: .3s;
+    
+  }
+  #e {
+    opacity: 0;
+    transition: .3s;
+  }
+}
+
+.logo-pos {
+  opacity: 1;
+  position: absolute;
+  right: 175px;
+  top: -30px;
+  z-index: 20;
+  width: 220px;
+  height: 160px;
+  transition: .6s;
+
+  #b {
+    opacity: 1;
+    transition: .6s;
+  }
+  #e {
+    opacity: 1;
+    transition: .6s;
+  }
+}
+
+.logo-pos:hover {
+  right: 220px;
+  transition: .6s;
+
+  .path {
+    stroke-dasharray: 140;
+    stroke-dashoffset: 140;
+    animation: dash-trace 1.75s linear alternate forwards;
+  }
+
+  .path-long {
+    stroke-dasharray: 160;
+    stroke-dashoffset: 160;
+    animation: dash-long-trace 1.25s linear alternate forwards;
+  }
+
+  #b {
+    opacity: 0;
+    transition: .6s;
+    
+  }
+  #e {
+    opacity: 0;
+    transition: .6s;
+  }
+}

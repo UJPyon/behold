@@ -1,9 +1,17 @@
 import React from 'react';
 
 class Logo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {start: "logo-init"};
+  }
+
+  componentDidMount() {
+    setTimeout(() => this.setState({ start: "logo-pos" }), 700);
+  }
 
   render() {
-    return ( <svg className="logo-pos">
+    return ( <svg className={this.state.start}>
       <path id="b" className="logo-size" fill="#ffffff" stroke="#ffffff" strokeWidth="2" strokeMiterlimit="10" d="M4.993,64.553V39.407h9.08c1.467,0,2.724,0.151,3.773,0.454
         c1.047,0.302,1.903,0.733,2.566,1.292c0.664,0.559,1.147,1.228,1.45,2.008c0.302,0.781,0.454,1.636,0.454,2.567
         c0,0.885-0.117,1.647-0.35,2.288c-0.232,0.64-0.535,1.176-0.908,1.606c-0.373,0.431-0.797,0.768-1.275,1.013
@@ -43,7 +51,7 @@ class Logo extends React.Component {
         c0.512,0.676,1.152,1.2,1.921,1.572c0.768,0.372,1.653,0.559,2.654,0.559c1.094,0,2.031-0.215,2.811-0.646
         c0.78-0.431,1.415-1.007,1.904-1.729c0.489-0.722,0.849-1.537,1.082-2.445C80.046,57.428,80.163,56.484,80.163,55.506"/>
       <rect id="l" className="logo-size" fill="#ffffff" x="86.555" y="39.406" stroke="#ffffff" strokeWidth="2" strokeMiterlimit="10" width="2.095" height="25.146"/>
-      <path id="d" className="logo-size" fill="#ffffff" stroke="#ffffff" strokeWidth="2" strokeMiterlimit="10" d="M107.963,39.406h2.096v25.147h-2.096v-3.179h-0.069
+      <path id="d" className="logo-size" fill="#ffffff" stroke="#ffffff" strokeWidth="2" strokeLinejoin="miter" strokeMiterlimit="10" d="M107.963,39.406h2.096v25.147h-2.096v-3.179h-0.069
         c-0.304,0.606-0.693,1.136-1.17,1.589c-0.478,0.454-1.001,0.833-1.572,1.136c-0.57,0.302-1.158,0.535-1.763,0.698
         c-0.606,0.163-1.2,0.244-1.781,0.244c-1.467,0-2.713-0.244-3.737-0.733c-1.024-0.489-1.869-1.158-2.533-2.008
         c-0.663-0.85-1.146-1.857-1.448-3.021c-0.304-1.164-0.454-2.41-0.454-3.737c0-1.258,0.163-2.468,0.488-3.632
@@ -60,12 +68,12 @@ class Logo extends React.Component {
         C106.132,49.411,107.004,50.283,107.004,51.359"/>
       <path id="head-mouth" className="logo-size" fill="none" stroke="#ffffff" strokeWidth="2" strokeMiterlimit="10" d="M96.851,68.74c-0.659,2.191-4.457,3.871-9.044,3.871
         c-4.656,0-8.5-1.731-9.071-3.97"/>
-      <path id="head-mid" className="logo-size" fill="none" stroke="#ffffff" strokeWidth="4" strokeMiterlimit="10" d="M62.385,43.573c0,0,7.94-5.815,5.602-15.125
+      <path id="head-mid" className="logo-size path" fill="none" stroke="#ffffff" strokeWidth="4" strokeMiterlimit="10" d="M62.385,43.573c0,0,7.94-5.815,5.602-15.125
         c0,0,10.445,7.516,43.178,6.794"/>
-      <path id="head-top" className="logo-size" fill="none" stroke="#ffffff" strokeWidth="4" strokeMiterlimit="10" d="M115.506,46.592c0,0,11.046-29.864-25.963-40.269
+      <path id="head-top" className="logo-size path-long" fill="none" stroke="#ffffff" strokeWidth="4" strokeMiterlimit="10" d="M115.506,46.592c0,0,11.046-29.864-25.963-40.269
         c0,0-25.201-5.845-31.533,8.545c-1.612-3.982-6.609-2.47-6.609-2.47c3.131,3.503,2.53,6.059,2.53,6.059
         c-14.052,2.245-6.38,9.676-6.135,16.983"/>
-      <path id="head-bot" className="logo-size" fill="none" stroke="#ffffff" strokeWidth="4" strokeLinejoin="round" strokeMiterlimit="10" d="M48.468,65.323
+      <path id="head-bot" className="logo-size path" fill="none" stroke="#ffffff" strokeWidth="4" strokeLinejoin="round" strokeMiterlimit="10" d="M48.468,65.323
         c0,0,0,5.688,8.138,3.757h-0.004c2.199,9.287,13.55,14.956,26.769,14.956c14.139,0,24.639-6.587,25.597-18.712"/>
       </svg>
     );
