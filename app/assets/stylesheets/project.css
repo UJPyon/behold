@@ -507,6 +507,7 @@
 
 .project-category1:hover, .project-category2:hover, .project-category3:hover {
   height: 42px;
+  cursor: pointer;
 }
 
 /* -------------------------------------------------------------------------------------------- */
