@@ -3,12 +3,18 @@ svg {
   .path {
     stroke-dasharray: 140;
     stroke-dashoffset: 140;
-    animation: dash-untrace 1.75s linear alternate forwards;
+    transition: 1.5s all ease;
+    // stroke-dasharray: 140;
+    // stroke-dashoffset: 140;
+    // animation: dash-untrace 1.75s linear alternate forwards;
   }
   .path-long {
     stroke-dasharray: 160;
     stroke-dashoffset: 160;
-    animation: dash-long-untrace 1.5s linear alternate forwards;
+    // stroke-dasharray: 160;
+    // stroke-dashoffset: 160;
+    transition: 1.5s all ease;
+    // animation: dash-long-untrace 1.5s linear alternate forwards;
   }
   
   @keyframes dash-trace {
@@ -59,16 +65,32 @@ svg {
   z-index: 20;
   width: 220px;
   height: 160px;
-  transition: .6s;
+  transition: .6s all ease;
 
+  .path {
+    stroke-dasharray: 140;
+    stroke-dashoffset: 0;
+    // stroke-dasharray: 140;
+    // stroke-dashoffset: 140;
+    // animation: dash-trace 1.75s linear alternate forwards;
+  }
+
+  .path-long {
+    stroke-dasharray: 160;
+    stroke-dashoffset: 0;
+    // stroke-dasharray: 160;
+    // stroke-dashoffset: 160;
+    // animation: dash-long-trace 1.25s linear alternate forwards;
+  }
+  
   #b {
     opacity: 0;
-    transition: .3s;
+    transition: .3s all ease;
     
   }
   #e {
     opacity: 0;
-    transition: .3s;
+    transition: .3s all ease;
   }
 }
 
@@ -80,41 +102,46 @@ svg {
   z-index: 20;
   width: 220px;
   height: 160px;
-  transition: .6s;
+  transition: .6s all ease;
 
   #b {
     opacity: 1;
-    transition: .6s;
+    transition: .6s all ease;
   }
   #e {
     opacity: 1;
-    transition: .6s;
+    transition: .6s all ease;
   }
 }
 
 .logo-pos:hover {
   right: 220px;
-  transition: .6s;
+  transition: .6s all ease;
 
   .path {
     stroke-dasharray: 140;
-    stroke-dashoffset: 140;
-    animation: dash-trace 1.75s linear alternate forwards;
+    stroke-dashoffset: 0;
+    // stroke-dasharray: 140;
+    // stroke-dashoffset: 140;
+    // animation: dash-trace 1.75s linear alternate forwards;
   }
 
   .path-long {
     stroke-dasharray: 160;
-    stroke-dashoffset: 160;
-    animation: dash-long-trace 1.25s linear alternate forwards;
+    stroke-dashoffset: 0;
+    // stroke-dasharray: 160;
+    // stroke-dashoffset: 160;
+    // animation: dash-long-trace 1.25s linear alternate forwards;
   }
 
   #b {
     opacity: 0;
-    transition: .6s;
+    transition: .6s all ease;
     
   }
+
   #e {
     opacity: 0;
-    transition: .6s;
+    transition: .6s all ease;
   }
 }
