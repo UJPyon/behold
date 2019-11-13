@@ -3,10 +3,6 @@
   height: auto;
 }
 
-.project-image-loading {
-
-}
-
 .project-close {
   font-size: 22px;
   position: fixed;
@@ -414,7 +410,7 @@
   height: 30px;
   position: absolute;
   right: 0;
-  background-color: #37271a;
+  background: linear-gradient(rgba(55,39,26,1) 0%, rgb(125, 62, 6) 100%);
   color: #fe7f17;
   font-family: 'Share', cursive;
   top: 0;
@@ -429,7 +425,7 @@
   height: 30px;
   position: absolute;
   right: 0;
-  background-color: #391525;
+  background-color: linear-gradient(rgba(57,21,37,1) 0%, rgb(142, 48, 85) 100%);
   color: #fd408b;
   font-family: 'Share', cursive;
   top: 0;
@@ -466,7 +462,7 @@
   height: 0;
   border-right: 0 solid transparent;
   border-left: 16px solid transparent;
-  border-top: 10px solid #37271a;
+  border-top: 10px solid rgb(125, 62, 6);
   position: absolute;
   right: 0;
   bottom: -9.9px;
@@ -477,7 +473,7 @@
   height: 0;
   border-right: 16px solid transparent;
   border-left: 0 solid transparent;
-  border-top: 10px solid #37271a;
+  border-top: 10px solid rgb(125, 62, 6);
   position: absolute;
   left: 0;
   bottom: -9.9px;
@@ -488,7 +484,7 @@
   height: 0;
   border-right: 0 solid transparent;
   border-left: 16px solid transparent;
-  border-top: 10px solid #391525;
+  border-top: 10px solid rgb(142, 48, 85);
   position: absolute;
   right: 0;
   bottom: -9.9px;
@@ -499,7 +495,7 @@
   height: 0;
   border-right: 16px solid transparent;
   border-left: 0 solid transparent;
-  border-top: 10px solid #391525;
+  border-top: 10px solid rgb(142, 48, 85);
   position: absolute;
   left: 0;
   bottom: -9.9px;
