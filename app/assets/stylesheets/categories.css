@@ -51,8 +51,10 @@
   width: 32px;
   height: 30px;
   position: absolute;
-  background: linear-gradient(rgba(55,39,26,1) 0%, rgb(125, 62, 6) 100%);
-  color: #fe7f17;
+  background-color: #256aff;
+  color: white;
+  /* background: linear-gradient(rgba(55,39,26,1) 0%, rgb(125, 62, 6) 100%); */
+  /* color: #fe7f17; */
   font-family: 'Share', cursive;
   top: 0;
   display: flex;
@@ -66,8 +68,10 @@
   width: 32px;
   height: 30px;
   position: absolute;
-  background: linear-gradient(rgba(57,21,37,1) 0%, rgb(142, 48, 85) 100%);
-  color: #fd408b;
+  /* background: linear-gradient(rgba(57,21,37,1) 0%, rgb(142, 48, 85) 100%);
+  color: #fd408b; */
+  background-color: #d23d77;
+  color: white;
   font-family: 'Share', cursive;
   top: 0;
   display: flex;
@@ -103,8 +107,10 @@
   height: 30px;
   position: absolute;
   right: 30px;
-  background: linear-gradient(rgba(55,39,26,1) 0%, rgb(125, 62, 6) 100%);
-  color: #fe7f17;
+  /* background: linear-gradient(rgba(55,39,26,1) 0%, rgb(125, 62, 6) 100%);
+  color: #fe7f17; */
+  background-color: #256aff;
+  color: white;
   font-family: 'Share', cursive;
   opacity: 0;
   top: 0;
@@ -119,8 +125,10 @@
   height: 30px;
   position: absolute;
   right: 30px;
-  background: linear-gradient(rgba(57,21,37,1) 0%, rgb(142, 48, 85) 100%);
-  color: #fd408b;
+  /* background: linear-gradient(rgba(57,21,37,1) 0%, rgb(142, 48, 85) 100%);
+  color: #fd408b; */
+  background-color: #d23d77;
+  color: white;
   font-family: 'Share', cursive;
   opacity: 0;
   top: 0;
@@ -161,7 +169,8 @@
   height: 0;
   border-right: 0 solid transparent;
   border-left: 16px solid transparent;
-  border-top: 10px solid rgb(125, 62, 6);
+  border-top: 10px solid #256aff;
+  /* border-top: 10px solid rgb(125, 62, 6); */
   position: absolute;
   right: 0;
   bottom: -10px;
@@ -172,7 +181,8 @@
   height: 0;
   border-right: 16px solid transparent;
   border-left: 0 solid transparent;
-  border-top: 10px solid rgb(125, 62, 6);
+  border-top: 10px solid #256aff;
+  /* border-top: 10px solid rgb(125, 62, 6); */
   position: absolute;
   left: 0;
   bottom: -10px;
@@ -183,7 +193,8 @@
   height: 0;
   border-right: 0 solid transparent;
   border-left: 16px solid transparent;
-  border-top: 10px solid rgb(142, 48, 85);
+  border-top: 10px solid #d23d77;
+  /* border-top: 10px solid rgb(142, 48, 85); */
   position: absolute;
   right: 0;
   bottom: -10px;
@@ -194,7 +205,8 @@
   height: 0;
   border-right: 16px solid transparent;
   border-left: 0 solid transparent;
-  border-top: 10px solid rgb(142, 48, 85);
+  border-top: 10px solid #d23d77;
+  /* border-top: 10px solid rgb(142, 48, 85); */
   position: absolute;
   left: 0;
   bottom: -10px;
