@@ -62,7 +62,7 @@ if (!this.props.currentUser.appreciatedProjectIds.includes(this.state.id)) {
 
 ### Two-Step User Authentication
 
-![Behold](app/assets/images/behold-readme-2.gif)
+![Behold](app/assets/images/behold-readme-3-s.gif)
 
 Logging into the app requires a two-step user authentication that, when an email is submitted, an ajax request is sent to the Rails backend to confirm whether or not that user exists in the database. If that the email exists, the form will proceed to ask the user for a password; otherwise it will prompt the user that the email does not exist in the database. This feature required mapping sign up & login errors to appear in the correct positions and change values depending on whether an input was invalid or not. 
 
