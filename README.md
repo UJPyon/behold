@@ -1,5 +1,7 @@
 # BEHOLD
 
+![Behold](app/assets/images/behold-readme-1.gif)
+
 Behold is an app for viewing awesome art and architecture student works of art. Peruse showcased projects that you can view, leave encouraging comments, and show your appreciation for!
 
 Visit the app today and behold some awesome projects:
@@ -19,6 +21,9 @@ https://behold-aa.herokuapp.com/#/
 ## Highlighted Features
 
 ### Viewing User Projects
+
+![project_views](app/assets/images/behold-readme-3.gif)
+
 The main feature of this app involves viewing an index of projects, which are all individually clickable and allows the viewing of a project's images. Some of the challenges faced when creating the project views were the implementation of modals, hosting images, and speeding up load times for all projects and images. The AWS (Amazon Web Services) API was used as an answer for storing all project images. Each project is given a ```has_many_attached``` association with the image URL's hosted on AWS. 
 
 The Rails jbuilder was designed to serve up a normalized state shape of the project for quick O(1) queries for information pertaining to a particular project. For example, each project has an array of the ID's of comments and appreciations associated to it, which can then be fetched by their associated ID keys without having to search through each comment or appreciation association for the relative info. 
@@ -56,6 +61,9 @@ if (!this.props.currentUser.appreciatedProjectIds.includes(this.state.id)) {
 
 
 ### Two-Step User Authentication
+
+![Behold](app/assets/images/behold-readme-2.gif)
+
 Logging into the app requires a two-step user authentication that, when an email is submitted, an ajax request is sent to the Rails backend to confirm whether or not that user exists in the database. If that the email exists, the form will proceed to ask the user for a password; otherwise it will prompt the user that the email does not exist in the database. This feature required mapping sign up & login errors to appear in the correct positions and change values depending on whether an input was invalid or not. 
 
 My solution to this issue was to build in two methods that handle conditional logic. One switches the input CSS class if the state of the app returned with particular errors at a particular input field: 
