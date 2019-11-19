@@ -10,12 +10,12 @@ https://behold-aa.herokuapp.com/#/
 
 
 ## Technologies Used
-  * React
-  * Redux
-  * Ruby on Rails
-  * PostgreSQL
-  * AWS S3
-  * Heroku
+  * React v16.9.0
+  * Redux v4.0.4
+  * Ruby on Rails v5.2.3
+  * PostgreSQL v10.5
+  * AWS S3 
+  * Heroku v7.35.0
 
 
 ## Highlighted Features
