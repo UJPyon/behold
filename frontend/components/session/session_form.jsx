@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
   }
 
   componentDidMount() {
-    document.body.style.backgroundImage = "url('https://cache.desktopnexus.com/cropped-wallpapers/2353/2353798-1920x1080-[DesktopNexus.com].jpg?st=Gsec2x7-Z0xWWwPSdmvqkA&e=1570216831')";
+    document.body.style.backgroundImage = "url('https://imgur.com/HPABVUs')";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "cover";
